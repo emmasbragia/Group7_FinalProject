@@ -49,6 +49,7 @@ Meeting Evidence #1:
     - reviewed assignment/sprint requirements
     -  split tasks among ourselves and discussed general site look
     -  no
+    
 Meeting Evidence #2:
 
 1. What did you do yesterday?
