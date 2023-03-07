@@ -1,181 +1,301 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HASA ASSOCIATION UW-MADISON</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link rel="icon" href="pictures/HASA_Transparent.png" />
-    <script src="https://kit.fontawesome.com/8a80b728dc.js" crossorigin="anonymous"></script>
-    <style>
-      .header {
-        padding-top: 20pt;
-        padding-bottom: 15pt;
-      }
-      .footer {
-        height: 20%;
-      }
-      .is_centered {
-        text-align: center;
-      }
-      .fa-brands {
-        color: white;
-      }
-      .footer {
-        height: 30%;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="has-background-danger-light">
-      <nav class="level header pl-6 pr-6">
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Home</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Our History</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Calendar</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <img
-            src="pictures/HASA_Transparent.png"
-            alt=""
-            style="height: 140px"
-          />
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Meet the Team</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Contact Us</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Inventory</a>
-        </p>
-      </nav>
-    </header>
-    <main>
-      <div class="section is-medium pt-6 pb-6">
-        <div class="columns">
-          <!-- center -->
-          <div class="section column is-9 mr-4" id="main">
-            <p class="title is-size-2">Welcome to HASA at UW-Madison!</p>
-            <p>
-              write something welcoming to the website... Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Impedit nesciunt labore quos
-              recusandae esse sunt eaque harum dolore molestias vero. Eaque
-              exercitationem excepturi nemo nobis voluptates? Explicabo officia
-              ipsam blanditiis recusandae id iusto magni facere adipisci error
-              ut eaque rem repudiandae, voluptatum placeat eligendi deserunt
-              obcaecati sunt eum voluptatem alias, debitis non magnam fugit
-              quia. Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit
-              amet consectetur adipisicing elit. Dolorem voluptatibus aliquid
-              perspiciatis voluptates vero, magnam quae error optio aspernatur
-              assumenda nemo, autem ut aliquam minima! Fugiat facere alias modi
-              vero dolorum aperiam, velit repellat aut voluptatum nam? Ullam,
-              aliquam possimus.
-            </p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HASA ASSOCIATION UW-MADISON</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="icon" href="pictures/HASA_Transparent.png" />
+  <script src="https://kit.fontawesome.com/8a80b728dc.js" crossorigin="anonymous"></script>
+  <style>
+    .header {
+      padding-top: 20pt;
+      padding-bottom: 15pt;
+    }
+
+    .footer {
+      height: 20%;
+    }
+
+    .is_centered {
+      text-align: center;
+    }
+
+    .fa-brands {
+      color: white;
+    }
+
+    .footer {
+      height: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <!--  sign up modal ... are hidden by default ... use javascript to display/hide them -->
+  <div class="modal" id="signup_modal">
+    <div class="modal-background" id="signup_modalbg"></div>
+    <div class="modal-content p-6 has-background-danger-light">
+      <h1 class="is-size-3 title">Sign Up!</h1>
+      <form id="signup_form">
+        <!-- Email -->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input type="email" id="email">
           </div>
 
-          <!-- right side -->
-          <div class="column is-3 pr-5">
-            <div class="box has-background-danger-light">
-              <div>
-                <p>
-                  Sign Up to become part of the community... Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Nam eligendi officiis
-                  sit. Odit modi, et harum suscipit asperiores architecto fuga
-                  dolor voluptatem ea magnam aspernatur placeat, inventore animi
-                  quibusdam a!
-                </p>
-              </div>
-              <div class="buttons is-centered pt-4">
-                <a class="button is-primary has-background-danger">
-                  <strong>Sign up</strong>
-                </a>
-                <p class="p-4">or</p>
-                <a class="button is-primary has-background-danger">
-                  <strong>Log in</strong>
-                </a>
-              </div>
-            </div>
+        </div>
+        <!-- Password -->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input type="password" id="password">
           </div>
         </div>
-        <div>
-          <img
-            src="pictures/group_picture.jpeg"
-            alt=""
-            style="height: 540px"
-          />
+
+
+        <!-- submit -->
+        <div class="field">
+          <div class="control">
+            <button class="m-3 button is-link">Submit</button>
+          </div>
         </div>
-      </div>
-      <div class="section has-background-danger-light mt-6 is-medium">
-        <div class="section column mr-4" id="main">
-          <p class="title is-size-2">Our Purpose</p>
+
+        <!-- div error -->
+        <div class="error has-text-danger">
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- sign in modal -->
+
+  <div class="modal" id="signin_modal">
+    <div class="modal-background" id="signin_modalbg"></div>
+    <div class="modal-content p-6 has-background-danger-light">
+      <h1 class="is-size-3 title">Sign In!</h1>
+      <form id="signin_form">
+        <!-- Email -->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input type="email" id="email_">
+          </div>
+
+        </div>
+        <!-- Password -->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input type="password" id="password_">
+          </div>
+        </div>
+
+        <!-- submit -->
+        <div class="field">
+          <div class="control">
+            <button class="m-3 button is-link">Submit</button>
+          </div>
+        </div>
+        <!-- div error -->
+        <div class="error has-text-danger">
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Message Bar -->
+  <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden">
+
+  </div>
+  <header class="has-background-danger-light">
+    <nav class="level header pl-6 pr-6">
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Home</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Our History</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Calendar</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <img src="pictures/HASA_Transparent.png" alt="" style="height: 140px" />
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Meet the Team</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Contact Us</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Inventory</a>
+      </p>
+    </nav>
+  </header>
+  <main>
+    <div class="section is-medium pt-6 pb-6">
+      <div class="columns">
+        <!-- center -->
+        <div class="section column is-9 mr-4" id="main">
+          <p class="title is-size-2">Welcome to HASA at UW-Madison!</p>
           <p>
-            write something about the purpose... Lorem ipsum dolor sit
+            write something welcoming to the website... Lorem ipsum dolor sit
             amet consectetur adipisicing elit. Impedit nesciunt labore quos
             recusandae esse sunt eaque harum dolore molestias vero. Eaque
             exercitationem excepturi nemo nobis voluptates? Explicabo officia
-            ipsam blanditiis recusandae id iusto magni facere adipisci error ut
-            eaque rem repudiandae, voluptatum placeat eligendi deserunt
-            obcaecati sunt eum voluptatem alias, debitis non magnam fugit quia.
-            Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Dolorem voluptatibus aliquid
+            ipsam blanditiis recusandae id iusto magni facere adipisci error
+            ut eaque rem repudiandae, voluptatum placeat eligendi deserunt
+            obcaecati sunt eum voluptatem alias, debitis non magnam fugit
+            quia. Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Dolorem voluptatibus aliquid
             perspiciatis voluptates vero, magnam quae error optio aspernatur
             assumenda nemo, autem ut aliquam minima! Fugiat facere alias modi
             vero dolorum aperiam, velit repellat aut voluptatum nam? Ullam,
             aliquam possimus.
           </p>
         </div>
-      </div>
-      <div class="section mt-6 is-small">
-        <div class="section column mr-4" id="main">
-          <p class="title is-size-2">Our Mission</p>
-          <p>
-            write something about the mission... Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Impedit nesciunt labore quos
-            recusandae esse sunt eaque harum dolore molestias vero. Eaque
-            exercitationem excepturi nemo nobis voluptates? Explicabo officia
-            ipsam blanditiis recusandae id iusto magni facere adipisci error ut
-            eaque rem repudiandae, voluptatum placeat eligendi deserunt
-            obcaecati sunt eum voluptatem alias, debitis non magnam fugit quia.
-            Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Dolorem voluptatibus aliquid
-            perspiciatis voluptates vero, magnam quae error optio aspernatur
-            assumenda nemo, autem ut aliquam minima! Fugiat facere alias modi
-            vero dolorum aperiam, velit repellat aut voluptatum nam? Ullam,
-            aliquam Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ex, illo commodi cumque modi maiores consequatur necessitatibus.
-            Laboriosam, numquam voluptas soluta eveniet aspernatur dolor quod
-            ipsa, tempore corrupti et incidunt ut, fuga ab inventore quibusdam
-            sit. Dolorem quasi sint vel omnis.
-          </p>
-        </div>
-      </div>
-    </main>
-    <div class="footer has-background-danger">
-        <div class="content">
-            <div class="content has-text-centered mb-3">
-                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x pr-2"></i></a>
-                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2x pr-2"></i></a>
-                <a href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>
-            </div>
-            <p class="content has-text-centered has-text-white mb-0 is-size-6">(123)111-1234</p>
-            <p class="content has-text-centered has-text-white mb-1"><a href="mailto:test@test.com"
-                    class="has-text-white is-size-5">contact@hasauw.com</a><br>
-                <div class="is-size-7 has-text-centered has-text-white">Copyright &copy; <br>
-                    Group 7 INFO SYS 424 Spring 2023
-                </div>
-            </p>
 
+        <!-- right side -->
+        <div class="column is-3 pr-5">
+          <div class="box has-background-danger-light signedout">
+            <div>
+              <p>
+                Sign Up to become part of the community... Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Nam eligendi officiis
+                sit. Odit modi, et harum suscipit asperiores architecto fuga
+                dolor voluptatem ea magnam aspernatur placeat, inventore animi
+                quibusdam a!
+              </p>
+            </div>
+            <div class="buttons is-centered pt-4">
+              <!-- sign up -->
+              <a class="button is-primary has-background-danger" id="signupbtn">
+                <strong>Sign up</strong>
+              </a>
+              <p class="p-4">or</p>
+              <!-- sign in -->
+              <a class="button is-primary has-background-danger" id="signinbtn">
+                <strong>Sign in</strong>
+              </a>
+
+            </div>
+          </div>
+          <!-- sign out -->
+          <a class="button is-grey-light signedin" id="signoutbtn">
+            Sign Out
+          </a>
         </div>
+      </div>
+      <div>
+        <img src="pictures/group_picture.jpeg" alt="" style="height: 540px" />
+      </div>
+    </div>
+    <div class="section has-background-danger-light mt-6 is-medium">
+      <div class="section column mr-4" id="main">
+        <p class="title is-size-2">Our Purpose</p>
+        <p>
+          write something about the purpose... Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Impedit nesciunt labore quos
+          recusandae esse sunt eaque harum dolore molestias vero. Eaque
+          exercitationem excepturi nemo nobis voluptates? Explicabo officia
+          ipsam blanditiis recusandae id iusto magni facere adipisci error ut
+          eaque rem repudiandae, voluptatum placeat eligendi deserunt
+          obcaecati sunt eum voluptatem alias, debitis non magnam fugit quia.
+          Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Dolorem voluptatibus aliquid
+          perspiciatis voluptates vero, magnam quae error optio aspernatur
+          assumenda nemo, autem ut aliquam minima! Fugiat facere alias modi
+          vero dolorum aperiam, velit repellat aut voluptatum nam? Ullam,
+          aliquam possimus.
+        </p>
+      </div>
+    </div>
+    <div class="section mt-6 is-small">
+      <div class="section column mr-4" id="main">
+        <p class="title is-size-2">Our Mission</p>
+        <p>
+          write something about the mission... Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Impedit nesciunt labore quos
+          recusandae esse sunt eaque harum dolore molestias vero. Eaque
+          exercitationem excepturi nemo nobis voluptates? Explicabo officia
+          ipsam blanditiis recusandae id iusto magni facere adipisci error ut
+          eaque rem repudiandae, voluptatum placeat eligendi deserunt
+          obcaecati sunt eum voluptatem alias, debitis non magnam fugit quia.
+          Omnis quae veniam eveniet aliquid?Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Dolorem voluptatibus aliquid
+          perspiciatis voluptates vero, magnam quae error optio aspernatur
+          assumenda nemo, autem ut aliquam minima! Fugiat facere alias modi
+          vero dolorum aperiam, velit repellat aut voluptatum nam? Ullam,
+          aliquam Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Ex, illo commodi cumque modi maiores consequatur necessitatibus.
+          Laboriosam, numquam voluptas soluta eveniet aspernatur dolor quod
+          ipsa, tempore corrupti et incidunt ut, fuga ab inventore quibusdam
+          sit. Dolorem quasi sint vel omnis.
+        </p>
+      </div>
+    </div>
+  </main>
+  <div class="footer has-background-danger">
+    <div class="content">
+      <div class="content has-text-centered mb-3">
+        <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x pr-2"></i></a>
+        <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2x pr-2"></i></a>
+        <a href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>
+      </div>
+      <p class="content has-text-centered has-text-white mb-0 is-size-6">(123)111-1234</p>
+      <p class="content has-text-centered has-text-white mb-1"><a href="mailto:test@test.com"
+          class="has-text-white is-size-5">contact@hasauw.com</a><br>
+        <div class="is-size-7 has-text-centered has-text-white">Copyright &copy; <br>
+          Group 7 INFO SYS 424 Spring 2023
+        </div>
+      </p>
 
     </div>
-  </body>
+
+  </div>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration -->
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
+    const firebaseConfig = {
+      apiKey: "AIzaSyDgk5wF9-s_-cWthdUeuzTvXkB7vfCESOM",
+      authDomain: "hasa-website-1c7e8.firebaseapp.com",
+      projectId: "hasa-website-1c7e8",
+      storageBucket: "hasa-website-1c7e8.appspot.com",
+      messagingSenderId: "705170026517",
+      appId: "1:705170026517:web:1f820c52b0f346b2179e1c",
+      measurementId: "G-SRBWR5N3LJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // define authentication variable
+    let auth = firebase.auth();
+    let db = firebase.firestore();
+
+    // add a new reference for storage
+    let ref = firebase.storage().ref();
+  </script>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+
+</body>
+
 </html>
