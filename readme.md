@@ -31,9 +31,9 @@ Meeting Evidence #1:
     - no problems as of now.
     
     Emma:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - I created the group VS code for git hub and added what we need to complete to the github. 
+    - I plan to initilaize the repository and add group members as collaborators. 
+    - Cant create a formatted table in a .doc file (for user stories).
 
     Inaki:
     - What did you do yesterday?
@@ -62,9 +62,9 @@ Meeting Evidence #2:
     - our burndown chart is not updating as it should. we will talk to professor to figure it out.
     
     Emma:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - I spoke with Yasmine about the user stories and she firgured out that a .md file allows for a formatted table. She will be creating that and deleting the .doc file. 
+    - I plan to create the google firebase and activate authorization function.
+    - No problems, cleared issue from earlier. 
 
     Inaki:
     - What did you do yesterday?
@@ -93,9 +93,9 @@ Meeting Evidence #3:
     - no issues as of now.
     
     Emma:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - I reviewed the webpage and discussed with Lajzoo potential changes to prototype. 
+    - I plan to create the sign up/sign in/sign out code. 
+    - No problems. 
 
     Inaki:
     - What did you do yesterday?
