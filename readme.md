@@ -8,10 +8,10 @@ User Stories:
 | Task                      | Story | Duration | Priority | Complexity | Lead Person |
 |:-------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
 | write user stories        |       | 1hr      | 2        | 1          | Akshada     |
-| create prototype          | 1     | 1hr      | 8        | 2          | Lazjoo      |
+| create prototype          | 1     | 1hr      | 8        | 2          | Lajzoo      |
 | create home screen layout | 1     | 2hr      | 10       | 5          | Inaki       |
 | create sign-in form       | 2     | 2hr      | 5        | 4          | Emma        |
-| add details about the org | 1     | 1hr      | 4        | 2          | Lazjoo      |
+| add details about the org | 1     | 1hr      | 4        | 2          | Lajzoo      |
 | add calendar page         | 2     | 2hr      | 4        | 5          | Emma        |
 
 
@@ -22,14 +22,64 @@ Github Public Repo: https://github.com/emmasbragia/Group7_Sprint1.git
 
 Meeting Evidence #1:
 1. What did you do yesterday?
-2.  What are you planning to do today?
-3.  Any problems are you facing?
+2. What are you planning to do today?
+3. Any problems are you facing?
 
+    Akshada:
+    - we reviewed the sprint requirements on our own to come to the meeting with a good understand of expectations.
+    - we discussed what we want our website to look like and discussed potential user stories. We talked about what the client expected from us and how we can best meet their needs. We divided tasks and discussed when we wanted to meet the next day.
+    - no problems as of now.
+    
+    Emma:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Inaki:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Lajzoo:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Yasmine:
+    - reviewed assignment/sprint requirements
+    -  split tasks among ourselves and discussed general site look
+    -  no
+    
 Meeting Evidence #2:
 
 1. What did you do yesterday?
 2. What are you planning to do today?
 3. Any problems are you facing?
+
+    Akshada:
+    - we communicated with the client and gave an update on our progress and showed her the prototype. She seems very pleased.
+    - We completed all the prototypes and began to code the webpage. We reviewed these materials and talked about next steps.
+    - our burndown chart is not updating as it should. we will talk to professor to figure it out.
+    
+    Emma:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Inaki:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Lajzoo:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Yasmine:
+    - updated trello board with our stories and tasks
+    - update trello board as other members add code, help with coding if needed
+    -  issues with burndown displaying properly
 
 Meeting Evidence #3:
 
@@ -37,6 +87,30 @@ Meeting Evidence #3:
 2. What are you planning to do today?
 3. Any problems are you facing?
 
+    Akshada:
+    - we made some edits to the webpage and discusses some final touches. 
+    - we are planning on coding the java script for the sign up/sign in.
+    - no issues as of now.
+    
+    Emma:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Inaki:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Lajzoo:
+    - What did you do yesterday?
+    -  What are you planning to do today?
+    -  Any problems are you facing?
+
+    Yasmine:
+    - discussed how the layout looks
+    - discussing how to add the calendar functionality
+    - no
 
 **Sprint Review:**
 
