@@ -177,5 +177,45 @@
         </div>
 
     </div>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration -->
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
+    const firebaseConfig = {
+      apiKey: "AIzaSyDgk5wF9-s_-cWthdUeuzTvXkB7vfCESOM",
+      authDomain: "hasa-website-1c7e8.firebaseapp.com",
+      projectId: "hasa-website-1c7e8",
+      storageBucket: "hasa-website-1c7e8.appspot.com",
+      messagingSenderId: "705170026517",
+      appId: "1:705170026517:web:1f820c52b0f346b2179e1c",
+      measurementId: "G-SRBWR5N3LJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // define authentication variable
+    let auth = firebase.auth();
+    let db = firebase.firestore();
+
+    // add a new reference for storage
+    let ref = firebase.storage().ref();
+    </script>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+
   </body>
 </html>
+
+
