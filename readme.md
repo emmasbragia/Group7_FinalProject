@@ -36,9 +36,9 @@ Meeting Evidence #1:
     - Cant create a formatted table in a .doc file (for user stories).
 
     Inaki:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - Reviewed the requirements for the sprint so that I was prepared for the meeting.
+    - I'm going to start refreshing the code from INFO SYS 371 to remember how to code different parts of the website, and start looking at the Bulma website to think about what to use in our site.
+    -  None.
 
     Lajzoo:
     - Put together a timeline on expectations so share with everyone to ensure timeliness in project progression.
@@ -67,9 +67,9 @@ Meeting Evidence #2:
     - No problems, cleared issue from earlier. 
 
     Inaki:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - Communicated with the team to know what the client thought about the prototype.
+    -  I plan to start thinking about how to code the prototype, when to use bulma and CSS, what I need to look up or refresh if needed and if I have some time start coding the website.
+    -  None as of now.
 
     Lajzoo:
     - Finalized a first draft of the Website pages and set up a meeting time with our Client. Also shared with the team to start working on it immedietley. 
@@ -98,9 +98,9 @@ Meeting Evidence #3:
     - No problems. 
 
     Inaki:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - I started coding the website (just the header) and pushed it to github to make sure the rest of the team could see the changes and everything was working fine.
+    -  I'm going to finish coding the front site of the website, adding the main elements of it (header, logo, sig up/log in buttons, main body, and footer).
+    -  No problems.
 
     Lajzoo:
     - Clarified what is expected for the turn in with professor. Also got input from the client on what was liked and what can be changed according to the draft. 
