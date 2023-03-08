@@ -8,7 +8,7 @@ User Stories:
 | Task                      | Story | Duration | Priority | Complexity | Lead Person |
 |:-------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
 | write user stories        |       | 1hr      | 2        | 1          | Akshada     |
-| create prototype          | 1     | 1hr      | 8        | 2          | Lajzoo      |
+| create prototype          | 1     | 2hr      | 8        | 2          | Lajzoo      |
 | create home screen layout | 1     | 2hr      | 10       | 5          | Inaki       |
 | create sign-in form       | 2     | 2hr      | 5        | 4          | Emma        |
 | add details about the org | 1     | 1hr      | 4        | 2          | Lajzoo      |
@@ -41,9 +41,9 @@ Meeting Evidence #1:
     -  Any problems are you facing?
 
     Lajzoo:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - Put together a timeline on expectations so share with everyone to ensure timeliness in project progression.
+    - Start developing a website template with the utilization of JustInMind and share it with the group and client.
+    - Figuring out what is feasible and able to be translated from a JustInMind concept to actual code that the team will have to manually design.
 
     Yasmine:
     - reviewed assignment/sprint requirements
@@ -72,9 +72,9 @@ Meeting Evidence #2:
     -  Any problems are you facing?
 
     Lajzoo:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - Finalized a first draft of the Website pages and set up a meeting time with our Client. Also shared with the team to start working on it immedietley. 
+    - Meeting with the client to see other aspects she would like to see in future iterations of the pages. 
+    - Figuring out what exactly is expected to be complete for the Sprint 1 turn in so a more accurate timeline can be shared with everyone. 
 
     Yasmine:
     - updated trello board with our stories and tasks
@@ -103,9 +103,9 @@ Meeting Evidence #3:
     -  Any problems are you facing?
 
     Lajzoo:
-    - What did you do yesterday?
-    -  What are you planning to do today?
-    -  Any problems are you facing?
+    - Clarified what is expected for the turn in with professor. Also got input from the client on what was liked and what can be changed according to the draft. 
+    - Showing the client what the actual build looks like so far apart from the draft. 
+    - No current issues. 
 
     Yasmine:
     - discussed how the layout looks
