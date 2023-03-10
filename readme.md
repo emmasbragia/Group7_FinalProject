@@ -115,8 +115,20 @@ Meeting Evidence #3:
 **Sprint Review:**
 
 1. What did you learn from doing our first sprint?
+One thing we learned is that just getting started rather than getting stuck on every tiny detail is very important so that we can keep making progress rather than staying at a standstill. We figured out the small details on the way but it was important for us to have the groupwork complete. Another thing we learned and something that worked good for our team is to divide up the tasks and let one person take the lead on a part and everyone else give their ideas and feedback. This way all tasks were being worked on simultaniously and everyone was working on everything in some way. 
+
 2. What did go well? Why?
+Like mentioned above, the concept of divide and conquer worked really well for our group. We were getting things done according to plan. Rather than us waiting for everyone to be available, different people working on different tasks and then us meetings once a day to update on progress and get feedback helped us make necessary changes as we decided. 
+
 3. What didn’t go well? Why not?
+For this sprint, there was nothing that didn't go well. Our group had a very good mutual understanding of what was expected of us. In our very first meeting, we made some big decisions like overall design of the website and what it is we wanted to get done. There were minor issues such as us not being able to figure out how an application works but other than that nothing major.
+
 4. How can you make things better next time?
+I think for next time we should meet with our client more often. This sprint we met with her once so maybe next time we meet twice (once a week) just so we get feedback more often. This way we can make changes before the end of the sprint so that for the next sprint we are not trying to work on things that could have been done in the previous sprint. 
+
 5. Are you satisfied with what you already completed?
+We made some really good progress for this first sprint. We got the home page ready, the sign in/sign up buttons ready, as well as a good outline for the other tabs. We met with the client once during the sprint and she was pleased with the design so far and just had a few feedback points such as more pictures on the webpage and such. 
+
 6. Which group was invited? What are your observations/notes? Everybody was present?
+Done with Group 5. Signed off by Peilan Zhang.
+"We were invited by Group 7 to do the sprint review with them. Everyone from Group 7 was in attendance and on time. We really liked the way their website looked right now. It has a nice color scheme that is similar to the old HASA website but not exactly the same. They spoke about the client feedback they received and how they are planning on acting on it which we think was a good point to discuss at the review meeting so that they can plan for work moving forward. We think Group 7 is doing a good job so far and making good progress. ~ Group 5"
