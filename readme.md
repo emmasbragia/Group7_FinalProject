@@ -12,7 +12,7 @@ User Stories:
 | create home screen layout | 1     | 2hr      | 10       | 5          | Inaki       |
 | create sign-in form       | 2     | 2hr      | 5        | 4          | Emma        |
 | add details about the org | 1     | 1hr      | 4        | 2          | Lajzoo      |
-| add calendar page         | 2     | 2hr      | 4        | 5          | Emma        |
+
 
 
 
@@ -120,7 +120,7 @@ One thing we learned is that just getting started rather than getting stuck on e
 
 2. What did go well? Why?
 
-Like mentioned above, the concept of divide and conquer worked really well for our group. We were getting things done according to plan. Rather than us waiting for everyone to be available, different people working on different tasks and then us meetings once a day to update on progress and get feedback helped us make necessary changes as we decided. 
+Like mentioned above, the concept of divide and conquer worked really well for our group. We were getting things done according to plan. Rather than us waiting for everyone to be available, different people working on different tasks and then us meeting once a day to update on progress and get feedback helped us make necessary changes as we decided. 
 
 3. What didn’t go well? Why not?
 
