@@ -5,7 +5,18 @@ let signup_modalbg = document.querySelector('#signup_modalbg');
 let signinbtn = document.querySelector('#signinbtn');
 let signin_modal = document.querySelector('#signin_modal');
 let signin_modalbg = document.querySelector('#signin_modalbg');
-
+let homebtn = document.querySelector('#homebtn');
+let home = document.querySelector('#home');
+let historybtn = document.querySelector('#historybtn');
+let history = document.querySelector('#history');
+let eventsbtn = document.querySelector('#eventsbtn');
+let events = document.querySelector('#events');
+let teambtn = document.querySelector('#teambtn');
+let team = document.querySelector('#team');
+let contactbtn = document.querySelector('#contactbtn');
+let contact = document.querySelector('#contact');
+let inventorybtn = document.querySelector('#inventorybtn');
+let inventory = document.querySelector('#inventory');
 
 
 // functions
@@ -170,3 +181,89 @@ signinbtn.addEventListener('click', () => {
 signin_modalbg.addEventListener('click', () => {
     signin_modal.classList.remove('is-active');
 });
+
+
+// switching between tabs
+
+// home tab
+homebtn.addEventListener('click', () => {
+    // show the home tab
+    home.classList.remove('is-hidden');
+
+
+    // hide the History, events, team, contact and inventory div
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+
+})
+
+// history tab
+historybtn.addEventListener('click', () => {
+    // show the history tab
+    history.classList.remove('is-hidden');
+
+    // hide the home, events, team, contact and inventory div
+    home.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+})
+
+// events tab
+eventsbtn.addEventListener('click', () => {
+    // show the events tab
+    events.classList.remove('is-hidden');
+
+    // hide the home, history, team, contact and inventory div
+    home.classList.add('is-hidden');
+    history.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+})
+
+// team tab
+teambtn.addEventListener('click', () => {
+    // show the team tab
+    team.classList.remove('is-hidden');
+
+    // hide the home, events, contact, history and inventory div
+    home.classList.add('is-hidden');
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+
+})
+
+// contact tab
+contactbtn.addEventListener('click', () => {
+    // show the contact tab
+    contact.classList.remove('is-hidden');
+
+    // hide the home, events, team, history and inventory div
+    home.classList.add('is-hidden');
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+
+})
+
+// inventory tab
+inventorybtn.addEventListener('click', () => {
+    // show the inventory tab
+    inventory.classList.remove('is-hidden');
+
+    // hide the home, events, team, history and contact div
+    home.classList.add('is-hidden');
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+
+})
