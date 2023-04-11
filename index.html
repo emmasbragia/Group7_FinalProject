@@ -124,6 +124,8 @@
 
   </div>
 
+
+
   <!-- Header/Nav Bar -->
   <header class="has-background-danger-light">
     <nav class="level header pl-6 pr-6">
@@ -131,22 +133,26 @@
         <a class="link is-info" id="homebtn">Home</a>
       </p>
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="historybtn">Our History</a>
-      </p>
-      <p class="level-item has-text-centered">
         <a class="link is-info" id="eventsbtn">Events</a>
-      </p>
-      <p class="level-item has-text-centered">
-        <img src="pictures/HASA_Transparent.png" alt="" style="height: 140px" />
       </p>
       <p class="level-item has-text-centered">
         <a class="link is-info" id="teambtn">Meet the Team</a>
       </p>
       <p class="level-item has-text-centered">
+        <img src="pictures/HASA_Transparent.png" alt="" style="height: 140px" />
+      </p>
+
+      <p class="level-item has-text-centered">
         <a class="link is-info" id="contactbtn">Contact Us</a>
       </p>
       <p class="level-item has-text-centered">
         <a class="link is-info" id="inventorybtn">Inventory</a>
+      </p>
+      <!-- Profile -->
+      <p class="level-item has-text-centered">
+        <a id="profilebtn" class="button is-primary has-background-danger">
+          Profile
+        </a>
       </p>
     </nav>
   </header>
@@ -199,10 +205,12 @@
 
               </div>
             </div>
+
             <!-- sign out -->
             <a class="button is-grey-light signedin" id="signoutbtn">
               Sign Out
             </a>
+
           </div>
         </div>
         <div>
@@ -258,6 +266,85 @@
     </div>
     <div class="is-hidden" id="inventory">
       inventory
+    </div>
+    <div class="is-hidden" id="profile">
+      <div class="container">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" id="name" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email:</label>
+          <div class="control">
+            <input class="input" type="text" id="emailprof" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Birthday</label>
+          <div class="control">
+            <input class="input" type="date" id="bday" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Date Joined</label>
+          <div class="control">
+            <input class="input" type="date" id="joindate" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Position</label>
+          <div class="control">
+            <div class="select">
+              <select id="position">
+                <option>General</option>
+                <option>Internal Committee</option>
+                <option>External Committee</option>
+                <option>Finance Committee</option>
+                <option>Liasons Committee</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Hometown:</label>
+          <div class="control">
+            <input class="input" type="text" id="home" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Expected Graduation Semester:</label>
+          <div class="control">
+            <input class="input" type="text" id="gradsem" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Major(s):</label>
+          <div class="control">
+            <input class="input" type="text" id="major1" placeholder="Text input">
+            <input class="input" type="text" id="major2" placeholder="Text input">
+            <input class="input" type="text" id="major3" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Minor(s):</label>
+          <div class="control">
+            <input class="input" type="text" id="minor1" placeholder="Text input">
+            <input class="input" type="text" id="minor2" placeholder="Text input">
+            <input class="input" type="text" id="minor3" placeholder="Text input">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">School Year:</label>
+          <div class="control">
+            <input class="input" type="number" id="schoolyear" placeholder="Text input">
+          </div>
+        </div>
+
+        <input class="button is-grey-light" type="submit" value="Submit">
+        <input class="button is-primary has-background-danger" type="update" value="Update">
+      </div>
     </div>
   </main>
   <div class="footer has-background-danger">
