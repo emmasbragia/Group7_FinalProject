@@ -17,7 +17,8 @@ let contactbtn = document.querySelector('#contactbtn');
 let contact = document.querySelector('#contact');
 let inventorybtn = document.querySelector('#inventorybtn');
 let inventory = document.querySelector('#inventory');
-
+let profilebtn = document.querySelector('#profilebtn');
+let profile = document.querySelector('#profile');
 
 // functions
 
@@ -91,6 +92,9 @@ r_e('signup_form').addEventListener('submit', (e) => {
     // grab the email and password combination from the form
     let email = r_e('email').value;
     let password = r_e('password').value;
+    let admin = r_e('Admin');
+    let adminval = admin.options[admin.selectedIndex].text;
+
 
     // call the firebase function to create the user
     auth.createUserWithEmailAndPassword(email, password).then((user) => {
@@ -107,6 +111,12 @@ r_e('signup_form').addEventListener('submit', (e) => {
         signup_modal.querySelector('.error').innerHTML = err.message;
     })
 
+    // adding admin preferences to firebase collection
+    db.collection("admin").doc(email).set({
+        user: `${email}`,
+        admin: `${adminval}`
+    })
+
 })
 
 // sign in user
@@ -115,6 +125,7 @@ r_e('signin_form').addEventListener('submit', (e) => {
     // grab the email and password combination from the form
     let email = r_e('email_').value;
     let password = r_e('password_').value;
+
 
     // call the firebase function to sign in the user
     auth.signInWithEmailAndPassword(email, password).then((user) => {
@@ -191,26 +202,14 @@ homebtn.addEventListener('click', () => {
     home.classList.remove('is-hidden');
 
 
-    // hide the History, events, team, contact and inventory div
+    // hide the events, team, contact, profile and inventory div
     history.classList.add('is-hidden');
     events.classList.add('is-hidden');
     team.classList.add('is-hidden');
     contact.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
 
-})
-
-// history tab
-historybtn.addEventListener('click', () => {
-    // show the history tab
-    history.classList.remove('is-hidden');
-
-    // hide the home, events, team, contact and inventory div
-    home.classList.add('is-hidden');
-    events.classList.add('is-hidden');
-    team.classList.add('is-hidden');
-    contact.classList.add('is-hidden');
-    inventory.classList.add('is-hidden');
 })
 
 // events tab
@@ -218,12 +217,12 @@ eventsbtn.addEventListener('click', () => {
     // show the events tab
     events.classList.remove('is-hidden');
 
-    // hide the home, history, team, contact and inventory div
+    // hide the home, team, contact, profile and inventory div
     home.classList.add('is-hidden');
-    history.classList.add('is-hidden');
     team.classList.add('is-hidden');
     contact.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
 })
 
 // team tab
@@ -231,12 +230,12 @@ teambtn.addEventListener('click', () => {
     // show the team tab
     team.classList.remove('is-hidden');
 
-    // hide the home, events, contact, history and inventory div
+    // hide the home, events, contact, profile and inventory div
     home.classList.add('is-hidden');
-    history.classList.add('is-hidden');
     events.classList.add('is-hidden');
     contact.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
 
 })
 
@@ -245,12 +244,12 @@ contactbtn.addEventListener('click', () => {
     // show the contact tab
     contact.classList.remove('is-hidden');
 
-    // hide the home, events, team, history and inventory div
+    // hide the home, events, team, profile and inventory div
     home.classList.add('is-hidden');
-    history.classList.add('is-hidden');
     events.classList.add('is-hidden');
     team.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
 
 })
 
@@ -259,11 +258,26 @@ inventorybtn.addEventListener('click', () => {
     // show the inventory tab
     inventory.classList.remove('is-hidden');
 
-    // hide the home, events, team, history and contact div
+    // hide the home, events, team, profile and contact div
     home.classList.add('is-hidden');
-    history.classList.add('is-hidden');
     events.classList.add('is-hidden');
     team.classList.add('is-hidden');
     contact.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
+
+})
+
+// Profile Section
+profilebtn.addEventListener('click', () => {
+    // show the inventory tab
+    profile.classList.remove('is-hidden');
+
+    // hide the home, events, team, inventory and contact div
+    home.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+
 
 })
