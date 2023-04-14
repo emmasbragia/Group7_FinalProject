@@ -119,6 +119,8 @@
       </form>
     </div>
   </div>
+
+
   <!-- Message Bar -->
   <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden">
 
@@ -130,29 +132,33 @@
   <header class="has-background-danger-light">
     <nav class="level header pl-6 pr-6">
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="homebtn">Home</a>
+        <a class="link is-info has-text-black" id="homebtn">Home</a>
       </p>
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="eventsbtn">Events</a>
+        <a class="link is-info has-text-black" id="eventsbtn">Events</a>
       </p>
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="teambtn">Meet the Team</a>
+        <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
       </p>
       <p class="level-item has-text-centered">
         <img src="pictures/HASA_Transparent.png" alt="" style="height: 140px" />
       </p>
 
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="contactbtn">Contact Us</a>
+        <a class="link is-info has-text-black" id="contactbtn">Contact Us</a>
       </p>
       <p class="level-item has-text-centered">
-        <a class="link is-info" id="inventorybtn">Inventory</a>
+        <a class="link is-info has-text-black" id="inventorybtn">Inventory</a>
       </p>
       <!-- Profile -->
-      <p class="level-item has-text-centered">
-        <a id="profilebtn" class="button is-primary has-background-danger">
-          Profile
-        </a>
+      <p class=" buttons level-item has-text-centered">
+        <button class="button is-primary has-background-danger" id="profilebtn">
+          <span class="icon">
+            <i class="fas fa-user"></i>
+          </span>
+          <span>Profile</span>
+        </button>
+        
       </p>
     </nav>
   </header>
@@ -256,98 +262,519 @@
       history
     </div>
     <div class="is-hidden" id="events">
-      events
+      <div class="columns mt-6 mb-6">
+        <div class="column is-3"></div>
+        <div class="column is-6">
+          <h1 class="title is-1 has-text-centered">Upcoming Club Events</h1>
+        </div>
+        <div class="column is-3 is-right"></div>
+      </div>
+      <div class="mt-4">
+        <div class="columns">
+          <div class="column is-2"></div>
+          <div class="column is-7 is-left pr-0">
+            <h2 class="title is-2">April</h2>
+          </div>
+          <div class="column is-3 pl-0">
+            <button class="button is-white has-background-danger has-text-white is-rounded">Add Event</button>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-2 pr-0"></div>
+        <div class="column is-8">
+          <div class="columns">
+            <div class="column is-6">
+              <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/VHP+HASACollab.png">
+                    </figure>
+                    <div class="title mb-2">
+                      Painting & Origami Social
+                    </div>
+                    <div class="mt-3"><b>Date</b>: </div>
+                    <div><b>Time</b>: </div>
+                    <div class="mb-4"> <b>Location</b>: </div>
+                    <b>Description</b>: Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/Spring Picnic 4_15_11AM-5PM_ Brittingham Park.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Spring Picnic
+                    </div>
+                    <div class="mt-3"><b>Date</b>: </div>
+                    <div><b>Time</b>: </div>
+                    <div class="mb-4"> <b>Location</b>: </div>
+                    <b>Description</b>: Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card ml-0 has-background-danger-light">
+                <div class="card-content mt-3">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/Spring Study Jam.png">
+                    </figure>
+                    <div class="title mb-2">
+                      Spring Study Jam
+                    </div>
+                    <div class="mt-3"><b>Date</b>: </div>
+                    <div><b>Time</b>: </div>
+                    <div class="mb-4"> <b>Location</b>: </div>
+                    <b>Description</b>: Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-2 pl-0"></div>
+      </div>
+      <div>
+        <div class="columns">
+          <div class="column is-2"></div>
+          <div class="column is-7 is-left pr-0">
+            <h2 class="title is-2">May</h2>
+          </div>
+          <div class="column is-3 pl-0">
+            <button class="button is-white has-background-danger has-text-white is-rounded">Add Event</button>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-2 pr-0"></div>
+        <div class="column is-8">
+          <div class="columns">
+            <div class="column is-6">
+              <div class="card ml-0 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <div class="title mb-2">
+                      Event title (we can add pictures)
+                    </div>
+                    <div class="mt-3"><b>Date</b>: </div>
+                    <div><b>Time</b>: </div>
+                    <div class="mb-4"> <b>Location</b>: </div>
+                    <b>Description</b>: Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card ml-0 has-background-danger-light">
+                <div class="card-content mt-3">
+                  <div class="content">
+                    <div class="title mb-2">
+                      Event title (we can add pictures)
+                    </div>
+                    <div class="mt-3"><b>Date</b>: </div>
+                    <div><b>Time</b>: </div>
+                    <div class="mb-4"> <b>Location</b>: </div>
+                    <b>Description</b>: Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-2 pl-0"></div>
+      </div>
     </div>
+
+
+
+
+
+
+    <!-- team  -->
     <div class="is-hidden" id="team">
-      team
+      <div class="columns mt-6 mb-6">
+        <div class="column is-3"></div>
+        <div class="column is-6">
+          <h1 class="title mt-4 is-1 has-text-centered">Council Members</h1>
+        </div>
+        <div class="column is-3 is-right"></div>
+      </div>
+      <img class='mb-6 mt-4' src="pictures/council/Council Professional Serious.jpeg">
+      <div class="columns mt-2">
+        <div class="column is-1 pr-0"></div>
+        <div class="column is-10">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/council/Yinglai Chang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Yinglai Chang
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Vang Ying.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Vang Ying
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Gaohli Vang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Gaohli Vang
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Elleana Moua.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Elleana Moua
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Cheyenne Lao.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Cheyenne Lao
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="card ml-0 mb-5 has-background-danger-light">
+                <div class="card-content mt-3">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/council/Tongchi Yang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Tongchi Yang
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Lajzoo Vang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Lajzoo Vang
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Jenny Hawj.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Jenny Hawj                    
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 has-background-danger-light">
+                <div class="card-content mt-3">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/council/Brendan Chang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Brendan Chang
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Pazong Vang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Pazong Vang                    
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-480">
+                      <img src="pictures/council/Hailey Xiong.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Hailey Xiong                 
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div><b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 has-background-danger-light">
+                <div class="card-content mt-3">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/council/Brandon Yang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Brandon Yang             
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div> <b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src="pictures/council/Yinglai Chang.jpeg">
+                    </figure>
+                    <div class="title mb-2">
+                      Yinglai Chang        
+                    </div>
+                    <div class="mt-3"><b>Position</b>: </div>
+                    <div><b>Major(s)</b>: </div>
+                    <div><b>Minor(s)</b>: </div>
+                    <div><b>Hometown</b>: </div>
+                    <div> <b>Year</b>: </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-2 pl-0"></div>
+      </div>
     </div>
+
+
+
+
+    <!-- contact -->
     <div class="is-hidden" id="contact">
       contact
     </div>
+
+
+
+    <!-- inventory -->
     <div class="is-hidden" id="inventory">
       inventory
     </div>
     <div class="is-hidden" id="profile">
-      <div class="container">
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" id="name" placeholder="Text input">
+      <div class="columns mt-5">
+        <div class="column is-2"></div>
+        <div class="container column is-8 mt-6">
+          <div class="title is-size-2 has-text-weight-bold has-text-centered">
+            <h1 class="mb-6">Member Profile Creation/Update Form</h1>
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Email:</label>
-          <div class="control">
-            <input class="input" type="text" id="emailprof" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Birthday</label>
-          <div class="control">
-            <input class="input" type="date" id="bday" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Date Joined</label>
-          <div class="control">
-            <input class="input" type="date" id="joindate" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Position</label>
-          <div class="control">
-            <div class="select">
-              <select id="position">
-                <option>General</option>
-                <option>Internal Committee</option>
-                <option>External Committee</option>
-                <option>Finance Committee</option>
-                <option>Liasons Committee</option>
-              </select>
+          <div class="columns">
+            <div class="column is-6">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="name" placeholder="First and Last Name">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Birthday</label>
+                <div class="control">
+                  <input class="input" type="date" id="bday" placeholder="Text input">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Position</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="position">
+                      <option>General</option>
+                      <option>Internal Committee</option>
+                      <option>External Committee</option>
+                      <option>Finance Committee</option>
+                      <option>Liasons Committee</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Hometown:</label>
+                <div class="control">
+                  <input class="input" type="text" id="home" placeholder="Hometown">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Major(s):</label>
+                <div class="control">
+                  <input class="input mb-3" type="text" id="major1" placeholder="Major 1">
+                  <input class="input mb-3" type="text" id="major2" placeholder="Major 2">
+                  <input class="input mb-3" type="text" id="major3" placeholder="Major 3">
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <label class="label">Email:</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="email" id="emailprof" placeholder="Email">
+                  <span class="icon is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Date Joined</label>
+                <div class="control">
+                  <input class="input" type="date" id="joindate" placeholder="Text input">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">School Year:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="position">
+                      <option>Choose One</option>
+                      <option>Freshman</option>
+                      <option>Sophomore</option>
+                      <option>Junior</option>
+                      <option>Senior</option>
+                      <option>Graduate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Expected Graduation Semester:</label>
+                <div class="control">
+                  <input class="input" type="text" id="gradsem" placeholder="Expected Graduation Semester">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Minor(s):</label>
+                <div class="control">
+                  <input class="input mb-3" type="text" id="minor1" placeholder="Minor 1">
+                  <input class="input mb-3" type="text" id="minor2" placeholder="Minor 2">
+                  <input class="input" type="text" id="minor3" placeholder="Minor 3">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Hometown:</label>
-          <div class="control">
-            <input class="input" type="text" id="home" placeholder="Text input">
+          <div class="field is-grouped is-grouped-centered">
+            <p class="control">
+              <a class="button is-primary has-background-danger is-rounded">
+                Create
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-light is-rounded">
+                Update
+              </a>
+            </p>
           </div>
         </div>
-        <div class="field">
-          <label class="label">Expected Graduation Semester:</label>
-          <div class="control">
-            <input class="input" type="text" id="gradsem" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Major(s):</label>
-          <div class="control">
-            <input class="input" type="text" id="major1" placeholder="Text input">
-            <input class="input" type="text" id="major2" placeholder="Text input">
-            <input class="input" type="text" id="major3" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Minor(s):</label>
-          <div class="control">
-            <input class="input" type="text" id="minor1" placeholder="Text input">
-            <input class="input" type="text" id="minor2" placeholder="Text input">
-            <input class="input" type="text" id="minor3" placeholder="Text input">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">School Year:</label>
-          <div class="control">
-            <input class="input" type="number" id="schoolyear" placeholder="Text input">
-          </div>
-        </div>
-
-        <input class="button is-grey-light" type="submit" value="Submit">
-        <input class="button is-primary has-background-danger" type="update" value="Update">
+        <div class="column is-2"></div>
       </div>
     </div>
   </main>
-  <div class="footer has-background-danger">
+
+
+
+  <div class="footer has-background-danger mt-6">
     <div class="content">
       <div class="content has-text-centered mb-3">
         <a href="https://www.facebook.com/HasaUWMadison/" target="_blank"><i
@@ -367,6 +794,18 @@
     </div>
 
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
