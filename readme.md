@@ -41,9 +41,9 @@ Meeting Evidence #1:
     -  
 
     Lajzoo:
-    - 
-    - 
-    - 
+    - Met with the HASA Chair to better assess design and what is wanted for implementation.
+    - Putting together another draft in JustInMind to satisfy HASA's Chairs requests.
+    - Translating requests from HASA Chair into simplified and accomplishable things I know the whole team is capable of implementing.
 
     Yasmine:
     - 
@@ -72,9 +72,9 @@ Meeting Evidence #2:
     -  
 
     Lajzoo:
-    - 
-    - 
-    - 
+    - Fixed up the designs even more so the whole team is aware of what exactly will be implemented and how it should be done.
+    - Sharing with the HASA Chair our actual work done with the website based off of the new designs in JustInMind before. 
+    - Ensuring the HASA Chair that our current work is still a prototype and that web design will come after we make sure it is first functional.
 
     Yasmine:
     - 
