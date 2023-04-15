@@ -106,4 +106,6 @@ Yes. I think our group made some really good progress. We worked on exactly the 
 
 6. Which group was invited? What are your observations/notes? Everybody was present?
 
-Akshada Note: talking to Group 5 Pelian Zhang to review with them again.
+Sprint Review done by Group 5. Signed off by Peilan Zhang.
+
+"We were present during the sprint review for Group 7. Everyone from Group 7 was in attendance during the meeting. We looked over their progress and their website is coming together great. Compared to the last sprint review, their website has a lot more elements to it. We liked how they used cards to display information than create a simple table. We think taht was a really creative way. it also makes reading information more clear. There is some great progress being made and we look forward to seeing their final product."
