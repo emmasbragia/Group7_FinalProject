@@ -39,9 +39,9 @@ Meeting Evidence #1:
     - 
 
     Inaki:
-    - 
-    - 
-    -  
+    - We met with the organization to finish up the final detail about the prototypes for the different pages of the website.
+    - I'm planning to start coding the events page and cleaning up some small details from the profile creation/update page.
+    -  None as of now.
 
     Lajzoo:
     - Met with the HASA Chair to better assess design and what is wanted for implementation.
@@ -70,9 +70,9 @@ Meeting Evidence #2:
     - 
 
     Inaki:
-    - 
-    -  
-    -  
+    - I looked at the different prototypes and made sure I knew how to code everything that was required, and if I didn't I looked up how to do so.
+    -  I finished the council members, contact, and inventory pages.
+    -  None
 
     Lajzoo:
     - Fixed up the designs even more so the whole team is aware of what exactly will be implemented and how it should be done.
