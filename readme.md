@@ -5,13 +5,16 @@ User Stories:
 2. As an admin user, I want to be able to view the Inventory and keep track of what the org has and needs.
 
 
-| Task                      | Story | Duration | Priority | Complexity | Lead Person |
-|:-------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
-| write user stories        |       | 1hr      | 2        | 1          | Akshada     |
-| create prototype          | 1     | 2hr      | 8        | 2          | Lajzoo      |
-| create home screen layout | 1     | 2hr      | 10       | 5          | Inaki       |
-| create sign-in form       | 2     | 2hr      | 5        | 4          | Emma        |
-| add details about the org | 1     | 1hr      | 4        | 2          | Lajzoo      |
+| Task                              | Story | Duration | Priority | Complexity | Lead Person |
+|:---------------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
+| write user stories                |       | 1hr      | 2        | 1          | Akshada     |
+| update just in mind prototypes    | 1 & 2 | 1hr      | 5        | 2          | Lajzoo    |
+| create remaining nav tabs         | 2     | 1hr      | 10       | 5          | Emma       |
+| gather inventory info from client | 2     | 1.5hr      |  7       | 4          | Lajzoo    |
+| pull inventory info from database | 1     | 1hr      | 4        | 2          | Akshada      |
+| add info to the meet the org tab  | 1     | 2hr      | 5        | 2          | Inaki
+| create table to display data      | 2     | 1.5hr      | 4        | 7          | Akshada     |
+| display inventory data            | 2     | 2hr      | 7        | 5          | Akshada |
 
 
 
@@ -46,9 +49,9 @@ Meeting Evidence #1:
     - Translating requests from HASA Chair into simplified and accomplishable things I know the whole team is capable of implementing.
 
     Yasmine:
-    - 
-    -  
-    -  
+    - Discussed what we would build off of from the first sprint
+    - Created Trello board and started working on estimations  
+    -  N/a
     
 Meeting Evidence #2:
 
@@ -77,9 +80,9 @@ Meeting Evidence #2:
     - Ensuring the HASA Chair that our current work is still a prototype and that web design will come after we make sure it is first functional.
 
     Yasmine:
-    - 
-    - 
-    -  
+    - Discussed best way to set up inventory tab and how to present the 'meet the org' tab
+    - Continued working on that
+    -  N/a
 
 
 **Sprint Review:**
