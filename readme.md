@@ -81,7 +81,7 @@ Meeting Evidence #2:
 
     Yasmine:
     - Discussed best way to set up inventory tab and how to present the 'meet the org' tab
-    - Continued working on that
+    - Added more to the Trello board as we assigned and created more tasks
     -  N/a
 
 
