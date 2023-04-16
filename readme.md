@@ -34,9 +34,9 @@ Meeting Evidence #1:
     - no problems as of now.
     
     Emma:
-    -  
-    - 
-    - 
+    -  We met to discuss the plan for the sprint and breakout timing of activities.
+    - Roles were assigned so I planned on creating tabs and allowing them to switch between pages. 
+    - No problems. 
 
     Inaki:
     - 
@@ -65,9 +65,9 @@ Meeting Evidence #2:
     - Just some code issues with getting the inventory tab to work the way we want. We should be able to figure it out soon. 
     
     Emma:
-    -  
-    - 
-    - 
+    - I created all the tabs so we could start building out the inventory and member tabs.  
+    - I will be creating a profile tab so members can update their personal information. 
+    - No problems. 
 
     Inaki:
     - 
