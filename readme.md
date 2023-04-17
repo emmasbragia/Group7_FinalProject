@@ -19,7 +19,7 @@ User Stories:
 
 
 
-Github Public Repo: https://github.com/emmasbragia/Group7_Sprint1.git 
+Github Public Repo: https://github.com/emmasbragia/Group7_FinalProject.git 
 
 **Daily Scrum:** 
 
