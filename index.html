@@ -32,6 +32,7 @@
   </style>
 </head>
 
+
 <body>
   <!--  sign up modal ... are hidden by default ... use javascript to display/hide them -->
   <div class="modal" id="signup_modal">
@@ -141,7 +142,7 @@
         <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
       </p>
       <p class="level-item has-text-centered">
-        <img src="pictures/HASA_Transparent.png" alt="" style="height: 140px" />
+        <a id="homebtn" href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 140px"/></a>
       </p>
 
       <p class="level-item has-text-centered">
@@ -646,15 +647,828 @@
 
     <!-- contact -->
     <div class="is-hidden" id="contact">
-      contact
+      <div class="columns">
+        <div class="column is-1"></div>
+        <div class="column is-10 mt-6">
+          <div class="card has-background-danger-light">
+            <div class="card-content">
+              <div class="title is-1 has-text-centered">
+                <h1>Contact Us</h1>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label has-text-centered mr-0 pr-0">From</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <p class="control is-expanded has-icons-left">
+                      <input class="input" type="text" placeholder="Name">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control is-expanded has-icons-left has-icons-right">
+                      <input class="input" type="email" placeholder="Email">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label has-text-centered mr-0 pr-0">Position</label>
+                </div>
+                <div class="field-body">
+                  <div class="field is-narrow">
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select>
+                          <option>Choose One</option>
+                          <option>General Member</option>
+                          <option>Council</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label has-text-centered mr-0 pr-0">Subject</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="e.g. Partnership opportunity">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label has-text-centered mr-0 pr-0">Question</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field is-horizontal">
+                <div class="field-label"></div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-danger is-rounded">
+                        Send message
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-1"></div>
+      </div>
     </div>
 
 
 
     <!-- inventory -->
     <div class="is-hidden" id="inventory">
-      inventory
+      <div class="columns">
+        <div class="column is-1"></div>
+        <div class="column is-10">
+          <div class="card mt-6">
+            <div class="card-content">
+              <div class="title is-1 has-text-centered">
+                <h1>Inventory Data</h1>
+                <div class="title is-5">
+                  <h2>Update Inventory Data</h2>
+                </div>
+              </div>
+              <div>
+                <table class="table is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>-</th>
+                      <th>Item</th>
+                      <th>Description</th>
+                      <th>Quantity</th>
+                      <th>+</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Gift Bows</td>
+                      <td></td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Board Games</td>
+                      <td>Connect Four, Guess Who</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Scissors</td>
+                      <td></td>
+                      <td>7</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Pens</td>
+                      <td></td>
+                      <td>500</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Construction Paper</td>
+                      <td>Red, Blue, Dark pink, light pink, orange, yellow, green, light green, purple, sky blue, dark blue, brown </td>
+                      <td>45</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Vertical Name covers</td>
+                      <td>Use with lanyards</td>
+                      <td>100</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>                      
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Sticky Name Badge</td>
+                      <td>White</td>
+                      <td>91</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Lanyards</td>
+                      <td>HASA Spring Conference</td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Gift bag</td>
+                      <td>Brown Bags</td>
+                      <td>5</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Glue Bottle</td>
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Tinsel Garland</td>
+                      <td>Gold+White, Gold, Red, Silver</td>
+                      <td>100</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Green wristband</td>
+                      <td></td>
+                      <td>300</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Envelopes</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Blue Folder</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Care Package Boxes</td>
+                      <td>White</td>
+                      <td>15</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Blue Folder</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Hand Sanitizer</td>
+                      <td>Small Bottles</td>
+                      <td>34</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>White Folder</td>
+                      <td></td>
+                      <td>200</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Paper streamer rolls</td>
+                      <td>pink, red, yellow, white</td>
+                      <td>9</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Raffle box</td>
+                      <td>Rainbow Taped</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Medium poster board</td>
+                      <td>14in x 22in </td>
+                      <td>3</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Bidding Signs</td>
+                      <td>1-120</td>
+                      <td>120</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Glitter</td>
+                      <td>small vials - red, blue, green, purple, silver, gold</td>
+                      <td>6</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Color paper</td>
+                      <td>Various colors</td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Black tote bags</td>
+                      <td>BCycle bags</td>
+                      <td>60</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Gift bag tissue</td>
+                      <td>Pink, White, Red, Blue</td>
+                      <td>72</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Light blue folders</td>
+                      <td></td>
+                      <td>140</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>White rose decor</td>
+                      <td>Green Vines</td>
+                      <td>8</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Tinfoil tray</td>
+                      <td>Large</td>
+                      <td>4</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Paint cups</td>
+                      <td>red plastic cups</td>
+                      <td>29</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Small painting canvas</td>
+                      <td>Square</td>
+                      <td>9</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>HASA Banner</td>
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Grill</td>
+                      <td>Small</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Cones</td>
+                      <td>Small, orange</td>
+                      <td>14</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Bags of cotton balls</td>
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Cups for activities</td>
+                      <td>Meduim small red solo cups</td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Balloon pump</td>
+                      <td>Small manual pump</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Gold glitter cloth</td>
+                      <td>Used for backdrop</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Webbed cloth</td>
+                      <td>Black, used for backdrop, big</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Marshmallow skewers</td>
+                      <td>Metal</td>
+                      <td>11</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>White ballons</td>
+                      <td></td>
+                      <td>12</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Round cones</td>
+                      <td>Multicolored</td>
+                      <td>4</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Wood skewers</td>
+                      <td></td>
+                      <td>180</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>White sheer cloth</td>
+                      <td>Large, used for backdrop</td>
+                      <td>3</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Plastic flower petals</td>
+                      <td>White, red</td>
+                      <td>200</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>White lotus flower decor</td>
+                      <td></td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Glue stick</td>
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Paper clip</td>
+                      <td>Medium</td>
+                      <td>30</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Thank you card</td>
+                      <td>Small</td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Red wristband</td>
+                      <td></td>
+                      <td>500</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Bloody white sheer cloth</td>
+                      <td>Used for backdrop, HASAween</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Duct tape roll</td>
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Black permanent markers</td>
+                      <td></td>
+                      <td>14</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Printing paper</td>
+                      <td>White</td>
+                      <td>26</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Paper bowls</td>
+                      <td></td>
+                      <td>19</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Drinking cup</td>
+                      <td>Clear plastic</td>
+                      <td>73</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Plastic fork</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td><button class="button is-rounded has-background-danger">-</button></td>
+                      <td>Plastic spoon</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Plastic knife</td>
+                      <td></td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Napkin</td>
+                      <td>Whole packages</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Raffle ticket roll</td>
+                      <td>Red, blue</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Zip lock bag box</td>
+                      <td>Gallon</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Black backdrop</td>
+                      <td>Photo booth</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>White backdrop</td>
+                      <td>Photo booth</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Blue decor table cloth</td>
+                      <td>Stripes</td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Fairy curtain light</td>
+                      <td>LED</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Clear tape</td>
+                      <td></td>
+                      <td>5</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>LED Candle light</td>
+                      <td></td>
+                      <td>35</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Plastic vials</td>
+                      <td>Decor with flowers, table center piece</td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Bottled flower decor</td>
+                      <td>Used with plasitc vials</td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Circle Mirror table decor</td>
+                      <td>Table center piece </td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Paper Cup</td>
+                      <td></td>
+                      <td>5</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Gold decor table cloth</td>
+                      <td>Stripes</td>
+                      <td>20</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Fishbowl</td>
+                      <td>Table center piece, round, heart, star</td>
+                      <td>30</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Clear marble rocks</td>
+                      <td>Blue + clear, used with fishbowls</td>
+                      <td>3</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Photo booth backdrop stand</td>
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Flower ball lights</td>                      
+                      <td>Used with photobooth</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Tennis ball</td>                      
+                      <td></td>
+                      <td>50</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Black garbage bag box</td>                      
+                      <td>30 in a box</td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>White garbage bags rolls</td>                      
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Plastic table cloth</td>                      
+                      <td>Pink, green, tied for photo booth</td>
+                      <td>4</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Waist flags</td>                      
+                      <td>Flag football, red, yellow</td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Large Cutting board</td>                      
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Blue tarp</td>                      
+                      <td>Large</td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Christmas lights</td>                      
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Hanging hearts decor</td>                      
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Two room dome tent</td>                      
+                      <td></td>
+                      <td>1</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Stopwatch</td>                      
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Pickle ball</td>                      
+                      <td>White</td>
+                      <td>15</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Lighter fluid</td>                      
+                      <td></td>
+                      <td>2</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Bottle cap openers</td>                      
+                      <td>Financial Aid Merch</td>
+                      <td>200</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Plastic cups with lid + Straw</td>                      
+                      <td>UW DEI Merch</td>
+                      <td>30</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Paint brushes</td>                      
+                      <td>Various brushes</td>
+                      <td>40</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Paint bottles</td>                      
+                      <td>Various colors</td>
+                      <td>15</td>
+                      <td><button class="button is is-rounded has-background-danger white">+</button></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-1"></div>
+      </div>
+
     </div>
+
+    <!-- member creation form -->
     <div class="is-hidden" id="profile">
       <div class="columns mt-5">
         <div class="column is-2"></div>
@@ -788,9 +1602,7 @@
           Group 7 INFO SYS 424 Spring 2023
         </div>
       </p>
-
     </div>
-
   </div>
 
 
