@@ -59,9 +59,23 @@ function configure_message_bar(msg) {
 function configure_nav_bar(user) {
     let signedin = document.querySelectorAll('.signedin');
     let signedout = document.querySelectorAll('.signedout');
+    let admin = document.querySelectorAll('.admin');
 
-    // check is user exists
+    // check if user exists
     if (user) {
+        // show inventory tab
+        db.collection("admin").get().then(res => {
+            let documents = res.docs;
+            documents.forEach(doc => {
+
+                if (doc.data().email.includes(auth.currentUser.email) == true) {
+                    admin.forEach(link => {
+                        link.classList.remove('is-hidden');
+                    })
+                } 
+            })
+        })
+            
         // show all signed in links 
         signedin.forEach(link => {
             link.classList.remove('is-hidden');
@@ -71,7 +85,6 @@ function configure_nav_bar(user) {
         signedout.forEach(link => {
             link.classList.add('is-hidden');
         })
-
     } else {
         // no user (signed out)
         // show all signed out links 
@@ -81,6 +94,9 @@ function configure_nav_bar(user) {
 
         // hide all signed in links
         signedin.forEach(link => {
+            link.classList.add('is-hidden');
+        })
+        admin.forEach(link => {
             link.classList.add('is-hidden');
         })
     }

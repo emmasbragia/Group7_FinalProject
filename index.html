@@ -119,9 +119,9 @@
 
   <!-- Header/Nav Bar -->
   <header class="has-background-danger-light">
-    <nav class="level header pl-6 pr-6">
+    <nav class="level header pl-4 pr-4">
       <p class="level-item has-text-centered">
-        <a class="link is-info has-text-black" id="homebtn">Home</a>
+        <a id="homebtn" href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 70px"/></a>
       </p>
       <p class="level-item has-text-centered">
         <a class="link is-info has-text-black" id="eventsbtn">Events</a>
@@ -129,25 +129,24 @@
       <p class="level-item has-text-centered">
         <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
       </p>
-      <p class="level-item has-text-centered">
-        <a id="homebtn" href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 140px"/></a>
-      </p>
 
       <p class="level-item has-text-centered">
         <a class="link is-info has-text-black" id="contactbtn">Contact Us</a>
       </p>
-      <p class="level-item has-text-centered signedin is-hidden">
+      <p class="level-item has-text-centered is-hidden admin">
         <a class="link is-info has-text-black" id="inventorybtn">Inventory</a>
       </p>
-      <!-- Profile -->
+      
       <p class=" buttons level-item has-text-centered signedin is-hidden">
+        <!-- Sign Out -->
+        <a class="button is-grey-light" id="signoutbtn">Sign Out</a>
+        <!-- Profile -->
         <button class="button is-primary has-background-danger" id="profilebtn">
           <span class="icon">
             <i class="fas fa-user"></i>
           </span>
           <span>Profile</span>
         </button>
-        
       </p>
     </nav>
   </header>
@@ -180,11 +179,7 @@
             <div class="box has-background-danger-light signedout">
               <div>
                 <p>
-                  Sign Up to become part of the community... Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Nam eligendi officiis
-                  sit. Odit modi, et harum suscipit asperiores architecto fuga
-                  dolor voluptatem ea magnam aspernatur placeat, inventore animi
-                  quibusdam a!
+                  Sign Up to become part of the community, attend events and ...
                 </p>
               </div>
               <div class="buttons is-centered pt-4">
@@ -200,9 +195,6 @@
 
               </div>
             </div>
-
-            <!-- sign out -->
-            <a class="button is-grey-light signedin" id="signoutbtn">Sign Out</a>
 
           </div>
         </div>
