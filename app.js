@@ -130,7 +130,7 @@ function save_event(coll, obj) {
     home.classList.remove('is-hidden');
 
 
-    // hide the events, team, contact, profile and inventory div
+    // // hide the events, team, contact, profile and inventory div
     history.classList.add('is-hidden');
     events.classList.add('is-hidden');
     team.classList.add('is-hidden');
@@ -236,6 +236,7 @@ r_e('sbmt_event').addEventListener('click', () => {
                  url: url
              }
  
+             
              // send the object to firebase
              save_event('event', event)
          })
