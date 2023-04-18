@@ -92,8 +92,7 @@ r_e('signup_form').addEventListener('submit', (e) => {
     // grab the email and password combination from the form
     let email = r_e('email').value;
     let password = r_e('password').value;
-    let admin = r_e('Admin');
-    let adminval = admin.options[admin.selectedIndex].text;
+    
 
 
     // call the firebase function to create the user
@@ -109,12 +108,6 @@ r_e('signup_form').addEventListener('submit', (e) => {
         r_e('signup_modal').classList.remove('is-active');
     }).catch(err => {
         signup_modal.querySelector('.error').innerHTML = err.message;
-    })
-
-    // adding admin preferences to firebase collection
-    db.collection("admin").doc(email).set({
-        user: `${email}`,
-        admin: `${adminval}`
     })
 
 })
