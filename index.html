@@ -109,6 +109,76 @@
     </div>
   </div>
 
+  <!-- Event Modal -->
+  <div class="modal" id="event_modal">
+    <div class="modal-background" id="event_modalbg"></div>
+    <div class="modal-content p-6 has-background-danger-light">
+      <h1 class="is-size-3 title">Create an Event</h1>
+      <form id="event_form">
+        <!-- Name -->
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input type="text" id="eventname" class="input">
+          </div>
+
+        </div>
+        <!-- Date -->
+        <div class="field">
+          <label class="label">Date</label>
+          <div class="control">
+            <input class="input" type="date" id="eventdate">
+          </div>
+        </div>
+
+        <!-- Time -->
+        <div class="field">
+          <label class="label">Time</label>
+          <div class="control">
+            <input class="input" type="time" id="eventtime">
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="field">
+          <label class="label">Location</label>
+          <div class="control">
+            <input class="input" type="text" id="eventlocation">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Event Description" id="eventdesc"></textarea>
+          </div>
+        </div>
+
+        <!-- image of event -->
+        <div class="field">
+          <label class="label">Image</label>
+          <div class="control">
+              <input class="input" type="file" id="event_image" placeholder="Choose Image">
+          </div>
+      </div>
+
+        <!-- submit -->
+        <div class="field">
+          <div class="control">
+            <button class="m-3 button is-link" id="sbmt_event">Submit</button>
+          </div>
+        </div>
+
+        <!-- div error -->
+        <div class="error has-text-danger">
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
 
   <!-- Message Bar -->
   <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden">
@@ -121,11 +191,15 @@
   <header class="has-background-danger-light">
     <nav class="level header pl-4 pr-4">
       <p class="level-item has-text-centered">
-        <a id="homebtn" href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 70px"/></a>
+        <a href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 70px"/></a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info has-text-black" id="homebtn">Home</a>
       </p>
       <p class="level-item has-text-centered">
         <a class="link is-info has-text-black" id="eventsbtn">Events</a>
       </p>
+      
       <p class="level-item has-text-centered">
         <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
       </p>
@@ -237,9 +311,7 @@
         </div>
       </div>
     </div>
-    <div class="is-hidden" id="history">
-      history
-    </div>
+    <!-- Events -->
     <div class="is-hidden" id="events">
       <div class="columns mt-6 mb-6">
         <div class="column is-3"></div>
@@ -255,10 +327,11 @@
             <h2 class="title is-2">April</h2>
           </div>
           <div class="column is-3 pl-0">
-            <button class="button is-white has-background-danger has-text-white is-rounded">Add Event</button>
+            <button class=" is-hidden admin button is-white has-background-danger has-text-white is-rounded" id="addeventbtn">Add Event</button>
           </div>
         </div>
       </div>
+    
       <div class="columns">
         <div class="column is-2 pr-0"></div>
         <div class="column is-8">

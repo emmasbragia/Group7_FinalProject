@@ -19,6 +19,11 @@ let inventorybtn = document.querySelector('#inventorybtn');
 let inventory = document.querySelector('#inventory');
 let profilebtn = document.querySelector('#profilebtn');
 let profile = document.querySelector('#profile');
+let addeventbtn = document.querySelector('#addeventbtn');
+let event_modal = document.querySelector('#event_modal');
+let event_modalbg = document.querySelector('#event_modalbg');
+
+
 
 // functions
 
@@ -102,6 +107,39 @@ function configure_nav_bar(user) {
     }
 }
 
+// save new data into a collection
+function save_event(coll, obj) {
+    db.collection(coll).add(obj).then(() => {
+        // show notification message to user 
+        configure_message_bar(`${obj.name} has been added!`)
+    })
+
+
+    // reset the form
+    r_e('eventname').value = ""
+    r_e('eventdate').value = ""
+    r_e('eventtime').value = ""
+    r_e('eventlocation').value = ""
+    r_e('eventdesc').value = ""
+    r_e('event_image').value = ""
+
+    // load data
+    // load_data('event', 'event')
+    
+    // show the home tab
+    home.classList.remove('is-hidden');
+
+
+    // hide the events, team, contact, profile and inventory div
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
+
+}
+
 // sign up  user 
 r_e('signup_form').addEventListener('submit', (e) => {
     e.preventDefault(); //prevent default behavior of the browser (no page refresh)
@@ -158,6 +196,50 @@ r_e('signoutbtn').addEventListener('click', () => {
     auth.signOut().then(() => {
         configure_message_bar("You signed out successfully!")
     })
+    // show the home tab
+    home.classList.remove('is-hidden');
+
+
+    // hide the events, team, contact, profile and inventory div
+    history.classList.add('is-hidden');
+    events.classList.add('is-hidden');
+    team.classList.add('is-hidden');
+    contact.classList.add('is-hidden');
+    inventory.classList.add('is-hidden');
+    profile.classList.add('is-hidden');
+})
+
+// Add an event
+r_e('sbmt_event').addEventListener('click', () => {
+    // grab event details
+    let name = r_e('eventname').value;
+    let date = r_e('eventdate').value;
+    let time = r_e('eventtime').value;
+    let location = r_e('eventlocation').value;
+    let desc = r_e('eventdesc').value;
+     // getting the image ready
+     let file = r_e('event_image').files[0];
+     let image = new Date() + "_" + file.name;
+     const task = ref.child(image).put(file);
+     task
+         .then(snapshot => snapshot.ref.getDownloadURL())
+         .then(url => {
+             // the URL of the image is ready now
+             // wrap those in an object
+             let event = {
+                 name: name,
+                 date: date,
+                 time: time,
+                 location: location,
+                 desc: desc,
+                 user_email: auth.currentUser.email,
+                 url: url
+             }
+ 
+             // send the object to firebase
+             save_event('event', event)
+         })
+    
 })
 
 auth.onAuthStateChanged((user) => {
@@ -200,6 +282,15 @@ signinbtn.addEventListener('click', () => {
 
 signin_modalbg.addEventListener('click', () => {
     signin_modal.classList.remove('is-active');
+});
+
+// event modal link
+addeventbtn.addEventListener('click', () => {
+    event_modal.classList.add('is-active');
+})
+
+event_modalbg.addEventListener('click', () => {
+    event_modal.classList.remove('is-active');
 });
 
 
