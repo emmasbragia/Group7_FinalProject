@@ -218,8 +218,6 @@ r_e('sbmt_event').addEventListener('click', () => {
     let location = r_e('eventlocation').value;
     let desc = r_e('eventdesc').value;
 
-    console.log(name)
-
     // getting the image ready
     let file = r_e('event_image').files[0];
     let image = new Date() + "_" + file.name;
@@ -237,7 +235,7 @@ r_e('sbmt_event').addEventListener('click', () => {
                  desc: desc,
                  url: url
              }
-console.log(event)
+                
 
              db.collection('events').add(event).then(() => {})
                 // show notification message to user 
