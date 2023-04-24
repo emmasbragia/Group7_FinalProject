@@ -217,12 +217,15 @@ r_e('sbmt_event').addEventListener('click', () => {
     let time = r_e('eventtime').value;
     let location = r_e('eventlocation').value;
     let desc = r_e('eventdesc').value;
-     // getting the image ready
-     let file = r_e('event_image').files[0];
-     let image = new Date() + "_" + file.name;
-     const task = ref.child(image).put(file);
-     task
-         .then(snapshot => snapshot.ref.getDownloadURL())
+
+    console.log(name)
+
+    // getting the image ready
+    let file = r_e('event_image').files[0];
+    let image = new Date() + "_" + file.name;
+    const task = ref.child(image).put(file);
+    task
+    .then(snapshot => snapshot.ref.getDownloadURL())
          .then(url => {
              // the URL of the image is ready now
              // wrap those in an object
@@ -232,14 +235,19 @@ r_e('sbmt_event').addEventListener('click', () => {
                  time: time,
                  location: location,
                  desc: desc,
-                 user_email: auth.currentUser.email,
                  url: url
              }
- 
-             
+console.log(event)
+
+             db.collection('events').add(event).then(() => {})
+                // show notification message to user 
+                // configure_message_bar(`${event.name} has been added!`)})
+       
              // send the object to firebase
-             save_event('event', event)
-         })
+            //  save_event('event', event)
+            
+            })
+         
     
 })
 
@@ -383,87 +391,87 @@ profilebtn.addEventListener('click', () => {
 
 })
 
-//Events Page = NEEDS TO BE TESTED
-db.collection("Events").get().then((response) => {
-    let docs = response.docs;
-    // need to write the id = events into the index.html page
-    var eventCreate = document.getElementById("events");
-    docs.forEach((doc) => {
-        html = `<div class="column is-6">
-            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
-                <div class="card-content">
-                  <div class="content">
-                    <figure class="image is-320-320">
-                      <img src= "${doc.data().Graphic}">
-                    </figure>
-                    <div class="title mb-2">
-                      ${doc.data().Title}
-                    </div>
-                    <div class="mt-3"><b>Date</b>: ${doc.data().Date}</div>
-                    <div><b>Time</b>: ${doc.data().Time}</div>
-                    <div class="mb-4"> <b>Location</b>: ${doc.data().Location}</div>
-                    <b>Description</b>: ${doc.data().Description}
-                  </div>
-                </div>
-            </div>
-        </div>`;
-    });
-    eventCreate.innerHTML += html;
-});
+// //Events Page = NEEDS TO BE TESTED
+// db.collection("Events").get().then((response) => {
+//     let docs = response.docs;
+//     // need to write the id = events into the index.html page
+//     var eventCreate = document.getElementById("events");
+//     docs.forEach((doc) => {
+//         html = `<div class="column is-6">
+//             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+//                 <div class="card-content">
+//                   <div class="content">
+//                     <figure class="image is-320-320">
+//                       <img src= "${doc.data().Graphic}">
+//                     </figure>
+//                     <div class="title mb-2">
+//                       ${doc.data().Title}
+//                     </div>
+//                     <div class="mt-3"><b>Date</b>: ${doc.data().Date}</div>
+//                     <div><b>Time</b>: ${doc.data().Time}</div>
+//                     <div class="mb-4"> <b>Location</b>: ${doc.data().Location}</div>
+//                     <b>Description</b>: ${doc.data().Description}
+//                   </div>
+//                 </div>
+//             </div>
+//         </div>`;
+//     });
+//     eventCreate.innerHTML += html;
+// });
 
-// Inventory Page - NEEDS TO BE TESTED
-db.collection("Inventory").get().then((response) => {
-    let docs = response.docs;
-    // need to write the id = events into the index.html page
-    var InventoryCreate = document.getElementById("Inventory");
-    docs.forEach((doc) => {
-        // + and - buttons need to be figured out 
-        html = `
-        <tr>
-            <td><button class="button is-rounded has-background-danger">-</button></td>
-            <td>${doc.data().Inventory}</td>
-            <td>${doc.data().Description}</td>
-            <td>${doc.data().Quantity}</td>
-            <td><button class="button is is-rounded has-background-danger white">+</button></td>
-        </tr>`
-    });
-InventoryCreate.innerHTML += html;
-});
+// // Inventory Page - NEEDS TO BE TESTED
+// db.collection("Inventory").get().then((response) => {
+//     let docs = response.docs;
+//     // need to write the id = events into the index.html page
+//     var InventoryCreate = document.getElementById("Inventory");
+//     docs.forEach((doc) => {
+//         // + and - buttons need to be figured out 
+//         html = `
+//         <tr>
+//             <td><button class="button is-rounded has-background-danger">-</button></td>
+//             <td>${doc.data().Inventory}</td>
+//             <td>${doc.data().Description}</td>
+//             <td>${doc.data().Quantity}</td>
+//             <td><button class="button is is-rounded has-background-danger white">+</button></td>
+//         </tr>`
+//     });
+// InventoryCreate.innerHTML += html;
+// });
 
-// Add Event to Firestore - NEEDS TO BE TESTED
-let addEvent = document.querySelector('#event_form');
+// // Add Event to Firestore - NEEDS TO BE TESTED
+// let addEvent = document.querySelector('#event_form');
 
-addEvent.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // event info
-    let eventTitle = document.querySelector('#eventname').value;
-    let eventDescription = document.querySelector('#eventdesc').value;
-    let eventDate = document.querySelector('#eventdate').value;
-    let eventTime = document.querySelector('#eventtime').value;
-    let eventLocation = document.querySelector('#eventlocation').value;
+// addEvent.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     // event info
+//     let eventTitle = document.querySelector('#eventname').value;
+//     let eventDescription = document.querySelector('#eventdesc').value;
+//     let eventDate = document.querySelector('#eventdate').value;
+//     let eventTime = document.querySelector('#eventtime').value;
+//     let eventLocation = document.querySelector('#eventlocation').value;
    
-    // upload an image
-    let eventImage = document.querySelector('#event_image').files[0];
-    let image_ = new Date()+"_"+ eventImage.name;
-    const task = ref.child(image_).put(eventImage);
-    task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url => {
-        let HASAevent = {
-        Date: eventDate,
-        Event: eventTitle,
-        Graphic: eventImage,
-        Location: eventLocation,
-        RSVP: "xxx" ,
-        // didnt know what to put for RSVP. Need to add to Event form I think.
-        Time: eventTime
-        };
+//     // upload an image
+//     let eventImage = document.querySelector('#event_image').files[0];
+//     let image_ = new Date()+"_"+ eventImage.name;
+//     const task = ref.child(image_).put(eventImage);
+//     task
+//     .then(snapshot => snapshot.ref.getDownloadURL())
+//     .then(url => {
+//         let HASAevent = {
+//         Date: eventDate,
+//         Event: eventTitle,
+//         Graphic: eventImage,
+//         Location: eventLocation,
+//         RSVP: "xxx" ,
+//         // didnt know what to put for RSVP. Need to add to Event form I think.
+//         Time: eventTime
+//         };
 
-        // add event 
-        save_data('Events', HASAevent);
-        // load data from firestore
-        load_data('Events');
+//         // add event 
+//         save_data('Events', HASAevent);
+//         // load data from firestore
+//         load_data('Events');
 
-    });
-  });
+//     });
+//   });
 
