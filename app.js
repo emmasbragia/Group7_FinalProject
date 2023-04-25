@@ -413,9 +413,9 @@ db.collection("events")
     let docs = response.docs;
     // need to write the id = events into the index.html page
     var eventCreate = document.getElementById("event");
-    html = `<div class="column is-2 pr-0"></div>`;
+    html = ``;
     docs.forEach((doc) => {
-      html = `<div class="column is-6">
+        html += `<div class="column is-6">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -498,3 +498,65 @@ db.collection("Inventory Data")
 
 //     });
 //   });
+
+
+
+
+
+
+function r_e(id) {
+    return document.querySelector(`#${id}`)
+};
+
+
+function load_data(coll) {
+    // check if we pass all 4 arguments
+    let query = db.collection(coll);
+    var eventCreate = document.getElementById("event");
+
+    query.get().then(res => {
+
+        // console.log(res.docs);
+        let documents = res.docs;
+
+        // html reference
+        html = ``;
+        
+        // <figure class="image is-320-320">
+        //     <img src= "${doc.data().url}">
+        // </figure>
+
+
+        // loop through documents array
+        documents.forEach(doc => {
+            html += `<div class="column is-6">
+            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <div class="title mb-2">
+                      ${doc.data().name}
+                    </div>
+                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
+                    <div><b>Time</b>: ${doc.data().time}</div>
+                    <div class="mb-4"> <b>Location</b>: ${doc.data().location}</div>
+                    <b>Description</b>: ${doc.data().desc}
+                  </div>
+                </div>
+            </div>
+        </div>`;
+
+        })
+
+        // console.log(html)
+
+        // ensure the div is not hidden
+        eventCreate.innerHTML += html;
+
+
+    })
+};
+
+
+r_e('events').addEventListener('click', () => {
+    load_data('events')
+});
