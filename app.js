@@ -389,39 +389,41 @@ profilebtn.addEventListener('click', () => {
 
 })
 
-// //Events Page = NEEDS TO BE TESTED
-// db.collection("Events").get().then((response) => {
-//     let docs = response.docs;
-//     // need to write the id = events into the index.html page
-//     var eventCreate = document.getElementById("events");
-//     docs.forEach((doc) => {
-//         html = `<div class="column is-6">
-//             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
-//                 <div class="card-content">
-//                   <div class="content">
-//                     <figure class="image is-320-320">
-//                       <img src= "${doc.data().Graphic}">
-//                     </figure>
-//                     <div class="title mb-2">
-//                       ${doc.data().Title}
-//                     </div>
-//                     <div class="mt-3"><b>Date</b>: ${doc.data().Date}</div>
-//                     <div><b>Time</b>: ${doc.data().Time}</div>
-//                     <div class="mb-4"> <b>Location</b>: ${doc.data().Location}</div>
-//                     <b>Description</b>: ${doc.data().Description}
-//                   </div>
-//                 </div>
-//             </div>
-//         </div>`;
-//     });
-//     eventCreate.innerHTML += html;
-// });
+//Events Page = Might need to make cards smaller
+db.collection("events").get().then((response) => {
+    let docs = response.docs;
+    // need to write the id = events into the index.html page
+    var eventCreate = document.getElementById("event");
+    html = `<div class="column is-2 pr-0"></div>`;
+    docs.forEach((doc) => {
+        html = `<div class="column is-6">
+            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src= "${doc.data().url}">
+                    </figure>
+                    <div class="title mb-2">
+                      ${doc.data().name}
+                    </div>
+                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
+                    <div><b>Time</b>: ${doc.data().time}</div>
+                    <div class="mb-4"> <b>Location</b>: ${doc.data().location}</div>
+                    <b>Description</b>: ${doc.data().desc}
+                  </div>
+                </div>
+            </div>
+        </div>`;
+    });
+    html += `<div class="column is-2 pl-0"></div>`
+    eventCreate.innerHTML += html;
+});
 
-// // Inventory Page - NEEDS TO BE TESTED
-// db.collection("Inventory").get().then((response) => {
+// Inventory Page - NEEDS TO BE TESTED
+// db.collection("Inventory Data").get().then((response) => {
 //     let docs = response.docs;
 //     // need to write the id = events into the index.html page
-//     var InventoryCreate = document.getElementById("Inventory");
+//     var InventoryCreate = document.getElementById("inventoryitem");
 //     docs.forEach((doc) => {
 //         // + and - buttons need to be figured out 
 //         html = `
