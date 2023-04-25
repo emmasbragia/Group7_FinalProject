@@ -419,24 +419,25 @@ db.collection("events").get().then((response) => {
     eventCreate.innerHTML += html;
 });
 
-// Inventory Page - NEEDS TO BE TESTED
-// db.collection("Inventory Data").get().then((response) => {
-//     let docs = response.docs;
-//     // need to write the id = events into the index.html page
-//     var InventoryCreate = document.getElementById("inventoryitem");
-//     docs.forEach((doc) => {
-//         // + and - buttons need to be figured out 
-//         html = `
-//         <tr>
-//             <td><button class="button is-rounded has-background-danger">-</button></td>
-//             <td>${doc.data().Inventory}</td>
-//             <td>${doc.data().Description}</td>
-//             <td>${doc.data().Quantity}</td>
-//             <td><button class="button is is-rounded has-background-danger white">+</button></td>
-//         </tr>`
-//     });
-// InventoryCreate.innerHTML += html;
-// });
+// Inventory Page - need to do javascript for buttons
+db.collection("Inventory Data").get().then((response) => {
+    let docs = response.docs;
+    // need to write the id = events into the index.html page
+    var InventoryCreate = document.getElementById("inventoryitem");
+    html = ""
+    docs.forEach((doc) => {
+        // + and - buttons need to be figured out 
+        html += `
+        <tr>
+            <td><button class="button is-rounded has-background-danger">-</button></td>
+            <td>${doc.data().Inventory}</td>
+            <td>${doc.data().Description}</td>
+            <td>${doc.data().Quantity}</td>
+            <td><button class="button is is-rounded has-background-danger white">+</button></td>
+        </tr>`
+    });
+InventoryCreate.innerHTML += html;
+});
 
 // // Add Event to Firestore - NEEDS TO BE TESTED
 // let addEvent = document.querySelector('#event_form');
