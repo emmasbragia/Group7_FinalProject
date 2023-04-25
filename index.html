@@ -37,38 +37,41 @@
   <!--  sign up modal ... are hidden by default ... use javascript to display/hide them -->
   <div class="modal" id="signup_modal">
     <div class="modal-background" id="signup_modalbg"></div>
-    <div class="modal-content p-6 has-background-danger-light">
-      <h1 class="is-size-3 title">Sign Up!</h1>
-      <form id="signup_form">
-        <!-- Email -->
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input type="email" id="email">
-          </div>
+        <div class="modal-content has-background-danger-light is-rounded">
+            <div>
+                <h1 class="title has-background-danger has-text-white p-5">Sign up
+                    <button class="delete is-pulled-right" aria-label="close" id="signup_modalb"></button></h1>
+            </div>
+            <form id="signup_form">
+                <!-- name  -->
+                <div class="mr-6 ml-5 mt-4 field">
+                    <label class="label has-text-danger">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="" id="email">
+                    </div>
+                </div>
 
-        </div>
-        <!-- Password -->
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input type="password" id="password">
-          </div>
-        </div>
+                <div class="field mr-6 ml-5 mt-4 mb-5">
+                    <label class="label has-text-danger">Create a password</label>
+                    <div class="control">
+                        <input class="input" type="password" placeholder="" id="password">
+                    </div>
+                </div>
 
-        <!-- submit -->
-        <div class="field">
-          <div class="control">
-            <button class="m-3 button is-link">Submit</button>
-          </div>
-        </div>
+                <!-- submit  -->
+                <div class="field is-grouped">
+                    <div class="control pb-3">
+                        <button class="button is-danger ml-5 is-rounded">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-danger is-danger ml-3 is-rounded" id="cancel">Cancel</button>
+                    </div>
+                </div>
 
-        <!-- div error -->
-        <div class="error has-text-danger">
-
-        </div>
-
-      </form>
+                <!-- div error -->
+                <div class="pl-5 error has-text-danger"></div>
+            </form>
+      </div>
     </div>
   </div>
 
@@ -76,37 +79,50 @@
 
   <div class="modal" id="signin_modal">
     <div class="modal-background" id="signin_modalbg"></div>
-    <div class="modal-content p-6 has-background-danger-light">
-      <h1 class="is-size-3 title">Sign In!</h1>
-      <form id="signin_form">
-        <!-- Email -->
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input type="email" id="email_">
-          </div>
+        <div class="modal-content has-background-danger-light">
+            <div>
+                <h1 class="title has-background-danger has-text-white p-5">Log in
+                    <button class="delete is-pulled-right" aria-label="close" id="signin_modalb2"></button></h1>
+            </div>
+            <form id="signin_form">
+                <div class="section pt-5 pb-5">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-6">
+                                <div class="field">
+                                    <label class="label has-text-danger">Email</label>
+                                    <div class="control">
+                                        <input class="input" type="email" id="email_" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="field">
+                                    <label class="label has-text-danger">Password</label>
+                                    <div class="control">
+                                        <input class="input" type="password" id="password_" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div>
-        <!-- Password -->
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input type="password" id="password_">
-          </div>
-        </div>
+                <!-- submit -->
+                <div class="field is-grouped">
+                    <div class="control pb-3">
+                        <button class="button is-danger ml-6 is-rounded">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-danger is-danger ml-3 is-rounded" id="cancel2">Cancel</button>
+                    </div>
+                </div>
 
-        <!-- submit -->
-        <div class="field">
-          <div class="control">
-            <button class="m-3 button is-link">Submit</button>
-          </div>
+                <!-- div error -->
+                <div class="pl-6 pr-4 error has-text-danger"></div>
+            </form>
         </div>
-        <!-- div error -->
-        <div class="error has-text-danger">
-
-        </div>
-      </form>
-    </div>
+      </div>
   </div>
 
   <!-- Event Modal -->
@@ -189,11 +205,11 @@
 
   <!-- Header/Nav Bar -->
   <header class="has-background-danger-light">
-    <nav class="level header pl-4 pr-4">
+    <nav class="level header pl-4">
       <p class="level-item has-text-centered">
-        <a href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 70px"/></a>
+        <a href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 100px"/></a>
       </p>
-      <p class="level-item has-text-centered">
+      <p class="level-item has-text-centered ml-0">
         <a class="link is-info has-text-black" id="homebtn">Home</a>
       </p>
       <p class="level-item has-text-centered">
@@ -251,6 +267,9 @@
           <!-- right side -->
           <div class="column is-3 pr-5">
             <div class="box has-background-danger-light signedout">
+              <div class="mt-2 mb-3">
+                <h2 class="title is-4 has-text-centered">Sign up/Sign In!</h2>
+              </div>
               <div>
                 <p>
                   Sign Up to become part of the community, attend events and ...
@@ -258,12 +277,11 @@
               </div>
               <div class="buttons is-centered pt-4">
                 <!-- sign up -->
-                <a class="button is-primary has-background-danger" id="signupbtn">
+                <a class="button is-primary has-background-danger is-rounded" id="signupbtn">
                   <strong>Sign up</strong>
                 </a>
-                <p class="p-4">or</p>
                 <!-- sign in -->
-                <a class="button is-primary has-background-danger" id="signinbtn">
+                <a class="button is-primary has-background-danger is-rounded" id="signinbtn">
                   <strong>Sign in</strong>
                 </a>
 
@@ -393,9 +411,9 @@
             </div>
           </div>
         </div>
-        <div class="column is-2 pl-0"></div> -->
+        <div class="column is-2 pl-0"></div> 
       
-      <!-- <div>
+      <div>
         <div class="columns">
           <div class="column is-2"></div>
           <div class="column is-7 is-left pr-0">
@@ -405,8 +423,8 @@
             <button class="button is-white has-background-danger has-text-white is-rounded">Add Event</button>
           </div>
         </div>
-      </div> -->
-      <!-- <div class="columns">
+      </div>
+      <div class="columns">
         <div class="column is-2 pr-0"></div>
         <div class="column is-8">
           <div class="columns">
@@ -440,12 +458,12 @@
                 </div>
               </div>
             </div>
-          </div> -->
-        <!-- </div>
+          </div>
+        </div>
         <div class="column is-2 pl-0"></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
