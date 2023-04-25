@@ -77,10 +77,10 @@ function configure_nav_bar(user) {
                     admin.forEach(link => {
                         link.classList.remove('is-hidden');
                     })
-                } 
+                }
             })
         })
-            
+
         // show all signed in links 
         signedin.forEach(link => {
             link.classList.remove('is-hidden');
@@ -125,7 +125,7 @@ function save_event(coll, obj) {
 
     // load data
     // load_data('event', 'event')
-    
+
     // show the home tab
     home.classList.remove('is-hidden');
 
@@ -146,7 +146,7 @@ r_e('signup_form').addEventListener('submit', (e) => {
     // grab the email and password combination from the form
     let email = r_e('email').value;
     let password = r_e('password').value;
-    
+
 
 
     // call the firebase function to create the user
@@ -228,30 +228,30 @@ r_e('sbmt_event').addEventListener('click', () => {
     let image = timestamp + "_" + file.name;
     const task = ref.child(image).put(file);
     task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-         .then(url => {
-             // the URL of the image is ready now
-             // wrap those in an object
-             let event = {
-                 name: name,
-                 date: date,
-                 time: time,
-                 location: location,
-                 desc: desc,
-                 url: url
-             }
-                
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+            // the URL of the image is ready now
+            // wrap those in an object
+            let event = {
+                name: name,
+                date: date,
+                time: time,
+                location: location,
+                desc: desc,
+                url: url
+            }
 
-             db.collection('events').add(event).then(() => {})
-                // show notification message to user 
-                // configure_message_bar(`${event.name} has been added!`)})
-       
-             // send the object to firebase
+
+            db.collection('events').add(event).then(() => {})
+            // show notification message to user 
+            // configure_message_bar(`${event.name} has been added!`)})
+
+            // send the object to firebase
             //  save_event('event', event)
-            
-            })
-         
-    
+
+        })
+
+
 })
 
 auth.onAuthStateChanged((user) => {
@@ -287,12 +287,29 @@ signup_modalbg.addEventListener('click', () => {
     signup_modal.classList.remove('is-active');
 });
 
+signup_modalb.addEventListener('click', () => {
+    signup_modal.classList.remove('is-active');
+});
+
+cancel.addEventListener('click', () => {
+    signup_modal.classList.remove('is-active');
+});
+
+
 // sign-in modal link
 signinbtn.addEventListener('click', () => {
     signin_modal.classList.add('is-active');
 })
 
 signin_modalbg.addEventListener('click', () => {
+    signin_modal.classList.remove('is-active');
+});
+
+signin_modalb2.addEventListener('click', () => {
+    signin_modal.classList.remove('is-active');
+});
+
+cancel2.addEventListener('click', () => {
     signin_modal.classList.remove('is-active');
 });
 
@@ -441,7 +458,7 @@ db.collection("Inventory Data").get().then((response) => {
             <td><button class="button is is-rounded has-background-danger white">+</button></td>
         </tr>`
     });
-InventoryCreate.innerHTML += html;
+    InventoryCreate.innerHTML += html;
 });
 
 // // Add Event to Firestore - NEEDS TO BE TESTED
@@ -455,7 +472,7 @@ InventoryCreate.innerHTML += html;
 //     let eventDate = document.querySelector('#eventdate').value;
 //     let eventTime = document.querySelector('#eventtime').value;
 //     let eventLocation = document.querySelector('#eventlocation').value;
-   
+
 //     // upload an image
 //     let eventImage = document.querySelector('#event_image').files[0];
 //     let image_ = new Date()+"_"+ eventImage.name;
@@ -480,4 +497,3 @@ InventoryCreate.innerHTML += html;
 
 //     });
 //   });
-
