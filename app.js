@@ -220,7 +220,12 @@ r_e('sbmt_event').addEventListener('click', () => {
 
     // getting the image ready
     let file = r_e('event_image').files[0];
-    let image = new Date() + "_" + file.name;
+    // Get current date and time
+    const now = new Date();
+    // Format the date and time as a string
+    const timestamp = `${now.getFullYear()}${(now.getMonth()+1).toString().padStart(2,'0')}${now.getDate().toString().padStart(2,'0')}_${now.getHours().toString().padStart(2,'0')}${now.getMinutes().toString().padStart(2,'0')}${now.getSeconds().toString().padStart(2,'0')}`;
+    // Use the timestamp in the file name or metadata
+    let image = timestamp + "_" + file.name;
     const task = ref.child(image).put(file);
     task
     .then(snapshot => snapshot.ref.getDownloadURL())
