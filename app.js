@@ -30,7 +30,7 @@ let event_modalbg = document.querySelector('#event_modalbg');
 // return HTML element with a given ID
 function r_e(id) {
     return document.querySelector(`#${id}`)
-}
+};
 
 // configure the message bar
 function configure_message_bar(msg) {
@@ -44,7 +44,7 @@ function configure_message_bar(msg) {
         r_e('message_bar').innerHTML = ""; //clear the text from the message bar
         r_e('message_bar').classList.add('is-hidden');
     }, 2000);
-}
+};
 
 // configure the message bar
 function configure_message_bar(msg) {
@@ -58,7 +58,7 @@ function configure_message_bar(msg) {
         r_e('message_bar').innerHTML = ""; //clear the text from the message bar
         r_e('message_bar').classList.add('is-hidden');
     }, 2000);
-}
+};
 
 // configure navigation bar
 function configure_nav_bar(user) {
@@ -105,7 +105,7 @@ function configure_nav_bar(user) {
             link.classList.add('is-hidden');
         })
     }
-}
+};
 
 // save new data into a collection
 function save_event(coll, obj) {
@@ -138,7 +138,7 @@ function save_event(coll, obj) {
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
 
-}
+};
 
 // sign up  user 
 r_e('signup_form').addEventListener('submit', (e) => {
@@ -164,7 +164,7 @@ r_e('signup_form').addEventListener('submit', (e) => {
         signup_modal.querySelector('.error').innerHTML = err.message;
     })
 
-})
+});
 
 // sign in user
 r_e('signin_form').addEventListener('submit', (e) => {
@@ -189,7 +189,7 @@ r_e('signin_form').addEventListener('submit', (e) => {
         signin_modal.querySelector('.error').innerHTML = err.message;
     })
 
-})
+});
 
 // sign out user
 r_e('signoutbtn').addEventListener('click', () => {
@@ -207,7 +207,7 @@ r_e('signoutbtn').addEventListener('click', () => {
     contact.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
-})
+});
 
 // Add an event
 r_e('sbmt_event').addEventListener('click', () => {
@@ -252,7 +252,7 @@ r_e('sbmt_event').addEventListener('click', () => {
         })
 
 
-})
+});
 
 auth.onAuthStateChanged((user) => {
     // check if user signed in or out
@@ -276,7 +276,7 @@ auth.onAuthStateChanged((user) => {
         // configure the navigation bar
         configure_nav_bar();
     }
-})
+});
 
 // sign - up modal link
 signupbtn.addEventListener('click', () => {
@@ -339,7 +339,7 @@ homebtn.addEventListener('click', () => {
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
 
-})
+});
 
 // events tab
 eventsbtn.addEventListener('click', () => {
@@ -352,7 +352,7 @@ eventsbtn.addEventListener('click', () => {
     contact.classList.add('is-hidden');
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
-})
+});
 
 // team tab
 teambtn.addEventListener('click', () => {
@@ -366,7 +366,7 @@ teambtn.addEventListener('click', () => {
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
 
-})
+});
 
 // contact tab
 contactbtn.addEventListener('click', () => {
@@ -380,7 +380,7 @@ contactbtn.addEventListener('click', () => {
     inventory.classList.add('is-hidden');
     profile.classList.add('is-hidden');
 
-})
+});
 
 // inventory tab
 inventorybtn.addEventListener('click', () => {
@@ -394,7 +394,7 @@ inventorybtn.addEventListener('click', () => {
     contact.classList.add('is-hidden');
     profile.classList.add('is-hidden');
 
-})
+});
 
 // Profile Section
 profilebtn.addEventListener('click', () => {
@@ -409,7 +409,7 @@ profilebtn.addEventListener('click', () => {
     inventory.classList.add('is-hidden');
 
 
-})
+});
 
 //Events Page = Might need to make cards smaller
 db.collection("events").get().then((response) => {
