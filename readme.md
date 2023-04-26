@@ -1,4 +1,4 @@
-Trello Board Link: https://trello.com/b/zguUIRq9/sprint-2 
+Trello Board Link: https://trello.com/b/zguUIRq9/sprint-3 
 
 User Stories: 
 1. As an admin user, I  want to be able to edit inventory data and make adjustments as new inventory is obtained or used
@@ -7,14 +7,14 @@ User Stories:
 
 | Task                              | Story | Duration | Priority | Complexity | Lead Person |
 |:---------------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
-| write user stories                |       | 1hr      | 2        | 1          | Akshada     |
-| update just in mind prototypes    | 1 & 2 | 1hr      | 5        | 2          | Lajzoo    |
-| create remaining nav tabs         | 2     | 1hr      | 10       | 5          | Emma       |
-| gather inventory info from client | 2     | 1.5hr      |  7       | 4          | Lajzoo    |
-| pull inventory info from database | 1     | 1hr      | 4        | 2          | Akshada      |
-| add info to the meet the org tab  | 1     | 2hr      | 5        | 2          | Inaki
-| create table to display data      | 2     | 1.5hr      | 4        | 7          | Akshada     |
-| display inventory data            | 2     | 2hr      | 7        | 5          | Akshada |
+| write user stories                |       | .5hr     | 2        | 1          | Akshada     |
+| add events through the website    | 2     |          | 5        | 7          | Emma        |
+| inventory page editable           | 1     |          | 10       | 8          | Inaki       |
+| event page design                 | 2     |          | 10       | 8          | Inaki       |
+| add delete buttons to dynamic content | 1&2 |        | 7        | 6          | Emma        |
+| add modals for inventory and member pages | 1  |     | 4        | 5          | Akshada     |
+| reduce picture sizes              | 2     |          | 3        | 3          | Lajzoo      |
+
 
 
 
@@ -35,9 +35,9 @@ Meeting Evidence #1:
 
     
     Emma:
-    - 
-    - 
-    - 
+    - We went through and assigned who would take the lead on each task. 
+    - I am planning on writing the code to add events into firebase.
+    - No problems as of yet. 
 
     Inaki:
     - 
@@ -50,9 +50,9 @@ Meeting Evidence #1:
     -
 
     Yasmine:
-    - 
-    -
-    -
+    - Worked with the team to break down the user stories into tasks. Updated Trello board and Burn Down chart data.
+    - Adding the time estimates for the remaining tasks and keeping track of actual task duration. 
+    - n/a
     
 Meeting Evidence #2:
 
@@ -67,9 +67,11 @@ Meeting Evidence #2:
 
     
     Emma:
-    - 
-    -
-    -
+    - I finished the modal for the events page and I also made sure all admin tabs are only visible by the admin. 
+    - I am planning on making both the event and inventory page dynamic to pull information from firebase. 
+    - Having trouble with adding events to firebase, speaking with team about it. 
+
+
 
     Inaki:
     - 
