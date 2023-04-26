@@ -111,6 +111,97 @@ function configure_nav_bar(user) {
     });
   }
 }
+//Load data for events
+function load_events() {
+  db.collection("events")
+    .get()
+    .then((response) => {
+      let docs = response.docs;
+      //
+      var eventCreate = document.getElementById("event");
+      html = ``;
+      docs.forEach((doc) => {
+        html += `<div class="column is-6">
+            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+                <div class="card-content">
+                  <div class="content">
+                    <figure class="image is-320-320">
+                      <img src= "${doc.data().url}">
+                    </figure>
+                    <div class="title mb-2">
+                      ${doc.data().name}
+                    </div>
+                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
+                    <div><b>Time</b>: ${doc.data().time}</div>
+                    <div> <b>Location</b>: ${
+                      doc.data().location
+                    }</div>
+                    <div class="mb-4"><b>Link to RSVP: </b><a href=${
+                      doc.data().rsvp
+                    }" target="_blank">RSVP</a></div>
+                    <b>Description</b>: ${doc.data().desc}
+                  </div>
+                </div>
+            </div>
+        </div>`;
+      });
+      html += `<div class="column is-2 pl-0"></div>`;
+      eventCreate.innerHTML += html;
+    });
+}
+
+// Inventory Page - need to do javascript for buttons
+function load_inventory() {
+  db.collection("Inventory Data")
+    .get()
+    .then((response) => {
+      let docs = response.docs;
+      // need to write the id = events into the index.html page
+      var InventoryCreate = document.getElementById("inventoryitem");
+      html = "";
+      docs.forEach((doc) => {
+        // + and - buttons need to be figured out
+        html += `
+        <tr>
+            <td><button class="button is-rounded has-background-danger sub">-</button></td>
+            <td>${doc.data().Inventory}</td>
+            <td>${doc.data().Description}</td>
+            <td>${doc.data().Quantity}</td>
+            <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+        </tr>`;
+
+        InventoryCreate.innerHTML += html;
+
+        // r_class('sub').addEventListener('click', () => {
+        //   doc.data().Quantity -= 1;
+        //   html1 =""
+        //   html1 += `
+        //     <tr>
+        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+        //         <td>${doc.data().Inventory}</td>
+        //         <td>${doc.data().Description}</td>
+        //         <td>${doc.data().Quantity}</td>
+        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+        //     </tr>`;
+        //   console.log('subrta')
+        //   InventoryCreate.innerHTML += html1;
+
+        // });
+        // r_class('sum').addEventListener('click', () => {
+        //   doc.data().Quantity += 1;
+        //   html += `
+        //     <tr>
+        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+        //         <td>${doc.data().Inventory}</td>
+        //         <td>${doc.data().Description}</td>
+        //         <td>${doc.data().Quantity}</td>
+        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+        //     </tr>`;
+        // });
+      });
+      // InventoryCreate.innerHTML += html;
+    });
+}
 
 // save new data into a collection
 function save_event(coll, obj) {
@@ -118,7 +209,7 @@ function save_event(coll, obj) {
     .add(obj)
     .then(() => {
       // show notification message to user
-      configure_message_bar(`${obj.name} has been added!`);
+      // configure_message_bar(`${obj.name} has been added!`);
     });
 
   // reset the form
@@ -126,22 +217,15 @@ function save_event(coll, obj) {
   r_e("eventdate").value = "";
   r_e("eventtime").value = "";
   r_e("eventlocation").value = "";
+  r_e("rsvp").value = "";
   r_e("eventdesc").value = "";
   r_e("event_image").value = "";
 
+  //hide the event modal tab
+  document.querySelector("#event_modal").classList.add("is-hidden");
+
   // load data
-  // load_data('event', 'event')
-
-  // show the home tab
-  home.classList.remove("is-hidden");
-
-  // // hide the events, team, contact, profile and inventory div
-  history.classList.add("is-hidden");
-  events.classList.add("is-hidden");
-  team.classList.add("is-hidden");
-  contact.classList.add("is-hidden");
-  inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
+  load_events();
 }
 
 // sign up  user
@@ -215,12 +299,12 @@ r_e("signoutbtn").addEventListener("click", () => {
 
 // Add an event
 r_e("sbmt_event").addEventListener("click", () => {
-  e.preventDefault();
   // grab event details
   let name = r_e("eventname").value;
   let date = r_e("eventdate").value;
   let time = r_e("eventtime").value;
   let location = r_e("eventlocation").value;
+  let rsvp = r_e("rsvp").value;
   let desc = r_e("eventdesc").value;
 
   // getting the image ready
@@ -250,18 +334,13 @@ r_e("sbmt_event").addEventListener("click", () => {
         date: date,
         time: time,
         location: location,
+        rsvp: rsvp,
         desc: desc,
         url: url,
       };
 
-      db.collection("events")
-        .add(event)
-        .then(() => {});
-      // show notification message to user
-      // configure_message_bar(`${event.name} has been added!`)})
-
       // send the object to firebase
-      //  save_event('event', event)
+      save_event("events", event);
     });
 });
 
@@ -370,6 +449,9 @@ eventsbtn.addEventListener("click", () => {
   // show the events tab
   events.classList.remove("is-hidden");
 
+  // load events
+  load_events();
+
   // hide the home, team, contact, profile and inventory div
   home.classList.add("is-hidden");
   team.classList.add("is-hidden");
@@ -409,6 +491,9 @@ inventorybtn.addEventListener("click", () => {
   // show the inventory tab
   inventory.classList.remove("is-hidden");
 
+  // load inventory data
+  load_inventory();
+
   // hide the home, events, team, profile and contact div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
@@ -430,255 +515,56 @@ profilebtn.addEventListener("click", () => {
   inventory.classList.add("is-hidden");
 });
 
-//Events Page = Might need to make cards smaller
-db.collection("events")
-  .get()
-  .then((response) => {
-    let docs = response.docs;
-    // need to write the id = events into the index.html page
-    var eventCreate = document.getElementById("event");
-    html = ``;
-    docs.forEach((doc) => {
-      html += `<div class="column is-6">
-            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
-                <div class="card-content">
-                  <div class="content">
-                    <figure class="image is-320-320">
-                      <img src= "${doc.data().url}">
-                    </figure>
-                    <div class="title mb-2">
-                      ${doc.data().name}
-                    </div>
-                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
-                    <div><b>Time</b>: ${doc.data().time}</div>
-                    <div class="mb-4"> <b>Location</b>: ${
-                      doc.data().location
-                    }</div>
-                    <b>Description</b>: ${doc.data().desc}
-                  </div>
-                </div>
-            </div>
-        </div>`;
-    });
-    html += `<div class="column is-2 pl-0"></div>`;
-    eventCreate.innerHTML += html;
-
-  });
-
-
-
-
-function r_class(clas){
+function r_class(clas) {
   return document.querySelector(`.${clas}`);
-};
+}
 
+// function load_data(coll) {
+//   // check if we pass all 4 arguments
+//   let query = db.collection(coll);
+//   var eventCreate = document.getElementById("event");
 
+//   query.get().then((res) => {
+//     // console.log(res.docs);
+//     let documents = res.docs;
 
+//     // html reference
+//     html = ``;
 
-// Inventory Page - need to do javascript for buttons
-db.collection("Inventory Data")
-  .get()
-  .then((response) => {
-    let docs = response.docs;
-    // need to write the id = events into the index.html page
-    var InventoryCreate = document.getElementById("inventoryitem");
-    html = "";
-    docs.forEach((doc) => {
-      // + and - buttons need to be figured out
-      html += `
-        <tr>
-            <td><button class="button is-rounded has-background-danger sub">-</button></td>
-            <td>${doc.data().Inventory}</td>
-            <td>${doc.data().Description}</td>
-            <td>${doc.data().Quantity}</td>
-            <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        </tr>`;
-
-      InventoryCreate.innerHTML += html;
-
-        // r_class('sub').addEventListener('click', () => {
-        //   doc.data().Quantity -= 1;
-        //   html1 =""
-        //   html1 += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        //   console.log('subrta')
-        //   InventoryCreate.innerHTML += html1;
-
-        // });
-        // r_class('sum').addEventListener('click', () => {
-        //   doc.data().Quantity += 1;
-        //   html += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        // });
-    });
-    InventoryCreate.innerHTML += html;
-
-  });
-
-
-
-
-
-
-
-// // Add Event to Firestore - NEEDS TO BE TESTED
-// let addEvent = document.querySelector('#event_form');
-
-// addEvent.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     // event info
-//     let eventTitle = document.querySelector('#eventname').value;
-//     let eventDescription = document.querySelector('#eventdesc').value;
-//     let eventDate = document.querySelector('#eventdate').value;
-//     let eventTime = document.querySelector('#eventtime').value;
-//     let eventLocation = document.querySelector('#eventlocation').value;
-
-//     // upload an image
-//     let eventImage = document.querySelector('#event_image').files[0];
-//     let image_ = new Date()+"_"+ eventImage.name;
-//     const task = ref.child(image_).put(eventImage);
-//     task
-//     .then(snapshot => snapshot.ref.getDownloadURL())
-//     .then(url => {
-//         let HASAevent = {
-//         Date: eventDate,
-//         Event: eventTitle,
-//         Graphic: eventImage,
-//         Location: eventLocation,
-//         RSVP: "xxx" ,
-//         // didnt know what to put for RSVP. Need to add to Event form I think.
-//         Time: eventTime
-//         };
-
-//         // add event
-//         save_data('Events', HASAevent);
-//         // load data from firestore
-//         load_data('Events');
-
+//     // loop through documents array
+//     documents.forEach((doc) => {
+//       html += `<div class="column is-6">
+//             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+//                 <div class="card-content">
+//                   <div class="content">
+//                     <figure class="image is-320-320">
+//                       <img src= "${doc.data().url}">
+//                     </figure>
+//                     <div class="title mb-2">
+//                       ${doc.data().name}
+//                     </div>
+//                     <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
+//                     <div><b>Time</b>: ${doc.data().time}</div>
+//                     <div class="mb-4"> <b>Location</b>: ${
+//                       doc.data().location
+//                     }</div>
+//                     <b>Description</b>: ${doc.data().desc}
+//                   </div>
+//                 </div>
+//             </div>
+//         </div>`;
 //     });
+
+//     // console.log(html)
+
+//     // ensure the div is not hidden
+//     eventCreate.innerHTML += html;
 //   });
+// }
 
+// // when events tab is clicked, get data from firestore
+// // r_e("events").addEventListener("click", () => {
+// //   load_data("events");
+// // });
 
-
-
-function load_data(coll) {
-  // check if we pass all 4 arguments
-  let query = db.collection(coll);
-  var eventCreate = document.getElementById("event");
-
-  query.get().then(res => {
-
-    // console.log(res.docs);
-    let documents = res.docs;
-
-    // html reference
-    html = ``;
-
-
-    // loop through documents array
-    documents.forEach(doc => {
-      html += `<div class="column is-6">
-            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
-                <div class="card-content">
-                  <div class="content">
-                    <figure class="image is-320-320">
-                      <img src= "${doc.data().url}">
-                    </figure>
-                    <div class="title mb-2">
-                      ${doc.data().name}
-                    </div>
-                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
-                    <div><b>Time</b>: ${doc.data().time}</div>
-                    <div class="mb-4"> <b>Location</b>: ${doc.data().location}</div>
-                    <b>Description</b>: ${doc.data().desc}
-                  </div>
-                </div>
-            </div>
-        </div>`;
-
-    })
-
-    // console.log(html)
-
-    // ensure the div is not hidden
-    eventCreate.innerHTML += html;
-
-
-  })
-};
-
-// when events tab is clicked, get data from firestore
-r_e('events').addEventListener('click', () => {
-  load_data('events')
-});
-
-
-
-
-// save data
-
-function save_event(coll, obj) {
-  db.collection(coll).add(obj).then(() => {
-    // reset form
-    r_e('event_form').reset()
-
-    // show notification message to the user
-    configure_message_bar(`Event added!`);
-  })
-};
-
-
-
-
-// r_e('sbmt_event').addEventListener('click', () => {
-
-//   // grab the value of the name box
-//   let e_name = r_e('eventname').value;
-
-//   // grab the value of the date box
-//   let e_date = r_e('eventdate').value;
-
-//   // grab the value of the time box
-//   let e_time = r_e('eventtime').value;
-
-//   // grab the value of the location box
-//   let e_location = r_e('eventlocation').value;
-
-//   // grab the value of the description
-//   let e_desc = r_e('eventdesc').value;
-
-//   // grab the image
-//   let e_image = r_e('event_image').value;
-
-//   // wrap those in an object
-//   let event = {
-//     name: e_name,
-//     date: e_date,
-//     time: e_time,
-//     location: e_location,
-//     desc: e_desc,
-//     url: e_image,
-//   };
-
-//   console.log(event)
-//   // send the object to firebase
-//   // save_event('events', event)
-
-// });
-
-
-
-
-
+// // save data
