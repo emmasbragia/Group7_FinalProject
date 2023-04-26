@@ -642,41 +642,41 @@ function save_event(coll, obj) {
 
 
 
-r_e('sbmt_event').addEventListener('click', () => {
+// r_e('sbmt_event').addEventListener('click', () => {
 
-  // grab the value of the name box
-  let e_name = r_e('eventname').value;
+//   // grab the value of the name box
+//   let e_name = r_e('eventname').value;
 
-  // grab the value of the date box
-  let e_date = r_e('eventdate').value;
+//   // grab the value of the date box
+//   let e_date = r_e('eventdate').value;
 
-  // grab the value of the time box
-  let e_time = r_e('eventtime').value;
+//   // grab the value of the time box
+//   let e_time = r_e('eventtime').value;
 
-  // grab the value of the location box
-  let e_location = r_e('eventlocation').value;
+//   // grab the value of the location box
+//   let e_location = r_e('eventlocation').value;
 
-  // grab the value of the description
-  let e_desc = r_e('eventdesc').value;
+//   // grab the value of the description
+//   let e_desc = r_e('eventdesc').value;
 
-  // grab the image
-  let e_image = r_e('event_image').value;
+//   // grab the image
+//   let e_image = r_e('event_image').value;
 
-  // wrap those in an object
-  let event = {
-    name: e_name,
-    date: e_date,
-    time: e_time,
-    location: e_location,
-    desc: e_desc,
-    url: e_image,
-  };
+//   // wrap those in an object
+//   let event = {
+//     name: e_name,
+//     date: e_date,
+//     time: e_time,
+//     location: e_location,
+//     desc: e_desc,
+//     url: e_image,
+//   };
 
-  console.log(event)
-  // send the object to firebase
-  // save_event('events', event)
+//   console.log(event)
+//   // send the object to firebase
+//   // save_event('events', event)
 
-});
+// });
 
 
 
