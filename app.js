@@ -415,7 +415,7 @@ db.collection("events")
     var eventCreate = document.getElementById("event");
     html = ``;
     docs.forEach((doc) => {
-        html += `<div class="column is-6">
+      html += `<div class="column is-6">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -438,7 +438,18 @@ db.collection("events")
     });
     html += `<div class="column is-2 pl-0"></div>`;
     eventCreate.innerHTML += html;
+
   });
+
+
+
+
+function r_class(clas){
+  return document.querySelector(`.${clas}`);
+};
+
+
+
 
 // Inventory Page - need to do javascript for buttons
 db.collection("Inventory Data")
@@ -452,15 +463,51 @@ db.collection("Inventory Data")
       // + and - buttons need to be figured out
       html += `
         <tr>
-            <td><button class="button is-rounded has-background-danger">-</button></td>
+            <td><button class="button is-rounded has-background-danger sub">-</button></td>
             <td>${doc.data().Inventory}</td>
             <td>${doc.data().Description}</td>
             <td>${doc.data().Quantity}</td>
-            <td><button class="button is is-rounded has-background-danger white">+</button></td>
+            <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
         </tr>`;
+
+      InventoryCreate.innerHTML += html;
+
+        // r_class('sub').addEventListener('click', () => {
+        //   doc.data().Quantity -= 1;
+        //   html1 =""
+        //   html1 += `
+        //     <tr>
+        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+        //         <td>${doc.data().Inventory}</td>
+        //         <td>${doc.data().Description}</td>
+        //         <td>${doc.data().Quantity}</td>
+        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+        //     </tr>`;
+        //   console.log('subrta')
+        //   InventoryCreate.innerHTML += html1;
+
+        // });
+        // r_class('sum').addEventListener('click', () => {
+        //   doc.data().Quantity += 1;
+        //   html += `
+        //     <tr>
+        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+        //         <td>${doc.data().Inventory}</td>
+        //         <td>${doc.data().Description}</td>
+        //         <td>${doc.data().Quantity}</td>
+        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+        //     </tr>`;
+        // });
     });
     InventoryCreate.innerHTML += html;
+
   });
+
+
+
+
+
+
 
 // // Add Event to Firestore - NEEDS TO BE TESTED
 // let addEvent = document.querySelector('#event_form');
@@ -502,37 +549,29 @@ db.collection("Inventory Data")
 
 
 
-
-
-function r_e(id) {
-    return document.querySelector(`#${id}`)
-};
-
-
 function load_data(coll) {
-    // check if we pass all 4 arguments
-    let query = db.collection(coll);
-    var eventCreate = document.getElementById("event");
+  // check if we pass all 4 arguments
+  let query = db.collection(coll);
+  var eventCreate = document.getElementById("event");
 
-    query.get().then(res => {
+  query.get().then(res => {
 
-        // console.log(res.docs);
-        let documents = res.docs;
+    // console.log(res.docs);
+    let documents = res.docs;
 
-        // html reference
-        html = ``;
-        
-        // <figure class="image is-320-320">
-        //     <img src= "${doc.data().url}">
-        // </figure>
+    // html reference
+    html = ``;
 
 
-        // loop through documents array
-        documents.forEach(doc => {
-            html += `<div class="column is-6">
+    // loop through documents array
+    documents.forEach(doc => {
+      html += `<div class="column is-6">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
+                    <figure class="image is-320-320">
+                      <img src= "${doc.data().url}">
+                    </figure>
                     <div class="title mb-2">
                       ${doc.data().name}
                     </div>
@@ -545,18 +584,77 @@ function load_data(coll) {
             </div>
         </div>`;
 
-        })
-
-        // console.log(html)
-
-        // ensure the div is not hidden
-        eventCreate.innerHTML += html;
-
-
     })
+
+    // console.log(html)
+
+    // ensure the div is not hidden
+    eventCreate.innerHTML += html;
+
+
+  })
+};
+
+// when events tab is clicked, get data from firestore
+r_e('events').addEventListener('click', () => {
+  load_data('events')
+});
+
+
+
+
+// save data
+
+function save_event(coll, obj) {
+  db.collection(coll).add(obj).then(() => {
+    // reset form
+    r_e('event_form').reset()
+
+    // show notification message to the user
+    configure_message_bar(`Event added!`);
+  })
 };
 
 
-r_e('events').addEventListener('click', () => {
-    load_data('events')
+
+
+r_e('sbmt_event').addEventListener('click', () => {
+
+  // grab the value of the name box
+  let e_name = r_e('eventname').value;
+
+  // grab the value of the date box
+  let e_date = r_e('eventdate').value;
+
+  // grab the value of the time box
+  let e_time = r_e('eventtime').value;
+
+  // grab the value of the location box
+  let e_location = r_e('eventlocation').value;
+
+  // grab the value of the description
+  let e_desc = r_e('eventdesc').value;
+
+  // grab the image
+  let e_image = r_e('event_image').value;
+
+  // wrap those in an object
+  let event = {
+    name: e_name,
+    date: e_date,
+    time: e_time,
+    location: e_location,
+    desc: e_desc,
+    url: e_image,
+  };
+
+  console.log(event)
+  // send the object to firebase
+  // save_event('events', event)
+
 });
+
+
+
+
+
