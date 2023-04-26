@@ -195,6 +195,131 @@
     </div>
   </div>
 
+<!-- Board Member Modal-->
+<div class="modal" id="board_modal">
+  <div class="modal-background" id="board_modalbg"></div>
+  <div class="modal-content p-6 has-background-danger-light">
+    <h1 class="is-size-3 title">Add Member</h1>
+    <form id="board_form">
+      <!-- Name -->
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input type="text" id="boardname" class="input">
+        </div>
+
+      </div>
+      
+      <!-- Position -->
+      <div class="field">
+        <label class="label">Position</label>
+        <div class="control">
+          <input class="input" type="text" id="boardposition">
+        </div>
+      </div>
+
+      <!-- Major -->
+      <div class="field">
+        <label class="label">Major(s)</label>
+        <div class="control">
+          <textarea class="input" type="text" id="boardmajor"></textarea>
+        </div>
+      </div>
+
+      <!-- Minor -->
+      <div class="field">
+        <label class="label">Minor(s)</label>
+        <div class="control">
+          <textarea class="input" type="text" id="boardminor"></textarea>
+        </div>
+      </div>
+
+      <!-- Hometown -->
+      <div class="field">
+        <label class="label">Hometown</label>
+        <div class="control">
+          <textarea class="input" type="text" id="boardtown"></textarea>
+        </div>
+      </div>
+      
+      <!-- Year -->
+      <div class="field">
+        <label class="label">Year</label>
+        <div class="control">
+          <textarea class="input" type="text" id="boardyear"></textarea>
+        </div>
+      </div>
+
+      <!-- image of event -->
+      <div class="field">
+        <label class="label">Image</label>
+        <div class="control">
+            <input class="input" type="file" id="board_image" placeholder="Choose Image">
+        </div>
+      </div>
+
+      <!-- submit -->
+      <div class="field">
+        <div class="control">
+          <button class="m-3 button is-link" id="sbmt_event">Submit</button>
+        </div>
+      </div>
+
+      <!-- div error -->
+      <div class="error has-text-danger">
+
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Inventory Modal-->
+<div class="modal" id="inv_modal">
+  <div class="modal-background" id="inv_modalbg"></div>
+  <div class="modal-content p-6 has-background-danger-light">
+    <h1 class="is-size-3 title">Add Inventory</h1>
+    <form id="inv_form">
+      <!-- Name -->
+      <div class="field">
+        <label class="label">Item</label>
+        <div class="control">
+          <input type="text" id="invname" class="input">
+        </div>
+
+      </div>
+      
+      <!-- Position -->
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input class="input" type="text" id="invdesc">
+        </div>
+      </div>
+
+      <!-- Major -->
+      <div class="field">
+        <label class="label">Quantity</label>
+        <div class="control">
+          <textarea class="input" type="text" id="invquantity"></textarea>
+        </div>
+      </div>
+
+      <!-- submit -->
+      <div class="field">
+        <div class="control">
+          <button class="m-3 button is-link" id="sbmt_event">Submit</button>
+        </div>
+      </div>
+
+      <!-- div error -->
+      <div class="error has-text-danger">
+
+      </div>
+
+    </form>
+  </div>
+</div>
 
   <!-- Message Bar -->
   <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden">
@@ -477,6 +602,14 @@
           <h1 class="title mt-4 is-1 has-text-centered">Council Members</h1>
         </div>
         <div class="column is-3 is-right"></div>
+      </div>
+      <div class="mt-4">
+        <div class="columns">
+          <div class="column is-2"></div>
+          <div class="column is-3 pl-0">
+            <button class=" is-hidden admin button is-white has-background-danger has-text-white is-rounded" id="addboardbtn">Add Board Members</button>
+          </div>
+        </div>
       </div>
       <img class='mb-6 mt-4' src="pictures/Council Professional Serious.jpeg">
       <div class="columns mt-2">
@@ -835,6 +968,13 @@
                   <h2>Update Inventory Data</h2>
                 </div>
               </div>
+              <div class="mt-4">
+                <div class="columns">
+                  <div class="column is-2"></div>
+                  <div class="column is-3 pl-0">
+                    <button class=" is-hidden admin button is-white has-background-danger has-text-white is-rounded" id="addinvbtn">Add Inventory</button>
+                  </div>
+                </div>
               <div>
                 <table class="table is-fullwidth">
                   <thead>

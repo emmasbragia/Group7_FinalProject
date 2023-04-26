@@ -22,6 +22,12 @@ let profile = document.querySelector("#profile");
 let addeventbtn = document.querySelector("#addeventbtn");
 let event_modal = document.querySelector("#event_modal");
 let event_modalbg = document.querySelector("#event_modalbg");
+let addboardbtn = document.querySelector("#addboardbtn");
+let board_modal = document.querySelector("#board_modal");
+let board_modalbg = document.querySelector("#board_modalbg");
+let addinvbtn = document.querySelector("#addinvbtn");
+let inv_modal = document.querySelector("#inv_modal");
+let inv_modalbg = document.querySelector("#inv_modalbg");
 
 // functions
 
@@ -323,6 +329,24 @@ addeventbtn.addEventListener("click", () => {
 
 event_modalbg.addEventListener("click", () => {
   event_modal.classList.remove("is-active");
+});
+
+// board member modal link
+addboardbtn.addEventListener("click", () => {
+  board_modal.classList.add("is-active");
+});
+
+board_modalbg.addEventListener("click", () => {
+  board_modal.classList.remove("is-active");
+});
+
+// Inventory modal link
+addinvbtn.addEventListener("click", () => {
+  inv_modal.classList.add("is-active");
+});
+
+inv_modalbg.addEventListener("click", () => {
+  inv_modal.classList.remove("is-active");
 });
 
 // switching between tabs
