@@ -228,6 +228,63 @@ function save_event(coll, obj) {
   load_events();
 }
 
+//Load data for board members
+function load_board() {
+  db.collection("BoardMembers")
+    .get()
+    .then((response) => {
+      let docs = response.docs;
+      //
+      var boardCreate = document.getElementById("boardmembers");
+      html = ``;
+      docs.forEach((doc) => {
+        html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+        <div class="card-content">
+          <div class="content">
+            <figure class="image is-320-320">
+              <img src="${doc.data().url}">
+            </figure>
+            <div class="title mb-2">
+            "${doc.data().name}"
+            </div>
+            <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
+            <div><b>Major(s)</b>: "${doc.data().major}"</div>
+            <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
+            <div><b>Hometown</b>: "${doc.data().town}"</div>
+            <div><b>Year</b>: "${doc.data().year}"</div>
+          </div>
+        </div>
+      </div>`;
+      });
+      html += `<div class="column is-4">`;
+      boardCreate.innerHTML += html;
+    });
+}
+// save new member into a collection
+function save_board(coll, obj) {
+  db.collection(coll)
+    .add(obj)
+    .then(() => {
+      // show notification message to user
+      // configure_message_bar(`${obj.name} has been added!`);
+    });
+
+  // reset the form
+  r_e("boardname").value = "";
+  r_e("boardposition").value = "";
+  r_e("boardmajor").value = "";
+  r_e("boardminor").value = "";
+  r_e("boardtown").value = "";
+  r_e("boardyear").value = "";
+  r_e("board_image").value = "";
+
+  //hide the event modal tab
+  document.querySelector("#board_modal").classList.add("is-hidden");
+
+  // load data
+  load_board();
+}
+
 // sign up  user
 r_e("signup_form").addEventListener("submit", (e) => {
   e.preventDefault(); //prevent default behavior of the browser (no page refresh)
@@ -343,6 +400,53 @@ r_e("sbmt_event").addEventListener("click", () => {
       save_event("events", event);
     });
 });
+
+// Add a board member
+r_e("sbmt_board").addEventListener("click", () => {
+  // grab event details
+  let name = r_e("boardname").value;
+  let position = r_e("boardposition").value;
+  let major = r_e("boardmajor").value;
+  let minor = r_e("boardminor").value;
+  let town = r_e("boardtown").value;
+  let year = r_e("boardyear").value;
+
+  // getting the image ready
+  let file = r_e("board_image").files[0];
+  // Get current date and time
+  const now = new Date();
+  // Format the date and time as a string
+  const timestamp = `${now.getFullYear()}${(now.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}${now.getDate().toString().padStart(2, "0")}_${now
+    .getHours()
+    .toString()
+    .padStart(2, "0")}${now.getMinutes().toString().padStart(2, "0")}${now
+    .getSeconds()
+    .toString()
+    .padStart(2, "0")}`;
+  // Use the timestamp in the file name or metadata
+  let image = timestamp + "_" + file.name;
+  const task = ref.child(image).put(file);
+  task
+    .then((snapshot) => snapshot.ref.getDownloadURL())
+    .then((url) => {
+      // the URL of the image is ready now
+      // wrap those in an object
+      let member = {
+        name: name,
+        position: position,
+        major: major,
+        minor: minor,
+        town: town,
+        year: year,
+        url: url,
+      };
+
+      // send the object to firebase
+      save_board("BoardMembers", member);
+    });
+})
 
 auth.onAuthStateChanged((user) => {
   // check if user signed in or out
@@ -464,7 +568,8 @@ eventsbtn.addEventListener("click", () => {
 teambtn.addEventListener("click", () => {
   // show the team tab
   team.classList.remove("is-hidden");
-
+  
+  load_board();
   // hide the home, events, contact, profile and inventory div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
