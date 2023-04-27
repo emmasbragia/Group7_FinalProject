@@ -263,6 +263,9 @@ function load_board() {
       var finance = document.getElementById("finance");
       var liaison = document.getElementById("liaisons");
       html = ``;
+      ehtml = ``;
+      fhtml = ``;
+      lhtml = ``;
       docs.forEach((doc) => {
         if(doc.data().committee == "Internal Committee"){
           html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
@@ -284,7 +287,7 @@ function load_board() {
       </div>`;
       internal.innerHTML += html
         } else if(doc.data().committee == "External Committee"){
-          html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          ehtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -301,9 +304,9 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      external.innerHTML += html
+      external.innerHTML += ehtml
         } else if(doc.data().committee == "Finance Committee"){
-          html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          fhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -320,9 +323,9 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      finance.innerHTML += html
+      finance.innerHTML += fhtml
         } else if(doc.data().committee == "Liaisons"){
-          html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          lhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -339,7 +342,7 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      liaison.innerHTML += html
+      liaison.innerHTML += lhtml
         }
       });
       // html += `<div class="column is-4">`;
