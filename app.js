@@ -121,7 +121,7 @@ function load_events() {
       var eventCreate = document.getElementById("event");
       html = ``;
       docs.forEach((doc) => {
-        html += `<div class="column is-6">
+        html += `<div class="column is-6 mb-2">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -133,9 +133,7 @@ function load_events() {
                     </div>
                     <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
                     <div><b>Time</b>: ${doc.data().time}</div>
-                    <div> <b>Location</b>: ${
-                      doc.data().location
-                    }</div>
+                    <div> <b>Location</b>: ${doc.data().location}</div>
                     <div class="mb-4"><b>Link to RSVP: </b><a href=${
                       doc.data().rsvp
                     }" target="_blank">RSVP</a></div>
@@ -446,7 +444,7 @@ r_e("sbmt_board").addEventListener("click", () => {
       // send the object to firebase
       save_board("BoardMembers", member);
     });
-})
+});
 
 auth.onAuthStateChanged((user) => {
   // check if user signed in or out
@@ -568,7 +566,7 @@ eventsbtn.addEventListener("click", () => {
 teambtn.addEventListener("click", () => {
   // show the team tab
   team.classList.remove("is-hidden");
-  
+
   load_board();
   // hide the home, events, contact, profile and inventory div
   home.classList.add("is-hidden");
