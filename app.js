@@ -571,9 +571,9 @@ signin_modalbg.addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
 });
 
-signin_modalb2.addEventListener("click", () => {
-  signin_modal.classList.remove("is-active");
-});
+// signin_modalb2.addEventListener("click", () => {
+//   signin_modal.classList.remove("is-active");
+// });
 
 cancel2.addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
