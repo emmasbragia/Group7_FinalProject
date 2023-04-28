@@ -7,8 +7,6 @@ let signin_modal = document.querySelector("#signin_modal");
 let signin_modalbg = document.querySelector("#signin_modalbg");
 let homebtn = document.querySelector("#homebtn");
 let home = document.querySelector("#home");
-let historybtn = document.querySelector("#historybtn");
-let history = document.querySelector("#history");
 let eventsbtn = document.querySelector("#eventsbtn");
 let events = document.querySelector("#events");
 let teambtn = document.querySelector("#teambtn");
@@ -17,8 +15,6 @@ let contactbtn = document.querySelector("#contactbtn");
 let contact = document.querySelector("#contact");
 let inventorybtn = document.querySelector("#inventorybtn");
 let inventory = document.querySelector("#inventory");
-let profilebtn = document.querySelector("#profilebtn");
-let profile = document.querySelector("#profile");
 let addeventbtn = document.querySelector("#addeventbtn");
 let event_modal = document.querySelector("#event_modal");
 let event_modalbg = document.querySelector("#event_modalbg");
@@ -265,7 +261,7 @@ function load_board() {
       fhtml = ``;
       lhtml = ``;
       docs.forEach((doc) => {
-        if(doc.data().committee == "Internal Committee"){
+        if (doc.data().committee == "Internal Committee") {
           html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -283,8 +279,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      internal.innerHTML += html
-        } else if(doc.data().committee == "External Committee"){
+          internal.innerHTML += html;
+        } else if (doc.data().committee == "External Committee") {
           ehtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -302,8 +298,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      external.innerHTML += ehtml
-        } else if(doc.data().committee == "Finance Committee"){
+          external.innerHTML += ehtml;
+        } else if (doc.data().committee == "Finance Committee") {
           fhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -321,8 +317,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      finance.innerHTML += fhtml
-        } else if(doc.data().committee == "Liaisons"){
+          finance.innerHTML += fhtml;
+        } else if (doc.data().committee == "Liaisons") {
           lhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -340,7 +336,7 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      liaison.innerHTML += lhtml
+          liaison.innerHTML += lhtml;
         }
       });
       // html += `<div class="column is-4">`;
@@ -433,13 +429,11 @@ r_e("signoutbtn").addEventListener("click", () => {
   // show the home tab
   home.classList.remove("is-hidden");
 
-  // hide the events, team, contact, profile and inventory div
-  history.classList.add("is-hidden");
+  // hide the events, team, contact and inventory div
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // Add an event
@@ -542,19 +536,13 @@ auth.onAuthStateChanged((user) => {
   // check if user signed in or out
   if (user) {
     // show user email in navigation bar
-    // r_e('user_email').innerHTML = auth.currentUser.email;
-
-    // configure main content column
-    // configure_content(user);
+    r_e("user_email").innerHTML = auth.currentUser.email;
 
     // configure the navigation bar
     configure_nav_bar(user);
   } else {
     // remove user email in navigation bar
-    // r_e('user_email').innerHTML = "";
-
-    // configure main content column
-    // configure_content();
+    r_e("user_email").innerHTML = "";
 
     // configure the navigation bar
     configure_nav_bar();
@@ -567,10 +555,6 @@ signupbtn.addEventListener("click", () => {
 });
 
 signup_modalbg.addEventListener("click", () => {
-  signup_modal.classList.remove("is-active");
-});
-
-signup_modalb.addEventListener("click", () => {
   signup_modal.classList.remove("is-active");
 });
 
@@ -629,13 +613,12 @@ homebtn.addEventListener("click", () => {
   // show the home tab
   home.classList.remove("is-hidden");
 
-  // hide the events, team, contact, profile and inventory div
-  history.classList.add("is-hidden");
+  // hide the events, team, contact and inventory div
+
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // events tab
@@ -646,12 +629,11 @@ eventsbtn.addEventListener("click", () => {
   // load events
   load_events();
 
-  // hide the home, team, contact, profile and inventory div
+  // hide the home, team, contact and inventory div
   home.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // team tab
@@ -660,12 +642,11 @@ teambtn.addEventListener("click", () => {
   team.classList.remove("is-hidden");
 
   load_board();
-  // hide the home, events, contact, profile and inventory div
+  // hide the home, events, contact and inventory div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // contact tab
@@ -673,12 +654,11 @@ contactbtn.addEventListener("click", () => {
   // show the contact tab
   contact.classList.remove("is-hidden");
 
-  // hide the home, events, team, profile and inventory div
+  // hide the home, events, team and inventory div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // inventory tab
@@ -689,30 +669,16 @@ inventorybtn.addEventListener("click", () => {
   // load inventory data
   load_inventory();
 
-  // hide the home, events, team, profile and contact div
+  // hide the home, events, team and contact div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
-// Profile Section
-profilebtn.addEventListener("click", () => {
-  // show the inventory tab
-  profile.classList.remove("is-hidden");
-
-  // hide the home, events, team, inventory and contact div
-  home.classList.add("is-hidden");
-  events.classList.add("is-hidden");
-  team.classList.add("is-hidden");
-  contact.classList.add("is-hidden");
-  inventory.classList.add("is-hidden");
-});
-
-function r_class(clas) {
-  return document.querySelector(`.${clas}`);
-}
+// function r_class(clas) {
+//   return document.querySelector(`.${clas}`);
+// }
 
 // function load_data(coll) {
 //   // check if we pass all 4 arguments

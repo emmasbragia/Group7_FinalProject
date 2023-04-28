@@ -118,7 +118,7 @@
                 <div class="pl-6 pr-4 error has-text-danger"></div>
             </form>
         </div>
-    </div>
+  </div>
  
   <!-- Event Modal -->
   <div class="modal" id="event_modal">
@@ -366,13 +366,8 @@
       <p class=" buttons level-item has-text-centered signedin is-hidden">
         <!-- Sign Out -->
         <a class="button is-grey-light" id="signoutbtn">Sign Out</a>
-        <!-- Profile -->
-        <button class="button is-primary has-background-danger" id="profilebtn">
-          <span class="icon">
-            <i class="fas fa-user"></i>
-          </span>
-          <span>Profile</span>
-        </button>
+        <!-- Email -->
+        <p id="user_email" class="signedin has-text-dark"></p>
       </p>
     </nav>
   </header>
@@ -478,7 +473,7 @@
       <div class="column is-two-thirds">
       <div class="columns is-multiline pb-1" id="event"></div>
     </div>
-  </div>
+    </div>
     </div>
         <!-- <div class="column is-2 pr-0"></div>
         <div class="column is-8">
@@ -590,7 +585,7 @@
         <div class="column is-2 pl-0"></div>
       </div>
     </div>
-  </div> -->
+    </div> -->
 
 
 
@@ -629,7 +624,7 @@
       </div>
       <div class="column is-2 pl-0"></div>
     </div>
-  </div>
+  
               <!-- <div class="card ml-0 mb-5 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -1012,139 +1007,10 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- member creation form -->
-    <div class="is-hidden" id="profile">
-      <div class="columns mt-5">
-        <div class="column is-2"></div>
-        <div class="container column is-8 mt-6">
-          <div class="title is-size-2 has-text-weight-bold has-text-centered">
-            <h1 class="mb-6">Member Profile Creation/Update Form</h1>
-          </div>
-          <div class="columns">
-            <div class="column is-6">
-              <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                  <input class="input" type="text" id="name" placeholder="First and Last Name">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Birthday</label>
-                <div class="control">
-                  <input class="input" type="date" id="bday" placeholder="Text input">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Position</label>
-                <div class="control">
-                  <div class="select">
-                    <select id="position">
-                      <option>General</option>
-                      <option>Internal Committee</option>
-                      <option>External Committee</option>
-                      <option>Finance Committee</option>
-                      <option>Liasons Committee</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Hometown:</label>
-                <div class="control">
-                  <input class="input" type="text" id="home" placeholder="Hometown">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Major(s):</label>
-                <div class="control">
-                  <input class="input mb-3" type="text" id="major1" placeholder="Major 1">
-                  <input class="input mb-3" type="text" id="major2" placeholder="Major 2">
-                  <input class="input mb-3" type="text" id="major3" placeholder="Major 3">
-                </div>
-              </div>
-            </div>
-            <div class="column is-6">
-              <div class="field">
-                <label class="label">Email:</label>
-                <div class="control has-icons-left">
-                  <input class="input" type="email" id="emailprof" placeholder="Email">
-                  <span class="icon is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Date Joined</label>
-                <div class="control">
-                  <input class="input" type="date" id="joindate" placeholder="Text input">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">School Year:</label>
-                <div class="control">
-                  <div class="select">
-                    <select id="position">
-                      <option>Choose One</option>
-                      <option>Freshman</option>
-                      <option>Sophomore</option>
-                      <option>Junior</option>
-                      <option>Senior</option>
-                      <option>Graduate</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Expected Graduation Semester:</label>
-                <div class="control">
-                  <input class="input" type="text" id="gradsem" placeholder="Expected Graduation Semester">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Minor(s):</label>
-                <div class="control">
-                  <input class="input mb-3" type="text" id="minor1" placeholder="Minor 1">
-                  <input class="input mb-3" type="text" id="minor2" placeholder="Minor 2">
-                  <input class="input" type="text" id="minor3" placeholder="Minor 3">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="field is-grouped is-grouped-centered">
-            <p class="control">
-              <a class="button is-primary has-background-danger is-rounded">
-                Create
-              </a>
-            </p>
-            <p class="control">
-              <a class="button is-light is-rounded">
-                Update
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class="column is-2"></div>
-      </div>
-    </div>
-
-
     
   </main>
 
-  <footer>
+<footer>
   <div class="footer has-background-danger is-active">
     <div class="content">
       <div class="content has-text-centered mb-3">
