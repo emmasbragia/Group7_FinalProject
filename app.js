@@ -46,20 +46,6 @@ function configure_message_bar(msg) {
   }, 2000);
 }
 
-// configure the message bar
-function configure_message_bar(msg) {
-  // enforce message bar being visible
-  r_e("message_bar").classList.remove("is-hidden");
-
-  r_e("message_bar").innerHTML = msg;
-
-  // hide the message bar
-  setTimeout(() => {
-    r_e("message_bar").innerHTML = ""; //clear the text from the message bar
-    r_e("message_bar").classList.add("is-hidden");
-  }, 2000);
-}
-
 // configure navigation bar
 function configure_nav_bar(user) {
   let signedin = document.querySelectorAll(".signedin");
@@ -107,6 +93,7 @@ function configure_nav_bar(user) {
     });
   }
 }
+
 //Load data for events
 function load_events() {
   db.collection("events")
@@ -126,6 +113,10 @@ function load_events() {
                     </figure>
                     <div class="title mb-2">
                       ${doc.data().name}
+                      <button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('events',
+                      '${
+                        doc.id
+                      }')"><i class="fa-solid fa-trash-can"></i></button>
                     </div>
                     <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
                     <div><b>Time</b>: ${doc.data().time}</div>
@@ -141,6 +132,23 @@ function load_events() {
       });
       html += `<div class="column is-2 pl-0"></div>`;
       eventCreate.innerHTML += html;
+    });
+}
+
+// delete document from a collection
+function del_doc(coll, id) {
+  db.collection(coll)
+    .doc(id)
+    .delete()
+    .then(() => {
+      // show a message on the message bar
+      configure_message_bar("Deleted!");
+      // load all data
+      if (coll == "events") {
+        load_events();
+      } else if (coll == "BoardMembers") {
+        load_board();
+      }
     });
 }
 
@@ -269,7 +277,10 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${
+              doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
