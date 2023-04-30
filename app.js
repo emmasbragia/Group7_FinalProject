@@ -332,8 +332,7 @@ function load_board() {
           liaison.innerHTML += lhtml;
         }
       });
-      // html += `<div class="column is-4">`;
-      // boardCreate.innerHTML += html;
+      
     });
 }
 // save new member into a collection
