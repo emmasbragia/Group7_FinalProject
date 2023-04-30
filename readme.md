@@ -9,11 +9,12 @@ User Stories:
 |:---------------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
 | write user stories                |       | .5hr     | 2        | 1          | Akshada     |
 | add events through the website    | 2     |          | 5        | 7          | Emma        |
-| inventory page editable           | 1     |          | 10       | 8          | Inaki       |
-| event page design                 | 2     |          | 10       | 8          | Inaki       |
-| add delete buttons to dynamic content | 1&2 |        | 7        | 6          | Emma        |
-| add modals for inventory and member pages | 1  |     | 4        | 5          | Akshada     |
+| editable inventory page data      | 1     |   1hr    | 10       | 8          | Inaki       |
+| event page design                 | 2     |   1.5hrs | 10       | 8          | Inaki       |
+| add delete buttons to dynamic content | 1&2 |  1hr   | 7        | 6          | Emma        |
+| add modals for inventory and member pages | 1  | 2hrs| 4        | 5          | Akshada     |
 | reduce picture sizes              | 2     |          | 3        | 3          | Lajzoo      |
+| meet the team page                | 2     | 5.5hrs   | 7        | 10         | Akshada     |
 
 
 
@@ -84,9 +85,9 @@ Meeting Evidence #2:
     -
 
     Yasmine:
-    - 
-    -
-    -
+    - Discussed how to make the inventory page easily editable for the client
+    - Started working on the testing page for our site
+    - n/a
 
 
 **Sprint Review:**
