@@ -236,30 +236,6 @@ function load_board() {
     .get()
     .then((response) => {
       let docs = response.docs;
-      //
-      // var boardCreate = document.getElementById("boardmembers");
-      // html = ``;
-      // docs.forEach((doc) => {
-      //   html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
-      //   <div class="card-content">
-      //     <div class="content">
-      //       <figure class="image is-320-320">
-      //         <img src="${doc.data().url}">
-      //       </figure>
-      //       <div class="title mb-2">
-      //       "${doc.data().name}"
-      //       </div>
-      //       <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-      //       <div><b>Major(s)</b>: "${doc.data().major}"</div>
-      //       <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-      //       <div><b>Hometown</b>: "${doc.data().town}"</div>
-      //       <div><b>Year</b>: "${doc.data().year}"</div>
-      //     </div>
-      //   </div>
-      // </div>`;
-      // });
-      // html += `<div class="column is-4">`;
-      // boardCreate.innerHTML += html;
       var internal = document.getElementById("internal");
       var external = document.getElementById("external");
       var finance = document.getElementById("finance");
