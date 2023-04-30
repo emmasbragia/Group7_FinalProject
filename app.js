@@ -299,7 +299,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -318,7 +320,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -337,7 +341,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
