@@ -104,7 +104,7 @@ function load_events() {
       var eventCreate = document.getElementById("event");
       html = ``;
       docs.forEach((doc) => {
-        html = `<div class="column is-6 mb-2">
+        html += `<div class="column is-6 mb-2">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -236,6 +236,7 @@ function load_board() {
     .get()
     .then((response) => {
       let docs = response.docs;
+      console.log(docs);
       var internal = document.getElementById("internal");
       var external = document.getElementById("external");
       var finance = document.getElementById("finance");
@@ -246,7 +247,7 @@ function load_board() {
       lhtml = ``;
       docs.forEach((doc) => {
         if (doc.data().committee == "Internal Committee") {
-          html = `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -266,9 +267,9 @@ function load_board() {
           </div>
         </div>
       </div>`;
-          internal.innerHTML += html;
+          // internal.innerHTML += html;
         } else if (doc.data().committee == "External Committee") {
-          ehtml = `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          ehtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -287,9 +288,9 @@ function load_board() {
           </div>
         </div>
       </div>`;
-          external.innerHTML += ehtml;
+          // external.innerHTML += ehtml;
         } else if (doc.data().committee == "Finance Committee") {
-          fhtml = `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          fhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -308,9 +309,9 @@ function load_board() {
           </div>
         </div>
       </div>`;
-          finance.innerHTML += fhtml;
+          // finance.innerHTML += fhtml;
         } else if (doc.data().committee == "Liaisons") {
-          lhtml = `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
+          lhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -329,9 +330,15 @@ function load_board() {
           </div>
         </div>
       </div>`;
-          liaison.innerHTML += lhtml;
+          // liaison.innerHTML += lhtml;
         }
       });
+      internal.innerHTML += html;
+      external.innerHTML += ehtml;
+      finance.innerHTML += fhtml;
+      liaison.innerHTML += lhtml;
+      
+     docs = []
     });
 }
 // save new member into a collection
