@@ -41,9 +41,9 @@ Meeting Evidence #1:
     - No problems as of yet. 
 
     Inaki:
-    - 
-    -
-    -
+    - I checked with the group how we want to approach the inventory tab, as we were struggling how to make it work as we wanted to.
+    - I tried to implement the new approach for the inventory tab.
+    - We couldn't figure out how to make the inventory tab add or subtract inventory amounts from the HTML code.
 
     Lajzoo:
     - Got final details from client from what is wanted to be implemented
@@ -76,9 +76,9 @@ Meeting Evidence #2:
 
 
     Inaki:
-    - 
-    -
-    -
+    - I talked with the team to see how to approach the events tab, as we couldn't figure out out to pull data from the database to the website
+    - I tried to implement what we talked for the events tab
+    - I could pull the data from firebase but couldn't make the cards stack horizontally instead of vertically.
 
     Lajzoo:
     - Uploading and editing all the information for the website
