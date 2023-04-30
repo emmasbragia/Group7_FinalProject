@@ -332,7 +332,6 @@ function load_board() {
           liaison.innerHTML += lhtml;
         }
       });
-      
     });
 }
 // save new member into a collection
