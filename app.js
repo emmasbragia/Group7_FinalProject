@@ -236,7 +236,6 @@ function load_board() {
     .get()
     .then((response) => {
       let docs = response.docs;
-      console.log(docs);
       var internal = document.getElementById("internal");
       var external = document.getElementById("external");
       var finance = document.getElementById("finance");
@@ -333,10 +332,10 @@ function load_board() {
           // liaison.innerHTML += lhtml;
         }
       });
-      internal.innerHTML += html;
-      external.innerHTML += ehtml;
-      finance.innerHTML += fhtml;
-      liaison.innerHTML += lhtml;
+      internal.innerHTML = html;
+      external.innerHTML = ehtml;
+      finance.innerHTML = fhtml;
+      liaison.innerHTML = lhtml;
       
      docs = []
     });
@@ -360,7 +359,7 @@ function save_board(coll, obj) {
   r_e("board_image").value = "";
   r_e("boardcommittee").value = "";
 
-  //hide the event modal tab
+  //hide the board modal tab
   document.querySelector("#board_modal").classList.add("is-hidden");
 
   // load data
@@ -483,7 +482,7 @@ r_e("sbmt_event").addEventListener("click", () => {
 
 // Add a board member
 r_e("sbmt_board").addEventListener("click", () => {
-  // grab event details
+  // grab board details
   let name = r_e("boardname").value;
   let position = r_e("boardposition").value;
   let major = r_e("boardmajor").value;
