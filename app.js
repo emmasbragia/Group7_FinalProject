@@ -152,58 +152,58 @@ function del_doc(coll, id) {
     });
 }
 
-// Inventory Page - need to do javascript for buttons
-function load_inventory() {
-  db.collection("Inventory Data")
-    .get()
-    .then((response) => {
-      let docs = response.docs;
-      // need to write the id = events into the index.html page
-      var InventoryCreate = document.getElementById("inventoryitem");
-      html = "";
-      docs.forEach((doc) => {
-        // + and - buttons need to be figured out
-        html = `
-        <tr>
-            <td><button class="button is-rounded has-background-danger sub">-</button></td>
-            <td>${doc.data().Inventory}</td>
-            <td>${doc.data().Description}</td>
-            <td>${doc.data().Quantity}</td>
-            <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        </tr>`;
+// // Inventory Page - need to do javascript for buttons
+// function load_inventory() {
+//   db.collection("Inventory Data")
+//     .get()
+//     .then((response) => {
+//       let docs = response.docs;
+//       // need to write the id = events into the index.html page
+//       var InventoryCreate = document.getElementById("inventoryitem");
+//       html = "";
+//       docs.forEach((doc) => {
+//         // + and - buttons need to be figured out
+//         html += `
+//         <tr>
+//             <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//             <td>${doc.data().Inventory}</td>
+//             <td>${doc.data().Description}</td>
+//             <td>${doc.data().Quantity}</td>
+//             <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         </tr>`;
 
-        InventoryCreate.innerHTML += html;
+//         InventoryCreate.innerHTML += html;
 
-        // r_class('sub').addEventListener('click', () => {
-        //   doc.data().Quantity -= 1;
-        //   html1 =""
-        //   html1 += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        //   console.log('subrta')
-        //   InventoryCreate.innerHTML += html1;
+//         // r_class('sub').addEventListener('click', () => {
+//         //   doc.data().Quantity -= 1;
+//         //   html1 =""
+//         //   html1 += `
+//         //     <tr>
+//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//         //         <td>${doc.data().Inventory}</td>
+//         //         <td>${doc.data().Description}</td>
+//         //         <td>${doc.data().Quantity}</td>
+//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         //     </tr>`;
+//         //   console.log('subrta')
+//         //   InventoryCreate.innerHTML += html1;
 
-        // });
-        // r_class('sum').addEventListener('click', () => {
-        //   doc.data().Quantity += 1;
-        //   html += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        // });
-      });
-      // InventoryCreate.innerHTML += html;
-    });
-}
+//         // });
+//         // r_class('sum').addEventListener('click', () => {
+//         //   doc.data().Quantity += 1;
+//         //   html += `
+//         //     <tr>
+//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//         //         <td>${doc.data().Inventory}</td>
+//         //         <td>${doc.data().Description}</td>
+//         //         <td>${doc.data().Quantity}</td>
+//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         //     </tr>`;
+//         // });
+//       });
+//       // InventoryCreate.innerHTML += html;
+//     });
+// }
 
 // save new data into a collection
 function save_event(coll, obj) {
@@ -614,14 +614,14 @@ board_modalbg.addEventListener("click", () => {
   board_modal.classList.remove("is-active");
 });
 
-// Inventory modal link
-addinvbtn.addEventListener("click", () => {
-  inv_modal.classList.add("is-active");
-});
+// // Inventory modal link
+// addinvbtn.addEventListener("click", () => {
+//   inv_modal.classList.add("is-active");
+// });
 
-inv_modalbg.addEventListener("click", () => {
-  inv_modal.classList.remove("is-active");
-});
+// inv_modalbg.addEventListener("click", () => {
+//   inv_modal.classList.remove("is-active");
+// });
 
 // switching between tabs
 
@@ -684,7 +684,7 @@ inventorybtn.addEventListener("click", () => {
   inventory.classList.remove("is-hidden");
 
   // load inventory data
-  load_inventory();
+  // load_inventory();
 
   // hide the home, events, team and contact div
   home.classList.add("is-hidden");
