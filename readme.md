@@ -8,12 +8,12 @@ User Stories:
 | Task                              | Story | Duration | Priority | Complexity | Lead Person |
 |:---------------------------------:|:-----:|:--------:|:--------:|:----------:|:-----------:|
 | write user stories                |       | .5hr     | 2        | 1          | Akshada     |
-| add events through the website    | 2     |          | 5        | 7          | Emma        |
+| add events through the website    | 2     |   2hrs   | 5        | 7          | Emma        |
 | editable inventory page data      | 1     |   1hr    | 10       | 8          | Inaki       |
 | event page design                 | 2     |   1.5hrs | 10       | 8          | Inaki       |
 | add delete buttons to dynamic content | 1&2 |  1hr   | 7        | 6          | Emma        |
 | add modals for inventory and member pages | 1  | 2hrs| 4        | 5          | Akshada     |
-| reduce picture sizes              | 2     |          | 3        | 3          | Lajzoo      |
+| reduce picture sizes              | 2     |   1hr    | 3        | 3          | Lajzoo      |
 | meet the team page                | 2     | 5.5hrs   | 7        | 10         | Akshada     |
 
 
