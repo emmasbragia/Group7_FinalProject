@@ -7,8 +7,6 @@ let signin_modal = document.querySelector("#signin_modal");
 let signin_modalbg = document.querySelector("#signin_modalbg");
 let homebtn = document.querySelector("#homebtn");
 let home = document.querySelector("#home");
-let historybtn = document.querySelector("#historybtn");
-let history = document.querySelector("#history");
 let eventsbtn = document.querySelector("#eventsbtn");
 let events = document.querySelector("#events");
 let teambtn = document.querySelector("#teambtn");
@@ -17,8 +15,6 @@ let contactbtn = document.querySelector("#contactbtn");
 let contact = document.querySelector("#contact");
 let inventorybtn = document.querySelector("#inventorybtn");
 let inventory = document.querySelector("#inventory");
-let profilebtn = document.querySelector("#profilebtn");
-let profile = document.querySelector("#profile");
 let addeventbtn = document.querySelector("#addeventbtn");
 let event_modal = document.querySelector("#event_modal");
 let event_modalbg = document.querySelector("#event_modalbg");
@@ -34,20 +30,6 @@ let inv_modalbg = document.querySelector("#inv_modalbg");
 // return HTML element with a given ID
 function r_e(id) {
   return document.querySelector(`#${id}`);
-}
-
-// configure the message bar
-function configure_message_bar(msg) {
-  // enforce message bar being visible
-  r_e("message_bar").classList.remove("is-hidden");
-
-  r_e("message_bar").innerHTML = msg;
-
-  // hide the message bar
-  setTimeout(() => {
-    r_e("message_bar").innerHTML = ""; //clear the text from the message bar
-    r_e("message_bar").classList.add("is-hidden");
-  }, 2000);
 }
 
 // configure the message bar
@@ -111,6 +93,7 @@ function configure_nav_bar(user) {
     });
   }
 }
+
 //Load data for events
 function load_events() {
   db.collection("events")
@@ -121,7 +104,7 @@ function load_events() {
       var eventCreate = document.getElementById("event");
       html = ``;
       docs.forEach((doc) => {
-        html += `<div class="column is-6">
+        html += `<div class="column is-6 mb-2">
             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
                 <div class="card-content">
                   <div class="content">
@@ -130,12 +113,14 @@ function load_events() {
                     </figure>
                     <div class="title mb-2">
                       ${doc.data().name}
+                      <button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('events',
+                      '${
+                        doc.id
+                      }')"><i class="fa-solid fa-trash-can"></i></button>
                     </div>
                     <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
                     <div><b>Time</b>: ${doc.data().time}</div>
-                    <div> <b>Location</b>: ${
-                      doc.data().location
-                    }</div>
+                    <div> <b>Location</b>: ${doc.data().location}</div>
                     <div class="mb-4"><b>Link to RSVP: </b><a href=${
                       doc.data().rsvp
                     }" target="_blank">RSVP</a></div>
@@ -150,58 +135,75 @@ function load_events() {
     });
 }
 
-// Inventory Page - need to do javascript for buttons
-function load_inventory() {
-  db.collection("Inventory Data")
-    .get()
-    .then((response) => {
-      let docs = response.docs;
-      // need to write the id = events into the index.html page
-      var InventoryCreate = document.getElementById("inventoryitem");
-      html = "";
-      docs.forEach((doc) => {
-        // + and - buttons need to be figured out
-        html += `
-        <tr>
-            <td><button class="button is-rounded has-background-danger sub">-</button></td>
-            <td>${doc.data().Inventory}</td>
-            <td>${doc.data().Description}</td>
-            <td>${doc.data().Quantity}</td>
-            <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        </tr>`;
-
-        InventoryCreate.innerHTML += html;
-
-        // r_class('sub').addEventListener('click', () => {
-        //   doc.data().Quantity -= 1;
-        //   html1 =""
-        //   html1 += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        //   console.log('subrta')
-        //   InventoryCreate.innerHTML += html1;
-
-        // });
-        // r_class('sum').addEventListener('click', () => {
-        //   doc.data().Quantity += 1;
-        //   html += `
-        //     <tr>
-        //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-        //         <td>${doc.data().Inventory}</td>
-        //         <td>${doc.data().Description}</td>
-        //         <td>${doc.data().Quantity}</td>
-        //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-        //     </tr>`;
-        // });
-      });
-      // InventoryCreate.innerHTML += html;
+// delete document from a collection
+function del_doc(coll, id) {
+  db.collection(coll)
+    .doc(id)
+    .delete()
+    .then(() => {
+      // show a message on the message bar
+      configure_message_bar("Deleted!");
+      // load all data
+      if (coll == "events") {
+        load_events();
+      } else if (coll == "BoardMembers") {
+        load_board();
+      }
     });
 }
+
+// // Inventory Page - need to do javascript for buttons
+// function load_inventory() {
+//   db.collection("Inventory Data")
+//     .get()
+//     .then((response) => {
+//       let docs = response.docs;
+//       // need to write the id = events into the index.html page
+//       var InventoryCreate = document.getElementById("inventoryitem");
+//       html = "";
+//       docs.forEach((doc) => {
+//         // + and - buttons need to be figured out
+//         html += `
+//         <tr>
+//             <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//             <td>${doc.data().Inventory}</td>
+//             <td>${doc.data().Description}</td>
+//             <td>${doc.data().Quantity}</td>
+//             <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         </tr>`;
+
+//         InventoryCreate.innerHTML += html;
+
+//         // r_class('sub').addEventListener('click', () => {
+//         //   doc.data().Quantity -= 1;
+//         //   html1 =""
+//         //   html1 += `
+//         //     <tr>
+//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//         //         <td>${doc.data().Inventory}</td>
+//         //         <td>${doc.data().Description}</td>
+//         //         <td>${doc.data().Quantity}</td>
+//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         //     </tr>`;
+//         //   console.log('subrta')
+//         //   InventoryCreate.innerHTML += html1;
+
+//         // });
+//         // r_class('sum').addEventListener('click', () => {
+//         //   doc.data().Quantity += 1;
+//         //   html += `
+//         //     <tr>
+//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
+//         //         <td>${doc.data().Inventory}</td>
+//         //         <td>${doc.data().Description}</td>
+//         //         <td>${doc.data().Quantity}</td>
+//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
+//         //     </tr>`;
+//         // });
+//       });
+//       // InventoryCreate.innerHTML += html;
+//     });
+// }
 
 // save new data into a collection
 function save_event(coll, obj) {
@@ -234,30 +236,7 @@ function load_board() {
     .get()
     .then((response) => {
       let docs = response.docs;
-      //
-      // var boardCreate = document.getElementById("boardmembers");
-      // html = ``;
-      // docs.forEach((doc) => {
-      //   html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
-      //   <div class="card-content">
-      //     <div class="content">
-      //       <figure class="image is-320-320">
-      //         <img src="${doc.data().url}">
-      //       </figure>
-      //       <div class="title mb-2">
-      //       "${doc.data().name}"
-      //       </div>
-      //       <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-      //       <div><b>Major(s)</b>: "${doc.data().major}"</div>
-      //       <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-      //       <div><b>Hometown</b>: "${doc.data().town}"</div>
-      //       <div><b>Year</b>: "${doc.data().year}"</div>
-      //     </div>
-      //   </div>
-      // </div>`;
-      // });
-      // html += `<div class="column is-4">`;
-      // boardCreate.innerHTML += html;
+      console.log(docs);
       var internal = document.getElementById("internal");
       var external = document.getElementById("external");
       var finance = document.getElementById("finance");
@@ -267,7 +246,7 @@ function load_board() {
       fhtml = ``;
       lhtml = ``;
       docs.forEach((doc) => {
-        if(doc.data().committee == "Internal Committee"){
+        if (doc.data().committee == "Internal Committee") {
           html += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -275,7 +254,10 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${
+              doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -285,8 +267,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      internal.innerHTML += html
-        } else if(doc.data().committee == "External Committee"){
+          // internal.innerHTML += html;
+        } else if (doc.data().committee == "External Committee") {
           ehtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -294,7 +276,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -304,8 +288,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      external.innerHTML += ehtml
-        } else if(doc.data().committee == "Finance Committee"){
+          // external.innerHTML += ehtml;
+        } else if (doc.data().committee == "Finance Committee") {
           fhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -313,7 +297,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -323,8 +309,8 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      finance.innerHTML += fhtml
-        } else if(doc.data().committee == "Liaisons"){
+          // finance.innerHTML += fhtml;
+        } else if (doc.data().committee == "Liaisons") {
           lhtml += `<div class="card ml-0 mb-5 mt-3 has-background-danger-light">
         <div class="card-content">
           <div class="content">
@@ -332,7 +318,9 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name}"
+            "${doc.data().name
+            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
             <div><b>Major(s)</b>: "${doc.data().major}"</div>
@@ -342,11 +330,15 @@ function load_board() {
           </div>
         </div>
       </div>`;
-      liaison.innerHTML += lhtml
+          // liaison.innerHTML += lhtml;
         }
       });
-      // html += `<div class="column is-4">`;
-      // boardCreate.innerHTML += html;
+      internal.innerHTML += html;
+      external.innerHTML += ehtml;
+      finance.innerHTML += fhtml;
+      liaison.innerHTML += lhtml;
+      
+     docs = []
     });
 }
 // save new member into a collection
@@ -435,13 +427,11 @@ r_e("signoutbtn").addEventListener("click", () => {
   // show the home tab
   home.classList.remove("is-hidden");
 
-  // hide the events, team, contact, profile and inventory div
-  history.classList.add("is-hidden");
+  // hide the events, team, contact and inventory div
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // Add an event
@@ -538,25 +528,19 @@ r_e("sbmt_board").addEventListener("click", () => {
       // send the object to firebase
       save_board("BoardMembers", member);
     });
-})
+});
 
 auth.onAuthStateChanged((user) => {
   // check if user signed in or out
   if (user) {
     // show user email in navigation bar
-    // r_e('user_email').innerHTML = auth.currentUser.email;
-
-    // configure main content column
-    // configure_content(user);
+    r_e("user_email").innerHTML = auth.currentUser.email;
 
     // configure the navigation bar
     configure_nav_bar(user);
   } else {
     // remove user email in navigation bar
-    // r_e('user_email').innerHTML = "";
-
-    // configure main content column
-    // configure_content();
+    r_e("user_email").innerHTML = "";
 
     // configure the navigation bar
     configure_nav_bar();
@@ -569,10 +553,6 @@ signupbtn.addEventListener("click", () => {
 });
 
 signup_modalbg.addEventListener("click", () => {
-  signup_modal.classList.remove("is-active");
-});
-
-signup_modalb.addEventListener("click", () => {
   signup_modal.classList.remove("is-active");
 });
 
@@ -589,9 +569,9 @@ signin_modalbg.addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
 });
 
-signin_modalb2.addEventListener("click", () => {
-  signin_modal.classList.remove("is-active");
-});
+// signin_modalb2.addEventListener("click", () => {
+//   signin_modal.classList.remove("is-active");
+// });
 
 cancel2.addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
@@ -615,14 +595,14 @@ board_modalbg.addEventListener("click", () => {
   board_modal.classList.remove("is-active");
 });
 
-// Inventory modal link
-addinvbtn.addEventListener("click", () => {
-  inv_modal.classList.add("is-active");
-});
+// // Inventory modal link
+// addinvbtn.addEventListener("click", () => {
+//   inv_modal.classList.add("is-active");
+// });
 
-inv_modalbg.addEventListener("click", () => {
-  inv_modal.classList.remove("is-active");
-});
+// inv_modalbg.addEventListener("click", () => {
+//   inv_modal.classList.remove("is-active");
+// });
 
 // switching between tabs
 
@@ -631,13 +611,12 @@ homebtn.addEventListener("click", () => {
   // show the home tab
   home.classList.remove("is-hidden");
 
-  // hide the events, team, contact, profile and inventory div
-  history.classList.add("is-hidden");
+  // hide the events, team, contact and inventory div
+
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // events tab
@@ -648,26 +627,24 @@ eventsbtn.addEventListener("click", () => {
   // load events
   load_events();
 
-  // hide the home, team, contact, profile and inventory div
+  // hide the home, team, contact and inventory div
   home.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // team tab
 teambtn.addEventListener("click", () => {
   // show the team tab
   team.classList.remove("is-hidden");
-  
+
   load_board();
-  // hide the home, events, contact, profile and inventory div
+  // hide the home, events, contact and inventory div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   contact.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // contact tab
@@ -675,12 +652,11 @@ contactbtn.addEventListener("click", () => {
   // show the contact tab
   contact.classList.remove("is-hidden");
 
-  // hide the home, events, team, profile and inventory div
+  // hide the home, events, team and inventory div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   inventory.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
 // inventory tab
@@ -689,32 +665,18 @@ inventorybtn.addEventListener("click", () => {
   inventory.classList.remove("is-hidden");
 
   // load inventory data
-  load_inventory();
+  // load_inventory();
 
-  // hide the home, events, team, profile and contact div
+  // hide the home, events, team and contact div
   home.classList.add("is-hidden");
   events.classList.add("is-hidden");
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
-  profile.classList.add("is-hidden");
 });
 
-// Profile Section
-profilebtn.addEventListener("click", () => {
-  // show the inventory tab
-  profile.classList.remove("is-hidden");
-
-  // hide the home, events, team, inventory and contact div
-  home.classList.add("is-hidden");
-  events.classList.add("is-hidden");
-  team.classList.add("is-hidden");
-  contact.classList.add("is-hidden");
-  inventory.classList.add("is-hidden");
-});
-
-function r_class(clas) {
-  return document.querySelector(`.${clas}`);
-}
+// function r_class(clas) {
+//   return document.querySelector(`.${clas}`);
+// }
 
 // function load_data(coll) {
 //   // check if we pass all 4 arguments
