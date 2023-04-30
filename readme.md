@@ -46,9 +46,10 @@ Meeting Evidence #1:
     -
 
     Lajzoo:
-    - 
-    -
-    -
+    - Got final details from client from what is wanted to be implemented
+    - Working on recording and collecting all necessary information
+    - Finding API’s that help automate optimization for the information
+
 
     Yasmine:
     - Worked with the team to break down the user stories into tasks. Updated Trello board and Burn Down chart data.
@@ -80,9 +81,9 @@ Meeting Evidence #2:
     -
 
     Lajzoo:
-    - 
-    -
-    -
+    - Uploading and editing all the information for the website
+    - Optimizing the imported images and helping heighten the design
+    - Not able to find an API that can be integrated seamlessly without existing code to have images auto compressed. 
 
     Yasmine:
     - Discussed how to make the inventory page easily editable for the client
