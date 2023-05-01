@@ -514,7 +514,11 @@ signup_modalbg.addEventListener("click", () => {
   signup_modal.classList.remove("is-active");
 });
 
-cancel.addEventListener("click", () => {
+r_e("signup_modalb2").addEventListener("click", () => {
+  signup_modal.classList.remove("is-active");
+});
+
+r_e("cancel").addEventListener("click", () => {
   signup_modal.classList.remove("is-active");
 });
 
@@ -527,11 +531,11 @@ signin_modalbg.addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
 });
 
-// signin_modalb2.addEventListener("click", () => {
-//   signin_modal.classList.remove("is-active");
-// });
+r_e("signin_modalb2").addEventListener("click", () => {
+  signin_modal.classList.remove("is-active");
+});
 
-cancel2.addEventListener("click", () => {
+r_e("cancel2").addEventListener("click", () => {
   signin_modal.classList.remove("is-active");
 });
 
