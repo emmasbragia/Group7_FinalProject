@@ -110,15 +110,23 @@ function load_events() {
                   <div class="content">
                     <figure class="image is-320-320">
                       <img src= "${doc.data().url}">
-                    </figure>
-                    <div class="title mb-2">
-                      ${doc.data().name}
-                      <button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('events',
-                      '${
-                        doc.id
-                      }')"><i class="fa-solid fa-trash-can"></i></button>
-                    </div>
-                    <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
+                    </figure>`;
+        // check if user email for current user matches email stored on the document
+        if (auth.currentUser.email == doc.data().user_email) {
+          html += `<div class="title mb-2">
+                        ${doc.data().name}
+                        <button class="is-pulled-right button is-dark ml-1" onclick="del_doc('events',
+                        '${
+                          doc.id
+                        }')"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>`;
+        } else {
+          html += `<div class="title mb-2">
+                        ${doc.data().name}
+                      </div>`;
+        }
+
+        html += `<div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
                     <div><b>Time</b>: ${doc.data().time}</div>
                     <div> <b>Location</b>: ${doc.data().location}</div>
                     <div class="mb-4"><b>Link to RSVP: </b><a href=${
@@ -151,59 +159,6 @@ function del_doc(coll, id) {
       }
     });
 }
-
-// // Inventory Page - need to do javascript for buttons
-// function load_inventory() {
-//   db.collection("Inventory Data")
-//     .get()
-//     .then((response) => {
-//       let docs = response.docs;
-//       // need to write the id = events into the index.html page
-//       var InventoryCreate = document.getElementById("inventoryitem");
-//       html = "";
-//       docs.forEach((doc) => {
-//         // + and - buttons need to be figured out
-//         html += `
-//         <tr>
-//             <td><button class="button is-rounded has-background-danger sub">-</button></td>
-//             <td>${doc.data().Inventory}</td>
-//             <td>${doc.data().Description}</td>
-//             <td>${doc.data().Quantity}</td>
-//             <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-//         </tr>`;
-
-//         InventoryCreate.innerHTML += html;
-
-//         // r_class('sub').addEventListener('click', () => {
-//         //   doc.data().Quantity -= 1;
-//         //   html1 =""
-//         //   html1 += `
-//         //     <tr>
-//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-//         //         <td>${doc.data().Inventory}</td>
-//         //         <td>${doc.data().Description}</td>
-//         //         <td>${doc.data().Quantity}</td>
-//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-//         //     </tr>`;
-//         //   console.log('subrta')
-//         //   InventoryCreate.innerHTML += html1;
-
-//         // });
-//         // r_class('sum').addEventListener('click', () => {
-//         //   doc.data().Quantity += 1;
-//         //   html += `
-//         //     <tr>
-//         //         <td><button class="button is-rounded has-background-danger sub">-</button></td>
-//         //         <td>${doc.data().Inventory}</td>
-//         //         <td>${doc.data().Description}</td>
-//         //         <td>${doc.data().Quantity}</td>
-//         //         <td><button class="button is is-rounded has-background-danger white sum">+</button></td>
-//         //     </tr>`;
-//         // });
-//       });
-//       // InventoryCreate.innerHTML += html;
-//     });
-// }
 
 // save new data into a collection
 function save_event(coll, obj) {
@@ -275,7 +230,8 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name
+            "${
+              doc.data().name
             }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
             '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
@@ -296,7 +252,8 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name
+            "${
+              doc.data().name
             }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
             '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
@@ -317,7 +274,8 @@ function load_board() {
               <img src="${doc.data().url}">
             </figure>
             <div class="title mb-2">
-            "${doc.data().name
+            "${
+              doc.data().name
             }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
             '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
             </div>
@@ -337,7 +295,7 @@ function load_board() {
       finance.innerHTML = fhtml;
       liaison.innerHTML = lhtml;
 
-      docs = []
+      docs = [];
     });
 }
 // save new member into a collection
@@ -473,6 +431,7 @@ r_e("sbmt_event").addEventListener("click", () => {
         rsvp: rsvp,
         desc: desc,
         url: url,
+        user_email: auth.currentUser.email,
       };
 
       // send the object to firebase
@@ -593,15 +552,6 @@ addboardbtn.addEventListener("click", () => {
 board_modalbg.addEventListener("click", () => {
   board_modal.classList.remove("is-active");
 });
-
-// // Inventory modal link
-// addinvbtn.addEventListener("click", () => {
-//   inv_modal.classList.add("is-active");
-// });
-
-// inv_modalbg.addEventListener("click", () => {
-//   inv_modal.classList.remove("is-active");
-// });
 
 // switching between tabs
 
