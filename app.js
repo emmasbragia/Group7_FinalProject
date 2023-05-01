@@ -105,7 +105,7 @@ function load_events() {
       html = ``;
       docs.forEach((doc) => {
         html += `<div class="column is-6 mb-2">
-            <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
+            <div class="card ml-0 mb-6 mt-3 has-background-warning-light">
                 <div class="card-content">
                   <div class="content">
                     <figure class="image is-320-320">
@@ -201,7 +201,7 @@ function load_board() {
       lhtml = ``;
       docs.forEach((doc) => {
         if (doc.data().committee == "Internal Committee") {
-          html += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-danger-light">
+          html += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-success-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -223,7 +223,7 @@ function load_board() {
       </div>`;
           // internal.innerHTML += html;
         } else if (doc.data().committee == "External Committee") {
-          ehtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-danger-light">
+          ehtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-success-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -245,7 +245,7 @@ function load_board() {
       </div>`;
           // external.innerHTML += ehtml;
         } else if (doc.data().committee == "Finance Committee") {
-          fhtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-danger-light">
+          fhtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-success-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
@@ -267,7 +267,7 @@ function load_board() {
       </div>`;
           // finance.innerHTML += fhtml;
         } else if (doc.data().committee == "Liaisons") {
-          lhtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-danger-light">
+          lhtml += `<div class="card ml-0 mb-5 mt-3 mr-5 has-background-success-light">
         <div class="card-content">
           <div class="content">
             <figure class="image is-320-320">
