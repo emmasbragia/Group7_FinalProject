@@ -21,9 +21,6 @@ let event_modalbg = document.querySelector("#event_modalbg");
 let addboardbtn = document.querySelector("#addboardbtn");
 let board_modal = document.querySelector("#board_modal");
 let board_modalbg = document.querySelector("#board_modalbg");
-let addinvbtn = document.querySelector("#addinvbtn");
-let inv_modal = document.querySelector("#inv_modal");
-let inv_modalbg = document.querySelector("#inv_modalbg");
 
 // functions
 
@@ -167,7 +164,7 @@ function save_event(coll, obj) {
     .add(obj)
     .then(() => {
       // show notification message to user
-      // configure_message_bar(`${obj.name} has been added!`);
+      configure_message_bar(`${obj.name} has been added!`);
     });
 
   // reset the form
@@ -343,7 +340,7 @@ function save_board(coll, obj) {
     .add(obj)
     .then(() => {
       // show notification message to user
-      // configure_message_bar(`${obj.name} has been added!`);
+      configure_message_bar(`${obj.name} has been added!`);
     });
 
   // reset the form
@@ -363,6 +360,40 @@ function save_board(coll, obj) {
   load_board();
 }
 
+// Slide show in home page
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
 // sign up  user
 r_e("signup_form").addEventListener("submit", (e) => {
   e.preventDefault(); //prevent default behavior of the browser (no page refresh)
@@ -374,7 +405,6 @@ r_e("signup_form").addEventListener("submit", (e) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((user) => {
-      // console.log(`${user.user.email} is now signed in`);
       // show sign up successful message on message bar
       configure_message_bar(`${user.user.email} is now created!`);
 
@@ -400,7 +430,6 @@ r_e("signin_form").addEventListener("submit", (e) => {
   auth
     .signInWithEmailAndPassword(email, password)
     .then((user) => {
-      // console.log(`${user.user.email} is now signed in`);
       // show sign in successful message on message bar
       configure_message_bar(`${user.user.email} is now signed in!`);
 
@@ -666,36 +695,3 @@ inventorybtn.addEventListener("click", () => {
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
 });
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
