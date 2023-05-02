@@ -139,7 +139,7 @@ function load_events() {
         </div>`;
       });
       html += `<div class="column is-2 pl-0"></div>`;
-      alert("1111");
+
       eventCreate.innerHTML = html;
     });
 }
@@ -666,8 +666,6 @@ inventorybtn.addEventListener("click", () => {
   team.classList.add("is-hidden");
   contact.classList.add("is-hidden");
 });
-
-
 
 let slideIndex = 1;
 showSlides(slideIndex);
