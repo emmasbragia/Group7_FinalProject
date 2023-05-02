@@ -666,59 +666,7 @@ inventorybtn.addEventListener("click", () => {
   contact.classList.add("is-hidden");
 });
 
-// function r_class(clas) {
-//   return document.querySelector(`.${clas}`);
-// }
 
-// function load_data(coll) {
-//   // check if we pass all 4 arguments
-//   let query = db.collection(coll);
-//   var eventCreate = document.getElementById("event");
-
-//   query.get().then((res) => {
-//     // console.log(res.docs);
-//     let documents = res.docs;
-
-//     // html reference
-//     html = ``;
-
-//     // loop through documents array
-//     documents.forEach((doc) => {
-//       html += `<div class="column is-6">
-//             <div class="card ml-0 mb-6 mt-3 has-background-danger-light">
-//                 <div class="card-content">
-//                   <div class="content">
-//                     <figure class="image is-320-320">
-//                       <img src= "${doc.data().url}">
-//                     </figure>
-//                     <div class="title mb-2">
-//                       ${doc.data().name}
-//                     </div>
-//                     <div class="mt-3"><b>Date</b>: ${doc.data().date}</div>
-//                     <div><b>Time</b>: ${doc.data().time}</div>
-//                     <div class="mb-4"> <b>Location</b>: ${
-//                       doc.data().location
-//                     }</div>
-//                     <b>Description</b>: ${doc.data().desc}
-//                   </div>
-//                 </div>
-//             </div>
-//         </div>`;
-//     });
-
-//     // console.log(html)
-
-//     // ensure the div is not hidden
-//     eventCreate.innerHTML += html;
-//   });
-// }
-
-// // when events tab is clicked, get data from firestore
-// // r_e("events").addEventListener("click", () => {
-// //   load_data("events");
-// // });
-
-// // save data
 
 let slideIndex = 1;
 showSlides(slideIndex);
