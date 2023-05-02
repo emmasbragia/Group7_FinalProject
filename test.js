@@ -10,7 +10,7 @@ async function go() {
     const page = await browser.newPage();
 
     // site to be tested
-    // await page.goto()
+    await page.goto("https://hasa-website-1c7e8.web.app/")
 
     // user clicks the signup button
     await page.click("#signinbtn");
@@ -19,6 +19,7 @@ async function go() {
     await page.type("#email_", "hasa.wisc@gmail.com");
     await page.type("#password_", "HASA@2023isG7");
     await page.click("#signin_form > div.field.is-grouped > div.control.pb-3 > button");
+    
 
     // test clicking inventory tab
     await page.click("#inventorybtn");
