@@ -139,7 +139,8 @@ function load_events() {
         </div>`;
       });
       html += `<div class="column is-2 pl-0"></div>`;
-      eventCreate.innerHTML += html;
+
+      eventCreate.innerHTML = html;
     });
 }
 
