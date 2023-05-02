@@ -19,12 +19,14 @@ async function go() {
     await page.type("#email_", "hasa.wisc@gmail.com");
     await page.type("#password_", "HASA@2023isG7");
     await page.click("#signin_form > div.field.is-grouped > div.control.pb-3 > button");
-    
+
 
     // test clicking inventory tab
+    await new Promise((r) => setTimeout(r, 2000));
     await page.click("#inventorybtn");
-       
+
     // testing clicking event tab
+    await new Promise((r) => setTimeout(r, 2000));
     await page.click("#eventsbtn");
     await page.click("#addeventbtn");
     await page.type("#eventname", "Testing Event");
@@ -35,6 +37,8 @@ async function go() {
     await page.type("#eventdesc", "testing description");
     await page.click("#sbmt_event");
 
+
+    browser.close();
 };
 
 // call go function
