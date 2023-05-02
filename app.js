@@ -206,18 +206,26 @@ function load_board() {
           <div class="content">
             <figure class="image is-320-320">
               <img src="${doc.data().url}">
-            </figure>
-            <div class="title mb-2">
-            "${
-              doc.data().name
-            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
-            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-            <div><b>Major(s)</b>: "${doc.data().major}"</div>
-            <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-            <div><b>Hometown</b>: "${doc.data().town}"</div>
-            <div><b>Year</b>: "${doc.data().year}"</div>
+            </figure>`;
+          // check if user email for current user matches email stored on the document
+          if (auth.currentUser.email == doc.data().user_email) {
+            html += `<div class="title mb-2">
+                ${doc.data().name}
+                <button class="is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+                '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
+              </div>`;
+          } else {
+            html += `<div class="title mb-2">
+                ${doc.data().name}
+              </div>`;
+          }
+          html += `<div class="mt-3"><b>Position</b>: ${
+            doc.data().position
+          }</div>
+            <div><b>Major(s)</b>: ${doc.data().major}</div>
+            <div><b>Minor(s)</b>: ${doc.data().minor}</div>
+            <div><b>Hometown</b>: ${doc.data().town}</div>
+            <div><b>Year</b>: ${doc.data().year}</div>
           </div>
         </div>
       </div>`;
@@ -228,18 +236,28 @@ function load_board() {
           <div class="content">
             <figure class="image is-320-320">
               <img src="${doc.data().url}">
-            </figure>
-            <div class="title mb-2">
-            "${
-              doc.data().name
-            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
-            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-            <div><b>Major(s)</b>: "${doc.data().major}"</div>
-            <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-            <div><b>Hometown</b>: "${doc.data().town}"</div>
-            <div><b>Year</b>: "${doc.data().year}"</div>
+            </figure>`;
+          // check if user email for current user matches email stored on the document
+          if (auth.currentUser.email == doc.data().user_email) {
+            ehtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                        <button class="is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+                        '${
+                          doc.id
+                        }')"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>`;
+          } else {
+            ehtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                      </div>`;
+          }
+          ehtml += `<div class="mt-3"><b>Position</b>: ${
+            doc.data().position
+          }</div>
+            <div><b>Major(s)</b>: ${doc.data().major}</div>
+            <div><b>Minor(s)</b>: ${doc.data().minor}</div>
+            <div><b>Hometown</b>: ${doc.data().town}</div>
+            <div><b>Year</b>: ${doc.data().year}</div>
           </div>
         </div>
       </div>`;
@@ -250,18 +268,28 @@ function load_board() {
           <div class="content">
             <figure class="image is-320-320">
               <img src="${doc.data().url}">
-            </figure>
-            <div class="title mb-2">
-            "${
-              doc.data().name
-            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
-            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-            <div><b>Major(s)</b>: "${doc.data().major}"</div>
-            <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-            <div><b>Hometown</b>: "${doc.data().town}"</div>
-            <div><b>Year</b>: "${doc.data().year}"</div>
+            </figure>`;
+          // check if user email for current user matches email stored on the document
+          if (auth.currentUser.email == doc.data().user_email) {
+            fhtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                        <button class="is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+                        '${
+                          doc.id
+                        }')"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>`;
+          } else {
+            fhtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                      </div>`;
+          }
+          fhtml += `<div class="mt-3"><b>Position</b>: ${
+            doc.data().position
+          }</div>
+            <div><b>Major(s)</b>: ${doc.data().major}</div>
+            <div><b>Minor(s)</b>: ${doc.data().minor}</div>
+            <div><b>Hometown</b>: ${doc.data().town}</div>
+            <div><b>Year</b>: ${doc.data().year}</div>
           </div>
         </div>
       </div>`;
@@ -272,18 +300,28 @@ function load_board() {
           <div class="content">
             <figure class="image is-320-320">
               <img src="${doc.data().url}">
-            </figure>
-            <div class="title mb-2">
-            "${
-              doc.data().name
-            }"<button class="admin is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
-            '${doc.id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="mt-3"><b>Position</b>: "${doc.data().position}"</div>
-            <div><b>Major(s)</b>: "${doc.data().major}"</div>
-            <div><b>Minor(s)</b>: "${doc.data().minor}"</div>
-            <div><b>Hometown</b>: "${doc.data().town}"</div>
-            <div><b>Year</b>: "${doc.data().year}"</div>
+            </figure>`;
+          // check if user email for current user matches email stored on the document
+          if (auth.currentUser.email == doc.data().user_email) {
+            lhtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                        <button class="is-pulled-right button is-dark ml-1" onclick="del_doc('BoardMembers',
+                        '${
+                          doc.id
+                        }')"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>`;
+          } else {
+            lhtml += `<div class="title mb-2">
+                        ${doc.data().name}
+                      </div>`;
+          }
+          lhtml += `<div class="mt-3"><b>Position</b>: ${
+            doc.data().position
+          }</div>
+            <div><b>Major(s)</b>: ${doc.data().major}</div>
+            <div><b>Minor(s)</b>: ${doc.data().minor}</div>
+            <div><b>Hometown</b>: ${doc.data().town}</div>
+            <div><b>Year</b>: ${doc.data().year}</div>
           </div>
         </div>
       </div>`;
@@ -481,6 +519,7 @@ r_e("sbmt_board").addEventListener("click", () => {
         town: town,
         year: year,
         url: url,
+        user_email: auth.currentUser.email,
       };
 
       // send the object to firebase
