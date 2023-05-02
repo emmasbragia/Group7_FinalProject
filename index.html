@@ -1,662 +1,762 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HASA ASSOCIATION UW-MADISON</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="pictures/HASA_Transparent.png" />
+    <script
+      src="https://kit.fontawesome.com/8a80b728dc.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HASA ASSOCIATION UW-MADISON</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="pictures/HASA_Transparent.png" />
-  <script src="https://kit.fontawesome.com/8a80b728dc.js" crossorigin="anonymous"></script>
+    <style>
+      .header {
+        padding-top: 20pt;
+        padding-bottom: 15pt;
+      }
 
-  <style>
-    .header {
-      padding-top: 20pt;
-      padding-bottom: 15pt;
-    }
+      .footer {
+        height: 20%;
+      }
 
-    .footer {
-      height: 20%;
-    }
+      .is_centered {
+        text-align: center;
+      }
 
-    .is_centered {
-      text-align: center;
-    }
+      .fa-brands {
+        color: white;
+      }
 
-    .fa-brands {
-      color: white;
-    }
+      .footer {
+        height: 30%;
+      }
+    </style>
+  </head>
 
-    .footer {
-      height: 30%;
-    }
-  </style>
-</head>
-
-<body>
-  <!--  sign up modal ... are hidden by default ... use javascript to display/hide them -->
-  <div class="modal" id="signup_modal">
-    <div class="modal-background" id="signup_modalbg"></div>
-    <div class="modal-content has-background-danger-light is-rounded">
-      <h1 class="title has-background-danger has-text-white p-5">
-        Sign up
-        <button class="delete is-pulled-right" aria-label="close" id="signup_modalb2"></button>
-      </h1>
-      <form id="signup_form">
-        <!-- Email  -->
-        <div class="mr-6 ml-5 mt-4 field">
-          <label class="label has-text-danger">Email</label>
-          <div class="control">
-            <input class="input" type="email" placeholder="" id="email" />
-          </div>
-        </div>
-
-        <div class="field mr-6 ml-5 mt-4 mb-5">
-          <label class="label has-text-danger">Create a password</label>
-          <div class="control">
-            <input class="input" type="password" placeholder="" id="password" />
-          </div>
-        </div>
-
-        <!-- submit  -->
-        <div class="field is-grouped">
-          <div class="control pb-3">
-            <button class="button is-danger ml-5 is-rounded">Submit</button>
-          </div>
-          <div class="control">
-            <button class="button is-danger is-danger ml-3 is-rounded" id="cancel">
-              Cancel
-            </button>
-          </div>
-        </div>
-
-        <!-- div error -->
-        <div class="pl-5 error has-text-danger"></div>
-      </form>
-    </div>
-  </div>
-
-  <!-- sign in modal -->
-
-  <div class="modal" id="signin_modal">
-    <div class="modal-background" id="signin_modalbg"></div>
-    <div class="modal-content has-background-danger-light">
-      <div>
+  <body>
+    <!--  sign up modal ... are hidden by default ... use javascript to display/hide them -->
+    <div class="modal" id="signup_modal">
+      <div class="modal-background" id="signup_modalbg"></div>
+      <div class="modal-content has-background-danger-light is-rounded">
         <h1 class="title has-background-danger has-text-white p-5">
-          Log in
-          <button class="delete is-pulled-right" aria-label="close" id="signin_modalb2"></button>
+          Sign up
+          <button
+            class="delete is-pulled-right"
+            aria-label="close"
+            id="signup_modalb2"
+          ></button>
         </h1>
+        <form id="signup_form">
+          <!-- Email  -->
+          <div class="mr-6 ml-5 mt-4 field">
+            <label class="label has-text-danger">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="" id="email" />
+            </div>
+          </div>
+
+          <div class="field mr-6 ml-5 mt-4 mb-5">
+            <label class="label has-text-danger">Create a password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                placeholder=""
+                id="password"
+              />
+            </div>
+          </div>
+
+          <!-- submit  -->
+          <div class="field is-grouped">
+            <div class="control pb-3">
+              <button class="button is-danger ml-5 is-rounded">Submit</button>
+            </div>
+            <div class="control">
+              <button
+                class="button is-danger is-danger ml-3 is-rounded"
+                id="cancel"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+
+          <!-- div error -->
+          <div class="pl-5 error has-text-danger"></div>
+        </form>
       </div>
-      <form id="signin_form">
-        <div class="section pt-5 pb-5">
-          <div class="container">
-            <div class="columns">
-              <div class="column is-6">
-                <div class="field">
-                  <label class="label has-text-danger">Email</label>
-                  <div class="control">
-                    <input class="input" type="email" id="email_" placeholder="" />
+    </div>
+
+    <!-- sign in modal -->
+
+    <div class="modal" id="signin_modal">
+      <div class="modal-background" id="signin_modalbg"></div>
+      <div class="modal-content has-background-danger-light">
+        <div>
+          <h1 class="title has-background-danger has-text-white p-5">
+            Log in
+            <button
+              class="delete is-pulled-right"
+              aria-label="close"
+              id="signin_modalb2"
+            ></button>
+          </h1>
+        </div>
+        <form id="signin_form">
+          <div class="section pt-5 pb-5">
+            <div class="container">
+              <div class="columns">
+                <div class="column is-6">
+                  <div class="field">
+                    <label class="label has-text-danger">Email</label>
+                    <div class="control">
+                      <input
+                        class="input"
+                        type="email"
+                        id="email_"
+                        placeholder=""
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="column is-6">
-                <div class="field">
-                  <label class="label has-text-danger">Password</label>
-                  <div class="control">
-                    <input class="input" type="password" id="password_" placeholder="" />
+                <div class="column is-6">
+                  <div class="field">
+                    <label class="label has-text-danger">Password</label>
+                    <div class="control">
+                      <input
+                        class="input"
+                        type="password"
+                        id="password_"
+                        placeholder=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- submit -->
-        <div class="field is-grouped">
-          <div class="control pb-3">
-            <button class="button is-danger ml-6 is-rounded">Submit</button>
+          <!-- submit -->
+          <div class="field is-grouped">
+            <div class="control pb-3">
+              <button class="button is-danger ml-6 is-rounded">Submit</button>
+            </div>
+            <div class="control">
+              <button
+                class="button is-danger is-danger ml-3 is-rounded"
+                id="cancel2"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
-          <div class="control">
-            <button class="button is-danger is-danger ml-3 is-rounded" id="cancel2">
-              Cancel
-            </button>
-          </div>
-        </div>
 
-        <!-- div error -->
-        <div class="pl-6 pr-4 error has-text-danger"></div>
-      </form>
+          <!-- div error -->
+          <div class="pl-6 pr-4 error has-text-danger"></div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Event Modal -->
-  <div class="modal" id="event_modal">
-    <div class="modal-background" id="event_modalbg"></div>
-    <div class="modal-content p-6 has-background-warning-light">
-      <h1 class="is-size-3 title">Create an Event</h1>
-      <form id="event_form">
-        <!-- Name -->
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input type="text" id="eventname" class="input" />
+    <!-- Event Modal -->
+    <div class="modal" id="event_modal">
+      <div class="modal-background" id="event_modalbg"></div>
+      <div class="modal-content p-6 has-background-warning-light">
+        <h1 class="is-size-3 title">Create an Event</h1>
+        <form id="event_form">
+          <!-- Name -->
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input type="text" id="eventname" class="input" />
+            </div>
           </div>
-        </div>
-        <!-- Date -->
-        <div class="field">
-          <label class="label">Date</label>
-          <div class="control">
-            <input class="input" type="text" id="eventdate" />
+          <!-- Date -->
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="text" id="eventdate" />
+            </div>
           </div>
-        </div>
 
-        <!-- Time -->
-        <div class="field">
-          <label class="label">Time</label>
-          <div class="control">
-            <input class="input" type="text" id="eventtime" />
+          <!-- Time -->
+          <div class="field">
+            <label class="label">Time</label>
+            <div class="control">
+              <input class="input" type="text" id="eventtime" />
+            </div>
           </div>
-        </div>
 
-        <!-- Location -->
-        <div class="field">
-          <label class="label">Location</label>
-          <div class="control">
-            <input class="input" type="text" id="eventlocation" />
+          <!-- Location -->
+          <div class="field">
+            <label class="label">Location</label>
+            <div class="control">
+              <input class="input" type="text" id="eventlocation" />
+            </div>
           </div>
-        </div>
 
-        <!-- RSVP -->
-        <div class="field">
-          <label class="label">RSVP Link</label>
-          <div class="control">
-            <input class="input" type="text" id="rsvp" />
+          <!-- RSVP -->
+          <div class="field">
+            <label class="label">RSVP Link</label>
+            <div class="control">
+              <input class="input" type="text" id="rsvp" />
+            </div>
           </div>
-        </div>
 
-        <!-- Description -->
-        <div class="field">
-          <label class="label">Description</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Event Description" id="eventdesc"></textarea>
+          <!-- Description -->
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea
+                class="textarea"
+                placeholder="Event Description"
+                id="eventdesc"
+              ></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- image of event -->
-        <div class="field">
-          <label class="label">Image</label>
-          <div class="control">
-            <input class="input" type="file" id="event_image" placeholder="Choose Image" />
+          <!-- image of event -->
+          <div class="field">
+            <label class="label">Image</label>
+            <div class="control">
+              <input
+                class="input"
+                type="file"
+                id="event_image"
+                placeholder="Choose Image"
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- submit -->
-        <div class="field">
-          <div class="control">
-            <button class="m-3 button is-link" id="sbmt_event" type="button">
-              Submit
-            </button>
+          <!-- submit -->
+          <div class="field">
+            <div class="control">
+              <button class="m-3 button is-link" id="sbmt_event" type="button">
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- div error -->
-        <div class="error has-text-danger"></div>
-      </form>
+          <!-- div error -->
+          <div class="error has-text-danger"></div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Board Member Modal-->
-  <div class="modal" id="board_modal">
-    <div class="modal-background" id="board_modalbg"></div>
-    <div class="modal-content p-6 has-background-info-light">
-      <h1 class="is-size-3 title">Add Member</h1>
-      <form id="board_form">
-        <!-- Name -->
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input type="text" id="boardname" class="input" />
+    <!-- Board Member Modal-->
+    <div class="modal" id="board_modal">
+      <div class="modal-background" id="board_modalbg"></div>
+      <div class="modal-content p-6 has-background-info-light">
+        <h1 class="is-size-3 title">Add Member</h1>
+        <form id="board_form">
+          <!-- Name -->
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input type="text" id="boardname" class="input" />
+            </div>
           </div>
-        </div>
 
-        <!-- Position -->
-        <div class="field">
-          <label class="label">Position</label>
-          <div class="control">
-            <input class="input" type="text" id="boardposition" />
+          <!-- Position -->
+          <div class="field">
+            <label class="label">Position</label>
+            <div class="control">
+              <input class="input" type="text" id="boardposition" />
+            </div>
           </div>
-        </div>
 
-        <!-- Committee -->
-        <div class="field">
-          <label class="label">Committee</label>
-          <div class="control">
-            <input class="input" type="text" id="boardcommittee" />
+          <!-- Committee -->
+          <div class="field">
+            <label class="label">Committee</label>
+            <div class="control">
+              <input class="input" type="text" id="boardcommittee" />
+            </div>
           </div>
-        </div>
 
-        <!-- Major -->
-        <div class="field">
-          <label class="label">Major(s)</label>
-          <div class="control">
-            <textarea class="input" type="text" id="boardmajor"></textarea>
+          <!-- Major -->
+          <div class="field">
+            <label class="label">Major(s)</label>
+            <div class="control">
+              <textarea class="input" type="text" id="boardmajor"></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- Minor -->
-        <div class="field">
-          <label class="label">Minor(s)</label>
-          <div class="control">
-            <textarea class="input" type="text" id="boardminor"></textarea>
+          <!-- Minor -->
+          <div class="field">
+            <label class="label">Minor(s)</label>
+            <div class="control">
+              <textarea class="input" type="text" id="boardminor"></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- Hometown -->
-        <div class="field">
-          <label class="label">Hometown</label>
-          <div class="control">
-            <textarea class="input" type="text" id="boardtown"></textarea>
+          <!-- Hometown -->
+          <div class="field">
+            <label class="label">Hometown</label>
+            <div class="control">
+              <textarea class="input" type="text" id="boardtown"></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- Year -->
-        <div class="field">
-          <label class="label">Year</label>
-          <div class="control">
-            <textarea class="input" type="text" id="boardyear"></textarea>
+          <!-- Year -->
+          <div class="field">
+            <label class="label">Year</label>
+            <div class="control">
+              <textarea class="input" type="text" id="boardyear"></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- image of event -->
-        <div class="field">
-          <label class="label">Image</label>
-          <div class="control">
-            <input class="input" type="file" id="board_image" placeholder="Choose Image" />
+          <!-- image of event -->
+          <div class="field">
+            <label class="label">Image</label>
+            <div class="control">
+              <input
+                class="input"
+                type="file"
+                id="board_image"
+                placeholder="Choose Image"
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- submit -->
-        <div class="field">
-          <div class="control">
-            <button class="m-3 button is-link" id="sbmt_board" type="button">
-              Submit
-            </button>
+          <!-- submit -->
+          <div class="field">
+            <div class="control">
+              <button class="m-3 button is-link" id="sbmt_board" type="button">
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- div error -->
-        <div class="error has-text-danger"></div>
-      </form>
+          <!-- div error -->
+          <div class="error has-text-danger"></div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Message Bar -->
-  <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden"></div>
+    <!-- Message Bar -->
+    <div
+      id="message_bar"
+      class="p-3 has-background-warning has-text-centered is-hidden"
+    ></div>
 
-  <!-- Header/Nav Bar -->
-  <header class="has-background-danger-light">
-    <nav class="level header pl-4">
-      <p class="level-item has-text-centered">
-        <a href=""><img src="pictures/HASA_Transparent.png" alt="" style="height: 100px" /></a>
-      </p>
-      <p class="level-item has-text-centered ml-0">
-        <a class="link is-info has-text-black" id="homebtn">Home</a>
-      </p>
-      <p class="signedin level-item has-text-centered">
-        <a class="link is-info has-text-black" id="eventsbtn">Events</a>
-      </p>
+    <!-- Header/Nav Bar -->
+    <header class="has-background-danger-light">
+      <nav class="level header pl-4">
+        <p class="level-item has-text-centered">
+          <a href=""
+            ><img
+              src="pictures/HASA_Transparent.png"
+              alt=""
+              style="height: 100px"
+          /></a>
+        </p>
+        <p class="level-item has-text-centered ml-0">
+          <a class="link is-info has-text-black" id="homebtn">Home</a>
+        </p>
+        <p class="signedin level-item has-text-centered">
+          <a class="link is-info has-text-black" id="eventsbtn">Events</a>
+        </p>
 
-      <p class="signedin level-item has-text-centered">
-        <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
-      </p>
+        <p class="signedin level-item has-text-centered">
+          <a class="link is-info has-text-black" id="teambtn">Meet the Team</a>
+        </p>
 
-      <p class="level-item has-text-centered">
-        <a class="link is-info has-text-black" id="contactbtn">Contact Us</a>
-      </p>
-      <p class="level-item has-text-centered is-hidden admin">
-        <a class="link is-info has-text-black" id="inventorybtn">Inventory</a>
-      </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info has-text-black" id="contactbtn">Contact Us</a>
+        </p>
+        <p class="level-item has-text-centered is-hidden admin">
+          <a class="link is-info has-text-black" id="inventorybtn">Inventory</a>
+        </p>
 
-      <!-- Email -->
-      <p id="user_email" class="signedin has-text-weight-bold mr-3"></p>
-      <p class="buttons has-text-centered signedin is-hidden mr-2">
-        <!-- Sign Out -->
-        <a class="button is-grey-light mr-5 is-rounded" id="signoutbtn">Sign Out</a>
-      </p>
-    </nav>
-  </header>
+        <!-- Email -->
+        <p id="user_email" class="signedin has-text-weight-bold mr-3"></p>
+        <p class="buttons has-text-centered signedin is-hidden mr-2">
+          <!-- Sign Out -->
+          <a class="button is-grey-light mr-5 is-rounded" id="signoutbtn"
+            >Sign Out</a
+          >
+        </p>
+      </nav>
+    </header>
 
-  <!-- Message Bar -->
-  <div id="message_bar" class="p-3 has-background-warning has-text-centered is-hidden"></div>
+    <!-- Message Bar -->
+    <div
+      id="message_bar"
+      class="p-3 has-background-warning has-text-centered is-hidden"
+    ></div>
 
-  <main class="">
-    <div id="home">
-      <div class="section is-medium pt-6 pb-6">
-        <div class="columns">
-          <!-- center -->
-          <div class="section column is-9 mr-4" id="main">
-            <p class="title is-size-2 has-text-centered">
-              Welcome to HASA at UW-Madison!
+    <main class="">
+      <div id="home">
+        <div class="section is-medium pt-6 pb-6">
+          <div class="columns">
+            <!-- center -->
+            <div class="section column is-9 mr-4" id="main">
+              <p class="title is-size-2 has-text-centered">
+                Welcome to HASA at UW-Madison!
+              </p>
+            </div>
+            <!-- right side -->
+            <div class="column is-3 pr-5">
+              <div class="box has-background-danger-light signedout">
+                <div class="mt-2 mb-3">
+                  <h2 class="title is-4 has-text-centered">Sign up/Sign In!</h2>
+                </div>
+                <div>
+                  <p>
+                    Sign Up to view our upcoming events and current Council!
+                  </p>
+                </div>
+                <div class="buttons is-centered pt-4">
+                  <!-- sign up -->
+                  <a
+                    class="button is-primary has-background-danger is-rounded"
+                    id="signupbtn"
+                  >
+                    <strong>Sign up</strong>
+                  </a>
+                  <!-- sign in -->
+                  <a
+                    class="button is-primary has-background-danger is-rounded"
+                    id="signinbtn"
+                  >
+                    <strong>Sign in</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 6</div>
+                <img src="pictures/group_picture.jpeg" style="width: 100%" />
+                <div class="text">Spring Picnic</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 6</div>
+                <img src="pictures\ToteMaking.jpeg" style="width: 100%" />
+                <div class="text">Tote Making</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 6</div>
+                <img
+                  src="pictures\StopAsianHateMovement.jpeg"
+                  style="width: 100%"
+                />
+                <div class="text">Stop Asian Hate Movement</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">4 / 6</div>
+                <img src="pictures\SpringConference.jpg" style="width: 100%" />
+                <div class="text">Spring Conference</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">5 / 6</div>
+                <img
+                  src="pictures\GeneralBodyMeeting.jpeg"
+                  style="width: 100%"
+                />
+                <div class="text">General Body Meeting</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">6 / 6</div>
+                <img src="pictures\HmongNewYear.jpeg" style="width: 100%" />
+                <div class="text">Hmong New Year</div>
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br />
+
+            <!-- The dots/circles -->
+            <div style="text-align: center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+          </div>
+        </div>
+        <div class="section has-background-danger-light mt-6 is-medium">
+          <div class="section column mr-4" id="main">
+            <p class="title is-size-2">Our Purpose</p>
+            <p>
+              HASA's goal is to raise awareness and educate Hmong Americans and
+              the community about the Hmong culture and contemporary issues; And
+              to cultivate and foster a familial community where we can all
+              stand together to grow as one.
             </p>
           </div>
-          <!-- right side -->
-          <div class="column is-3 pr-5">
-            <div class="box has-background-danger-light signedout">
-              <div class="mt-2 mb-3">
-                <h2 class="title is-4 has-text-centered">Sign up/Sign In!</h2>
-              </div>
-              <div>
-                <p>
-                  Sign Up to view our upcoming events and current Council!
-                </p>
-              </div>
-              <div class="buttons is-centered pt-4">
-                <!-- sign up -->
-                <a class="button is-primary has-background-danger is-rounded" id="signupbtn">
-                  <strong>Sign up</strong>
-                </a>
-                <!-- sign in -->
-                <a class="button is-primary has-background-danger is-rounded" id="signinbtn">
-                  <strong>Sign in</strong>
-                </a>
-              </div>
-            </div>
+        </div>
+        <div class="section mt-6 is-small">
+          <div class="section column mr-4" id="main">
+            <p class="title is-size-2">Our Mission</p>
+
+            The mission of the Hmong American Student Association is to: <br />
+            <ul>
+              <li><b>1. </b>Promote higher education;</li>
+              <li>
+                <b>2. </b>Serve as a bridge between students, community leaders,
+                and scholars with the Hmong community and the broader American
+                community;
+              </li>
+              <li>
+                <b>3. </b>Address the concerns and needs of students and the
+                Hmong community such as Hmong Human Rights, Students’ Rights and
+                Civil Rights;
+              </li>
+              <li>
+                <b>4. </b>Provide leadership opportunities for aspiring
+                students;
+              </li>
+              <li><b>5. </b>Serve as a resource for students;</li>
+              <li>
+                <b>6. </b>Serve as a channel to develop, display, and recognize
+                the talents and creativity of the students.
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="mt-5">
-          <!-- Slideshow container -->
-          <div class="slideshow-container">
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 6</div>
-              <img src="pictures/group_picture.jpeg" style="width: 100%" />
-              <div class="text">Spring Picnic</div>
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 6</div>
-              <img src="pictures\ToteMaking.jpeg" style="width: 100%" />
-              <div class="text">Tote Making</div>
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 6</div>
-              <img src="pictures\StopAsianHateMovement.jpeg" style="width: 100%" />
-              <div class="text">Stop Asian Hate Movement</div>
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">4 / 6</div>
-              <img src="pictures\SpringConference.jpg" style="width: 100%" />
-              <div class="text">Spring Conference</div>
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">5 / 6</div>
-              <img src="pictures\GeneralBodyMeeting.jpeg" style="width: 100%" />
-              <div class="text">General Body Meeting</div>
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">6 / 6</div>
-              <img src="pictures\HmongNewYear.jpeg" style="width: 100%" />
-              <div class="text">Hmong New Year</div>
-            </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br />
-
-          <!-- The dots/circles -->
-          <div style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
+        <div class="section has-background-danger-light mt-6 is-medium">
+          <div class="section column mr-4" id="main">
+            <p class="title is-size-2">Our History</p>
+            <p>
+              HASA was first established at the University of Wisconsin-Madison
+              in 1988. With its establishment, the first waves of Hmong
+              individuals to be the first to ever get a college education paved
+              a way for every generation after them to have representation on
+              campus. Ever since then, HASA has transformed in many ways to
+              better suit its time: Promoting Hmong Human Rights, building
+              community, fighting against Asian Hate, and providing cultural
+              shows to display, not only the Hmong culture, but to raise up all
+              underrepresented cultures around us on campus.
+            </p>
           </div>
         </div>
       </div>
-      <div class="section has-background-danger-light mt-6 is-medium">
-        <div class="section column mr-4" id="main">
-          <p class="title is-size-2">Our Purpose</p>
-          <p>
-            HASA's goal is to raise awareness and educate Hmong Americans and
-            the community about the Hmong culture and contemporary issues; And
-            to cultivate and foster a familial community where we can all
-            stand together to grow as one.
+      <!-- Events -->
+      <div class="is-hidden pb-6" id="events">
+        <div class="columns mt-6 mb-6">
+          <div class="column is-3"></div>
+          <div class="column is-6">
+            <h1 class="title is-1 has-text-centered">Upcoming Club Events</h1>
+          </div>
+          <div class="column is-3 is-right"></div>
+        </div>
+        <div class="mt-4">
+          <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column is-3 pl-0">
+              <button
+                class="is-hidden admin button is-white has-background-danger has-text-white is-rounded"
+                id="addeventbtn"
+              >
+                Add Event
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            <div class="columns is-multiline pb-1" id="event"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="is-hidden" id="team">
+        <div class="columns mt-6 mb-3">
+          <div class="column is-3"></div>
+          <div class="column is-6">
+            <h1 class="title mt-4 is-1 has-text-centered">
+              <i>Meet the Current Council</i>
+            </h1>
+          </div>
+          <div class="column is-3 is-right"></div>
+        </div>
+        <div class="mt-1">
+          <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column is-3 pl-0">
+              <button
+                class="is-hidden admin button is-white has-background-danger has-text-white is-rounded"
+                id="addboardbtn"
+              >
+                Add Board Members
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns mt-2">
+          <div class="column is-1 pr-0"></div>
+          <div class="column is-10">
+            <h2 class="title mt-2 is-1 has-text-centered">
+              Internal Committee
+            </h2>
+            <div class="columns is-4" id="internal"></div>
+            <h2 class="title mt-6 is-1 has-text-centered">
+              External Committee
+            </h2>
+            <div class="columns is-4 mr-3" id="external"></div>
+            <h2 class="title mt-6 is-1 has-text-centered">Finance Committee</h2>
+            <div class="columns is-4 mr-3" id="finance"></div>
+            <h2 class="title mt-6 is-1 has-text-centered">Liasons</h2>
+            <div class="columns is-4 mr-3" id="liaisons"></div>
+          </div>
+        </div>
+        <div class="column is-2 pl-0"></div>
+      </div>
+
+      <!-- contact -->
+      <div class="is-hidden" id="contact">
+        <div class="my-6 mx-6 py-4 px-4 has-background-danger-light">
+          <h1 class="title has-text-centered">
+            Collab Inquiry? Formal Business?
+          </h1>
+          <p class="has-text-centered pb-5">
+            Please reach out to us via email. We would love to consider working
+            with you!
+          </p>
+          <p class="has-text-centered pb-3">
+            <a
+              href="mailto:hasa.wisc@gmail.com"
+              class="has-text-black is-size-1 pt-3 pb-6"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </p>
+        </div>
+        <div class="my-6 mx-6 py-4 px-4 has-background-light">
+          <h1 class="title has-text-centered">Find Us On Social Media</h1>
+          <p class="has-text-centered pb-5">
+            Look through our memories here! For any comments/concerns, send us a
+            message here.
+          </p>
+          <p class="has-text-centered">
+            <a
+              style="padding: 50px"
+              href="https://www.facebook.com/HasaUWMadison/"
+              class="is-size-1 pt-3 pb-6"
+              ><i class="has-text-black-bis fa-brands fa-facebook"></i
+            ></a>
+            <a
+              style="padding: 50px"
+              class="is-size-1 pt-3 pb-6"
+              href="https://www.instagram.com/hasa.uw/?hl=en"
+              ><i class="has-text-black-bis fa-brands fa-instagram"></i
+            ></a>
           </p>
         </div>
       </div>
-      <div class="section mt-6 is-small">
-        <div class="section column mr-4" id="main">
-          <p class="title is-size-2">Our Mission</p>
 
-          The mission of the Hmong American Student Association is to: <br />
-          <ul>
-            <li><b>1. </b>Promote higher education;</li>
-            <li>
-              <b>2. </b>Serve as a bridge between students, community leaders,
-              and scholars with the Hmong community and the broader American
-              community;
-            </li>
-            <li>
-              <b>3. </b>Address the concerns and needs of students and the
-              Hmong community such as Hmong Human Rights, Students’ Rights and
-              Civil Rights;
-            </li>
-            <li>
-              <b>4. </b>Provide leadership opportunities for aspiring
-              students;
-            </li>
-            <li><b>5. </b>Serve as a resource for students;</li>
-            <li>
-              <b>6. </b>Serve as a channel to develop, display, and recognize
-              the talents and creativity of the students.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="section has-background-danger-light mt-6 is-medium">
-        <div class="section column mr-4" id="main">
-          <p class="title is-size-2">Our History</p>
-          <p>
-            HASA was first established at the University of Wisconsin-Madison
-            in 1988. With its establishment, the first waves of Hmong
-            individuals to be the first to ever get a college education paved
-            a way for every generation after them to have representation on
-            campus. Ever since then, HASA has transformed in many ways to
-            better suit its time: Promoting Hmong Human Rights, building
-            community, fighting against Asian Hate, and providing cultural
-            shows to display, not only the Hmong culture, but to raise up all
-            underrepresented cultures around us on campus.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Events -->
-    <div class="is-hidden pb-6" id="events">
-      <div class="columns mt-6 mb-6">
-        <div class="column is-3"></div>
-        <div class="column is-6">
-          <h1 class="title is-1 has-text-centered">Upcoming Club Events</h1>
-        </div>
-        <div class="column is-3 is-right"></div>
-      </div>
-      <div class="mt-4">
+      <!-- inventory -->
+      <div class="is-hidden" id="inventory">
         <div class="columns">
-          <div class="column is-2"></div>
-          <div class="column is-3 pl-0">
-            <button class="is-hidden admin button is-white has-background-danger has-text-white is-rounded"
-              id="addeventbtn">
-              Add Event
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-two-thirds">
-          <div class="columns is-multiline pb-1" id="event"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Team -->
-    <div class="is-hidden" id="team">
-      <div class="columns mt-6 mb-6">
-        <div class="column is-3"></div>
-        <div class="column is-6">
-          <h1 class="title mt-4 is-1 has-text-centered">Council Members</h1>
-        </div>
-        <div class="column is-3 is-right"></div>
-      </div>
-      <div class="mt-4">
-        <div class="columns">
-          <div class="column is-2"></div>
-          <div class="column is-3 pl-0">
-            <button class="is-hidden admin button is-white has-background-danger has-text-white is-rounded"
-              id="addboardbtn">
-              Add Board Members
-            </button>
-          </div>
-        </div>
-      </div>
-      <img class="mb-6 mt-4" src="pictures/Council Professional Serious.jpeg" />
-      <div class="columns mt-2">
-        <div class="column is-1 pr-0"></div>
-        <div class="column is-10">
-          <h2 class="title mt-6 is-1 has-text-centered">
-            Internal Committee
-          </h2>
-          <div class="columns is-4" id="internal"></div>
-          <h2 class="title mt-6 is-1 has-text-centered">
-            External Committee
-          </h2>
-          <div class="columns is-4 mr-3" id="external"></div>
-          <h2 class="title mt-6 is-1 has-text-centered">Finance Committee</h2>
-          <div class="columns is-4 mr-3" id="finance"></div>
-          <h2 class="title mt-6 is-1 has-text-centered">Liasons</h2>
-          <div class="columns is-4 mr-3" id="liaisons"></div>
-        </div>
-      </div>
-      <div class="column is-2 pl-0"></div>
-    </div>
-
-    <!-- contact -->
-    <div class="is-hidden" id="contact">
-      <div class="my-6 mx-6 py-4 px-4 has-background-danger-light">
-        <h1 class="title has-text-centered">
-          Collab Inquiry? Formal Business?
-        </h1>
-        <p class="has-text-centered pb-5">
-          Please reach out to us via email. We would love to consider working
-          with you!
-        </p>
-        <p class="has-text-centered pb-3">
-          <a href="mailto:hasa.wisc@gmail.com" class="has-text-black is-size-1 pt-3 pb-6"><i
-              class="fa-solid fa-envelope"></i></a>
-        </p>
-      </div>
-      <div class="my-6 mx-6 py-4 px-4 has-background-light">
-        <h1 class="title has-text-centered">Find Us On Social Media</h1>
-        <p class="has-text-centered pb-5">
-          Look through our memories here! For any comments/concerns, send us a
-          message here.
-        </p>
-        <p class="has-text-centered">
-          <a style="padding: 50px" href="https://www.facebook.com/HasaUWMadison/" class="is-size-1 pt-3 pb-6"><i
-              class="has-text-black-bis fa-brands fa-facebook"></i></a>
-          <a style="padding: 50px" class="is-size-1 pt-3 pb-6" href="https://www.instagram.com/hasa.uw/?hl=en"><i
-              class="has-text-black-bis fa-brands fa-instagram"></i></a>
-        </p>
-      </div>
-    </div>
-
-    <!-- inventory -->
-    <div class="is-hidden" id="inventory">
-      <div class="columns">
-        <div class="column is-1"></div>
-        <div class="column is-10">
-          <div class="title is-1 has-text-centered pt-6 pb-6">
-            <h1>Inventory Data</h1>
-          </div>
-          <center>
-            <iframe width="1200" height="1200"
-              src="https://docs.google.com/spreadsheets/d/1kFtXSnmMGhDrREUXcpC8bsOU-_xPSE0-Yv3AuGUbQo4/edit?usp=sharing&amp;rm=minimal&amp;single=true&amp"></iframe>
-          </center>
-
           <div class="column is-1"></div>
+          <div class="column is-10">
+            <div class="title is-1 has-text-centered pt-6 pb-6">
+              <h1>Inventory Data</h1>
+            </div>
+            <center>
+              <iframe
+                width="1200"
+                height="1200"
+                src="https://docs.google.com/spreadsheets/d/1kFtXSnmMGhDrREUXcpC8bsOU-_xPSE0-Yv3AuGUbQo4/edit?usp=sharing&amp;rm=minimal&amp;single=true&amp"
+              ></iframe>
+            </center>
+
+            <div class="column is-1"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    <div class="footer has-background-danger is-active">
-      <div class="content">
-        <div class="content has-text-centered mb-3">
-          <a href="https://www.facebook.com/HasaUWMadison/" target="_blank"><i
-              class="fa-brands fa-facebook fa-2x pr-2"></i></a>
-          <a href="https://www.instagram.com/hasa.uw/?hl=en" target="_blank"><i
-              class="fa-brands fa-instagram fa-2x pr-2"></i></a>
-        </div>
-        <p class="content has-text-centered has-text-white mb-1">
-          <a href="https://win.wisc.edu/organization/hasauw" class="has-text-white is-size-5" target="_blank">Become a
-            Member: https://win.wisc.edu/organization/hasauw</a>
-        </p>
-        <p class="content has-text-centered has-text-white mb-1">
-          <a href="mailto:test@test.com" class="has-text-white is-size-5">hasa.wisc@gmail.com</a><br />
-        </p>
+    <footer>
+      <div class="footer has-background-danger is-active">
+        <div class="content">
+          <div class="content has-text-centered mb-3">
+            <a href="https://www.facebook.com/HasaUWMadison/" target="_blank"
+              ><i class="fa-brands fa-facebook fa-2x pr-2"></i
+            ></a>
+            <a href="https://www.instagram.com/hasa.uw/?hl=en" target="_blank"
+              ><i class="fa-brands fa-instagram fa-2x pr-2"></i
+            ></a>
+          </div>
+          <p class="content has-text-centered has-text-white mb-1">
+            <a
+              href="https://win.wisc.edu/organization/hasauw"
+              class="has-text-white is-size-5"
+              target="_blank"
+              >Become a Member: https://win.wisc.edu/organization/hasauw</a
+            >
+          </p>
+          <p class="content has-text-centered has-text-white mb-1">
+            <a href="mailto:test@test.com" class="has-text-white is-size-5"
+              >hasa.wisc@gmail.com</a
+            ><br />
+          </p>
 
-        <div class="is-size-7 has-text-centered has-text-white">
-          Copyright &copy; <br />
-          Group 7 INFO SYS 424 Spring 2023
+          <div class="is-size-7 has-text-centered has-text-white">
+            Copyright &copy; <br />
+            Group 7 INFO SYS 424 Spring 2023
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration -->
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
-    const firebaseConfig = {
-      apiKey: "AIzaSyDgk5wF9-s_-cWthdUeuzTvXkB7vfCESOM",
-      authDomain: "hasa-website-1c7e8.firebaseapp.com",
-      projectId: "hasa-website-1c7e8",
-      storageBucket: "hasa-website-1c7e8.appspot.com",
-      messagingSenderId: "705170026517",
-      appId: "1:705170026517:web:1f820c52b0f346b2179e1c",
-      measurementId: "G-SRBWR5N3LJ",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    // define authentication variable
-    let auth = firebase.auth();
-    let db = firebase.firestore();
+    <script>
+      // Your web app's Firebase configuration -->
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgk5wF9-s_-cWthdUeuzTvXkB7vfCESOM",
+        authDomain: "hasa-website-1c7e8.firebaseapp.com",
+        projectId: "hasa-website-1c7e8",
+        storageBucket: "hasa-website-1c7e8.appspot.com",
+        messagingSenderId: "705170026517",
+        appId: "1:705170026517:web:1f820c52b0f346b2179e1c",
+        measurementId: "G-SRBWR5N3LJ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // define authentication variable
+      let auth = firebase.auth();
+      let db = firebase.firestore();
 
-    // add a new reference for storage
-    let ref = firebase.storage().ref();
-  </script>
+      // add a new reference for storage
+      let ref = firebase.storage().ref();
+    </script>
 
-  <!-- JavaScript -->
-  <script src="app.js"></script>
-</body>
-
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+  </body>
 </html>
