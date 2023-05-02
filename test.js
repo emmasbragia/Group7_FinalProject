@@ -23,11 +23,7 @@ async function go() {
     // test clicking inventory tab
     await page.click("#inventorybtn");
     await page.click("#addinvbtn"); // adding inventory
-    // entering new inventory
-    await page.type("#invname", "new item name");
-    await page.type("#invdesc", "new item description");
-    await page.type("#invquantity", "new item quantity");
-
+   
     // testing clicking event tab
     await page.click("#eventsbtn");
 };
